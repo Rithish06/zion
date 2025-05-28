@@ -7,7 +7,7 @@ const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     
     // Style for active links
-    const activeStyle = "text-blue-600 font-bold";
+    const activeStyle = "font-[700] border-b-[1px]";
     
     useEffect(() => {
         const handleScroll = () => {
@@ -17,10 +17,8 @@ const Navbar = () => {
             }
         };
         
-        // Add scroll event listener
         window.addEventListener('scroll', handleScroll);
         
-        // Clean up the event listener
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
@@ -36,19 +34,19 @@ const Navbar = () => {
                     <NavLink 
                         to="/" 
                         end 
-                        className={({ isActive }) => `text-black text-xl font-normal font-['Mina'] ${isActive ? activeStyle : ''}`}
+                        className={({ isActive }) => `text-black text-xl font-['Mina'] ${isActive ? activeStyle : 'font-normal'}`}
                     >
                         Home
                     </NavLink>
                     <NavLink 
                         to="/services" 
-                        className={({ isActive }) => `text-black text-xl font-normal font-['Mina'] ${isActive ? activeStyle : ''}`}
+                        className={({ isActive }) => `text-black text-xl font-['Mina'] ${isActive ? activeStyle : 'font-normal'}`}
                     >
                         Services
                     </NavLink>
                     <NavLink 
                         to="/contact-us" 
-                        className={({ isActive }) => `text-black text-xl font-normal font-['Mina'] ${isActive ? activeStyle : ''}`}
+                        className={({ isActive }) => `text-black text-xl font-['Mina'] ${isActive ? activeStyle : 'font-normal'}`}
                     >
                         Contact Us
                     </NavLink>
