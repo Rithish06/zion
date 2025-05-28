@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Delius Swash Caps';
+  src: url('/fonts/DeliusSwashCaps-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+@theme {
+  --font-jost : "jost";
+  --font-delius : "Delius Swash Caps";
+
+  /* break points */
+    --breakpoint-xs: 330px;
+    --breakpoint-s: 360px;
+    --brekpoint-mm : 380px; 
+    --brekpoint-ms : 400px; 
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-sxl : 1100px;
+    --breakpoint-mxl : 1400px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
+}
+
+@layer utilities {
+  .font-jost {font-family: var(--font-jost);}
+  .font-delius {font-family: var(--font-delius);}
+}

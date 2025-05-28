@@ -1,0 +1,52 @@
+import React from 'react'
+import { assets } from '../assets/assets'
+import ContactFrom from '../components/ContactFrom'
+
+const Contact = () => {
+
+  return (
+    <div className='relative top-20 md:top-0 overflow-x-hidden bg-[#FFF7FE]'>
+      <div className='relative bg-white'>
+        {/* banner bg */}
+        <div className='realtive z-1 flex flex-col justify-around w-full h-[80vh] lg:h-[90vh]'>
+          <img src={assets.serviceBannerBg} className='w-full h-[80vh]  lg:h-[90vh]' alt="" />
+        </div>
+
+        {/* content */}
+
+        <div className='absolute top-0 z-2 flex flex-col items-center justify-center gap-10 lg:gap-0 md:flex-row lg:justify-between w-full h-[80vh] lg:h-[90vh]'>
+          {/* left side */}
+
+          <div className='px-10 lg:px-20 flex justify-center align-items-center flex-col w-full h-[50%] lg:w-[60%] lg:h-full'>
+            <div className="w-full text-black text-3xl text-center lg:text-[50px] font-bold font-jost lg:ml-10">Contact Us</div>
+            <div className="w-full text-black text-sm text-center lg:text-[20px] font-normal font-jost mt-3 lg:ml-10">We’d love to connect with you! Whether you're planning a bridal makeover, looking for a relaxing beauty treatment or simply have a question about our services - we’re just a message away.</div>
+          </div>
+          {/* right side */}
+
+          <div className='flex items-center justify-center w-full h-[50%] md:w-[50%] md:h-full'>
+            <img src={assets.contactBannerImage} className='w-[300px] md:w-[700px]  h-auto' alt="" />
+          </div>
+        </div>
+      </div>
+
+      {/* container 2 */}
+      <ContactFrom />
+
+      <div className='flex flex-col items-center justify-center lg:flex-row mt-10 gap-10 lg:gap-0'>
+          {/* left side */}
+          <div className='flex flex-col items-center justify-center w-full lg:w-[50%] '>
+              <img src={assets.contactIcon} className='w-[62px] h-auto' alt="" />
+              <div className='font-jost text-[36px] lg:text-[42px] font-[700] text-black'>Join Our Team</div>
+              <div className='font-jost text-[16px] lg:text-[18px] font-[400] text-center'>Please send us an email telling us a  bit about us</div>
+              <div className='px-2 py-1 text-[18px] lg:text-[20px] border-black border-[2px] text-center font-[700]'>zionbeautyofheaven@gmail.com</div>
+          </div>
+          {/* right side */}
+          <div className='w-full lg:w-[50%] flex justify-center lg:justify-start items-center'>
+            <img src={assets.salonPicIn} className='w-[80%]' alt="" />
+          </div>
+      </div>
+    </div>
+  )
+}
+
+export default Contact
