@@ -67,7 +67,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Navigation */}
-            <div className={`fixed bg-white top-24 flex flex-col gap-4 w-full max-w-[400px] h-[87vh] p-3 shadow shadow-black backdrop-blur-lg transition-all duration-[0.5s] ${isOpen ? '-translate-x-[0px]' : '-translate-x-[500px]'} md:hidden`}>
+            <div className={`fixed bg-white top-24 flex flex-col z-100 gap-4 w-full max-w-[400px] h-[87vh] p-3 shadow shadow-black backdrop-blur-lg transition-all duration-[0.5s] ${isOpen ? '-translate-x-[0px]' : '-translate-x-[500px]'} md:hidden`}>
                 <NavLink 
                     to="/" 
                     end 
