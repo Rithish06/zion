@@ -18,9 +18,14 @@ const ContactFrom = () => {
     const onSubmit = (data) => console.log(data)
 
     const options = [
-        { value: "s1", label: "Service 1" },
-        { value: "s2", label: "Service 2" },
-        { value: "s3", label: "Service 3" },
+        { value: "Bridal Makeup", label: "Bridal Makeup" },
+        { value: "Nail Extension & Nail Art", label: "Nail Extension & Nail Art" },
+        { value: "Makeup Services", label: "Makeup Services" },
+        { value: "Haircut & Hair Colouring", label: "Haircut & Hair Colouring" },
+        { value: "Hair Treatment", label: "Hair Treatment" },
+        { value: "Hair Spa", label: "Hair Spa" },
+        { value: "Eyelash Extension & Lifting", label: "Eyelash Extension & Lifting" },
+        { value: "Advanced Facial", label: "Advanced Facial" },
     ];
 
     return (
@@ -48,8 +53,8 @@ const ContactFrom = () => {
                     </div>
 
                     {/* Row 1 */}
-                    <div className="flex gap-5 mt-10">
-                        <div className="w-[50%]">
+                    <div className="flex flex-col md:flex-row gap-3 md:gap-5 mt-10 lg:mt-10">
+                        <div className="w-full md:w-[50%]">
                             <input
                                 {...register("firstName", {
                                     required: "First name is required",
@@ -58,7 +63,7 @@ const ContactFrom = () => {
                                         message: "First name should contain only letters",
                                     },
                                 })}
-                                className="w-full border-b-[2px] outline-none border-black placeholder:text-zinc-600 placeholder:text-[16px] placeholder:font-[poppins] py-2"
+                                className="w-full border-b-[2px] outline-none border-black placeholder:text-[#565B5D] placeholder:text-[16px] placeholder:font-[poppins] py-2"
                                 placeholder="First Name*"
                             />
                             {errors.firstName && (
@@ -66,7 +71,7 @@ const ContactFrom = () => {
                             )}
                         </div>
 
-                        <div className="w-[50%]">
+                        <div className="w-full md:w-[50%]">
                             <input
                                 {...register("lastName", {
                                     required: "Last name is required",
@@ -75,7 +80,7 @@ const ContactFrom = () => {
                                         message: "Last name should contain only letters",
                                     },
                                 })}
-                                className="w-full border-b-[2px] outline-none border-black placeholder:text-zinc-600 placeholder:text-[16px] placeholder:font-[poppins] py-2"
+                                className="w-full border-b-[2px] outline-none border-black placeholder:text-[#565B5D] placeholder:text-[16px] placeholder:font-[poppins] py-2"
                                 placeholder="Last Name*"
                             />
                             {errors.lastName && (
@@ -85,8 +90,8 @@ const ContactFrom = () => {
                     </div>
 
                     {/* Row 2 */}
-                    <div className="flex gap-5 mt-8">
-                        <div className="w-[50%]">
+                    <div className="flex flex-col md:flex-row gap-3 md:gap-5 mt-3 lg:mt-8">
+                        <div className="w-full md:w-[50%]">
                             <input
                                 {...register("phonenumber", {
                                     required: "Phone number is required",
@@ -95,7 +100,7 @@ const ContactFrom = () => {
                                         message: "Enter a valid 10-digit phone number",
                                     },
                                 })}
-                                className="w-full border-b-[2px] outline-none border-black placeholder:text-zinc-600 placeholder:text-[16px] placeholder:font-[poppins] py-2"
+                                className="w-full border-b-[2px] outline-none border-black placeholder:text-[#565B5D] placeholder:text-[16px] placeholder:font-[poppins] py-2"
                                 placeholder="Phone Number*"
                             />
                             {errors.phonenumber && (
@@ -103,7 +108,7 @@ const ContactFrom = () => {
                             )}
                         </div>
 
-                        <div className="w-[50%]">
+                        <div className="w-full md:w-[50%]">
                             <input
                                 {...register("email", {
                                     required: "Email is required",
@@ -112,7 +117,7 @@ const ContactFrom = () => {
                                         message: "Enter a valid email address",
                                     },
                                 })}
-                                className="w-full border-b-[2px] outline-none border-black placeholder:text-zinc-600 placeholder:text-[16px] placeholder:font-[poppins] py-2"
+                                className="w-full border-b-[2px] outline-none border-black placeholder:text-[#565B5D] placeholder:text-[16px] placeholder:font-[poppins] py-2"
                                 placeholder="Email*"
                             />
                             {errors.email && (
@@ -122,68 +127,97 @@ const ContactFrom = () => {
                     </div>
 
                     {/* Service Select */}
-                    <div className="flex gap-5 mt-8">
+                    <div className="flex gap-5 mt-3 lg:mt-8">
                         <Controller
                             name="service"
                             control={control}
                             rules={{ required: "Service is required" }}
                             render={({ field }) => (
-                                <Select
-                                    {...field}
-                                    options={options}
-                                    placeholder="Select a service*"
-                                    isSearchable={false}
-                                    className="w-full text-base"
-                                    styles={{
-                                        control: (base) => ({
-                                            ...base,
-                                            backgroundColor: "transparent",
-                                            border: "0",
-                                            borderBottom: "2px solid black",
-                                            boxShadow: "none",
-                                            borderRadius: 0,
-                                            fontFamily: "Poppins, sans-serif",
-                                            fontSize: "16px",
-                                            color: "#000",
-                                        }),
-                                        placeholder: (base) => ({
-                                            ...base,
-                                            fontFamily: "Poppins, sans-serif",
-                                            color: "#71717a",
-                                            fontSize: "16px",
-                                        }),
-                                        singleValue: (base) => ({
-                                            ...base,
-                                            fontFamily: "Poppins, sans-serif",
-                                            fontSize: "16px",
-                                            color: "#000",
-                                        }),
-                                        option: (base, state) => ({
-                                            ...base,
-                                            fontFamily: "Poppins, sans-serif",
-                                            backgroundColor: state.isSelected
-                                                ? "#3b82f6"
-                                                : state.isFocused
-                                                    ? "#e0e7ff"
-                                                    : "#fff",
-                                            color: "#000",
-                                            cursor: "pointer",
-                                        }),
-                                        menu: (base) => ({
-                                            ...base,
-                                            zIndex: 50,
-                                        }),
-                                    }}
+                                <Controller
+                                    name="service"
+                                    control={control}
+                                    rules={{ required: "Service is required" }}
+                                    render={({ field }) => (
+                                        <Select
+                                            {...field}
+                                            options={options}
+                                            placeholder="Select a service*"
+                                            isSearchable={false}
+                                            className="w-full text-base px-0"
+                                            styles={{
+                                                control: (base) => ({
+                                                    ...base,
+                                                    backgroundColor: "transparent",
+                                                    border: "0",
+                                                    borderBottom: "2px solid black",
+                                                    boxShadow: "none",
+                                                    borderRadius: 0,
+                                                    fontFamily: "Poppins, sans-serif",
+                                                    fontSize: "16px",
+                                                    color: "#000",
+                                                    padding: 0,
+                                                }),
+                                                placeholder: (base) => ({
+                                                    ...base,
+                                                    fontFamily: "Poppins, sans-serif",
+                                                    color: "#565B5D",
+                                                    fontSize: "16px",
+                                                    padding: 0,
+                                                }),
+                                                singleValue: (base) => ({
+                                                    ...base,
+                                                    fontFamily: "Poppins, sans-serif",
+                                                    fontSize: "16px",
+                                                    color: "#000",
+                                                    padding: 0,
+                                                }),
+                                                option: (base, state) => ({
+                                                    ...base,
+                                                    fontFamily: "Poppins, sans-serif",
+                                                    backgroundColor: state.isSelected
+                                                        ? "#3b82f6"
+                                                        : state.isFocused
+                                                            ? "#e0e7ff"
+                                                            : "#fff",
+                                                    color: "#000",
+                                                    cursor: "pointer",
+                                                    paddingLeft: "8px",
+                                                }),
+                                                menu: (base) => ({
+                                                    ...base,
+                                                    zIndex: 50,
+                                                }),
+                                                valueContainer: (base) => ({
+                                                    ...base,
+                                                    padding: 0,
+                                                }),
+                                                input: (base) => ({
+                                                    ...base,
+                                                    padding: 0,
+                                                    margin: 0,
+                                                }),
+                                                dropdownIndicator: (base) => ({
+                                                    ...base,
+                                                    padding: 0,
+                                                }),
+                                                indicatorSeparator: () => ({
+                                                    display: "none",
+                                                }),
+                                            }}
+                                        />
+                                    )}
                                 />
+
                             )}
                         />
+
                     </div>
                     {errors.service && (
                         <p className="text-red-600 text-sm mt-2">{errors.service.message}</p>
                     )}
 
                     {/* Message */}
-                    <div className="flex gap-5 mt-8">
+                    <div className="flex gap-5 mt-3 lg:mt-8">
                         <textarea
                             {...register("message", {
                                 required: "Message is required",
@@ -192,7 +226,7 @@ const ContactFrom = () => {
                                     message: "Message must be at least 10 characters",
                                 },
                             })}
-                            className="w-full border-b-[2px] outline-none border-black placeholder:text-zinc-600 placeholder:text-base placeholder:font-[poppins] py-2"
+                            className="w-full border-b-[2px] outline-none border-black placeholder:text-[#565B5D] placeholder:text-base placeholder:font-[poppins] py-2"
                             placeholder="Message*"
                         />
                     </div>

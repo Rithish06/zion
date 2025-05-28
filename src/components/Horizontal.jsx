@@ -43,10 +43,13 @@ const HorizontalScroll = ({ children, speed = 30 }) => {
     }
   }, [speed]); // Add speed as dependency if it might change
 
+  const handleMouseEnter = () => contentRef.current?.pause();
+  const handleMouseLeave = () => contentRef.current?.play();
+
   return (
     <div className="overflow-hidden w-full relative">
       <div ref={wrapperRef} className="flex whitespace-nowrap">
-        <div ref={contentRef} className="flex">
+        <div ref={contentRef} className="flex" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
           {React.Children.map(children, (child) => (
             <div className="inline-block">
               {child}

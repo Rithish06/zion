@@ -8,7 +8,7 @@ const Contact = () => {
     <div className='relative top-20 md:top-0 overflow-x-hidden bg-[#FFF7FE]'>
       <div className='relative bg-white'>
         {/* banner bg */}
-        <div className='realtive z-1 flex flex-col justify-around w-full h-[80vh] lg:h-[90vh]'>
+        <div className='realtive z-1 flex flex-col justify-around w-full h-[80vh] md:h-[70vh] lg:h-[90vh]'>
           <img src={assets.serviceBannerBg} className='w-full h-[80vh]  lg:h-[90vh]' alt="" />
         </div>
 
@@ -23,8 +23,8 @@ const Contact = () => {
           </div>
           {/* right side */}
 
-          <div className='flex items-center justify-center w-full h-[50%] md:w-[50%] md:h-full'>
-            <img src={assets.contactBannerImage} className='w-[300px] md:w-[700px]  h-auto' alt="" />
+          <div className='flex items-center justify-center w-full h-[50%] md:w-[60%] lg:w-[50%] md:h-full'>
+            <img src={assets.contactBannerImage} className='w-[300px] md:w-[50%] md:absolute h-auto md:right-0 lg:top-6' alt="" />
           </div>
         </div>
       </div>
@@ -32,13 +32,13 @@ const Contact = () => {
       {/* container 2 */}
       <ContactFrom />
 
-      <div className='flex flex-col items-center justify-center lg:flex-row my-10 gap-10 lg:gap-0'>
+      <div className='flex flex-col items-center justify-center lg:flex-row my-10 gap-10 lg:gap-0 mb-30 lg:mb-10'>
           {/* left side */}
           <div className='flex flex-col items-center justify-center w-full lg:w-[50%] '>
               <img src={assets.contactIcon} className='w-[62px] h-auto' alt="" />
               <div className='font-jost text-[36px] lg:text-[42px] font-[700] text-black'>Join Our Team</div>
-              <div className='font-jost text-[16px] lg:text-[18px] font-[400] text-center'>Please send us an email telling us a  bit about us</div>
-              <div className='px-2 py-1 text-[18px] lg:text-[20px] border-black border-[2px] text-center font-[700]'>zionbeautyofheaven@gmail.com</div>
+              <div className='font-jost text-[16px] lg:text-[18px] font-[400] text-center mt-4 w-[300px]'>Please send us an email telling us a  bit about us</div>
+              <div className='px-3 py-2 text-[18px] lg:text-[20px] border-black border-[2px] text-center font-[700] mt-3'>zionbeautyofheaven@gmail.com</div>
           </div>
           {/* right side */}
           <div className='w-full lg:w-[50%] flex justify-center lg:justify-start items-center'>
