@@ -32,7 +32,7 @@ const Contact = () => {
       {/* container 2 */}
       <ContactFrom />
 
-      <div className='flex flex-col items-center justify-center lg:flex-row mt-10 gap-10 lg:gap-0'>
+      <div className='flex flex-col items-center justify-center lg:flex-row my-10 gap-10 lg:gap-0'>
           {/* left side */}
           <div className='flex flex-col items-center justify-center w-full lg:w-[50%] '>
               <img src={assets.contactIcon} className='w-[62px] h-auto' alt="" />

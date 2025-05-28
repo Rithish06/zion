@@ -1,13 +1,14 @@
-import React,{useEffect} from 'react'
+import React,{useEffect, useRef} from 'react'
 import { assets } from '../assets/assets'
 import { FaAngleRight } from "react-icons/fa6";
 import VerticalInfiniteScroll from '../components/VerticalInfiniteScroll';
 import HorizontalScroll from '../components/Horizontal'
-import { useForm, Controller } from "react-hook-form"
-import Select from "react-select";
 import ContactFrom from '../components/ContactFrom';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
+
+	const discover = useRef()
 
 	useEffect(() => {
         const script = document.createElement('script');
@@ -21,16 +22,21 @@ const Home = () => {
         };
     }, []);
 
+	const nextContainer = () => {
+		if (discover.current) {
+			const elementTop = discover.current.getBoundingClientRect().top;
+			const offset = window.innerHeight * 0.4;
+			window.scrollTo({
+				top: window.pageYOffset + elementTop - offset,
+				behavior: 'smooth',
+			});
+		}
+	}	
+
 
 	const scrollOne = [assets.scrollImg1, assets.scrollImg2, assets.scrollImg3]
 	const scrollTwo = [assets.scrollImg4, assets.scrollImg5, assets.scrollImg6]
 	const scrollThree = [assets.scrollImg7, assets.scrollImg8, assets.scrollImg9]
-
-	const options = [
-		{ value: "s1", label: "Service 1" },
-		{ value: "s2", label: "Service 2" },
-		{ value: "s3", label: "Service 3" },
-	];
 
 	const serviceList = [
 		{
@@ -95,7 +101,7 @@ const Home = () => {
 						</div>
 
 						<div className='mt-8 flex justify-center lg:justify-start lg:ml-40'>
-							<button className="flex items-center gap-3">
+							<button className="flex items-center gap-3" onClick={nextContainer}>
 								<div className="justify-start text-white text-xs font-bold font-jost px-5 py-3 bg-gradient-to-r from-black to-black rounded-lg">LET’S DISCOVER</div>
 								<div className='w-[25px] h-[25px] border-[2px] border-black flex justify-center items-center rounded-full'>
 									<FaAngleRight />
@@ -173,7 +179,7 @@ const Home = () => {
 			</div>
 
 			{/* container 2 */}
-			<div className='px-10 lg:px-20'>
+			<div className='px-10 lg:px-20' ref={discover}>
 				<div className="text-black text-3xl lg:text-4xl font-medium font-jost text-center mt-15 mb-8">Be Your Own Kind of Beautiful</div>
 				<div className="text-center justify-start text-black text-sm lg:text-lg font-normal font-delius leading-7 mt-4">Zion Beauty of Heaven is a premier beauty destination in Tumkur, founded by Anupama Sharmanraj, a skilled and passionate beauty expert committed to excellence. With a deep understanding of modern trends and a dedication to empowering women, she has created a space where every client experiences more than just a makeover - they experience transformation.</div>
 				<div className="text-center justify-start text-black text-sm lg:text-lg font-normal font-delius leading-7 mt-4">Offering a wide range of services including skincare, makeup, hairstyling, nail enhancements, lash lifting and bridal grooming, Zion blends artistry with advanced techniques in a calm and hygienic environment. Every service is designed to suit individual needs while enhancing natural beauty and confidence.</div>
@@ -184,20 +190,27 @@ const Home = () => {
 			<div>
 				<div className="justify-start text-stone-950 text-3xl lg:text-5xl font-bold font-jost text-center mt-15 mb-10">Service Menu</div>
 
-				<HorizontalScroll speed={15}>
+				<HorizontalScroll speed={20}>
 					{serviceList.map((service, index) => (
-						<div key={index} className="flex flex-col items-center gap-2 w-[100px] px-2 mx-7">
+						<div key={index} className="flex flex-col items- justify-center gap-2 w-[100px] px-2 mx-7">
 							<img src={service.image} className="w-[77px] h-auto" alt="" />
-							<div className="text-center text-black text-[12px] font-normal font-delius tracking-wider">
+							<div className="text-center text-black text-[12px] font-normal font-delius tracking-wider w-[80%]">
+								{service.name}
+							</div>
+						</div>
+					))}
+					{serviceList.map((service, index) => (
+						<div key={index} className="flex flex-col items- justify-center gap-2 w-[100px] px-2 mx-7">
+							<img src={service.image} className="w-[77px] h-auto" alt="" />
+							<div className="text-center text-black text-[12px] font-normal font-delius tracking-wider w-[80%]">
 								{service.name}
 							</div>
 						</div>
 					))}
 				</HorizontalScroll>
 				<div className="mt-10 flex justify-center">
-					<button className="w-64 h-14 bg-[#b88bb2] rounded-lg text-white text-base font-bold font-jost">View Service Menu</button>
+				 	<Link to="/services"><button className="w-64 h-14 bg-[#b88bb2] rounded-lg text-white text-base font-bold font-jost">View Service Menu</button></Link>
 				</div>
-
 			</div>
 
 			{/* google review */}

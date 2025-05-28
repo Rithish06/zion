@@ -2,6 +2,7 @@ import React from 'react'
 import { assets } from '../assets/assets'
 import HorizontalScroll from '../components/Horizontal'
 import ContactFrom from '../components/ContactFrom'
+import { Link } from 'react-router-dom'
 
 const Services = () => {
 
@@ -57,21 +58,21 @@ const Services = () => {
                 </div>
 
                 <div className="flex justify-center mb-10">
-                    <button className="w-64 h-14 bg-[#b88bb2] rounded-lg text-white text-base font-bold font-jost">View Service Menu</button>
+                    <Link to='/contact-us' className="flex justify-center items-center w-64 h-14 bg-[#b88bb2] rounded-lg text-white text-base font-bold font-jost">Book an Appointment</Link>
                 </div>
 
                 <HorizontalScroll speed={20}>
                     {
                         bridalMakeUp.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[160px] h-auto relative' />
+                                <img src={image} className='w-[120px] md:w-[160px] h-auto relative' />
                             </div>
                         ))
                     }
                     {
                         bridalMakeUp.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[160px] h-auto relative' />
+                                <img src={image} className='w-[120px] md:w-[160px] h-auto relative' />
                             </div>
                         ))
                     }
@@ -107,14 +108,14 @@ const Services = () => {
                 <HorizontalScroll speed={20}>
                     {
                         bridalMakeUp.map((image, index) => (
-                            <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
+                            <div className={`w-[120px] md:w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
                                 <img src={image} className='w-[160px] h-auto relative' />
                             </div>
                         ))
                     }
                     {
                         bridalMakeUp.map((image, index) => (
-                            <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
+                            <div className={`w-[120px] md:w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
                                 <img src={image} className='w-[160px] h-auto relative' />
                             </div>
                         ))
@@ -139,14 +140,14 @@ const Services = () => {
                     {
                         bridalMakeUp.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[160px] h-auto relative' />
+                                <img src={image} className='w-[120px] md:w-[160px] h-auto relative' />
                             </div>
                         ))
                     }
                     {
                         bridalMakeUp.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[160px] h-auto relative' />
+                                <img src={image} className='w-[120px] md:w-[160px] h-auto relative' />
                             </div>
                         ))
                     }
@@ -163,14 +164,14 @@ const Services = () => {
                     {
                         bridalMakeUp.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[160px] h-auto relative' />
+                                <img src={image} className='w-[120px] md:w-[160px] h-auto relative' />
                             </div>
                         ))
                     }
                     {
                         bridalMakeUp.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[160px] h-auto relative' />
+                                <img src={image} className='w-[120px] md:w-[160px] h-auto relative' />
                             </div>
                         ))
                     }

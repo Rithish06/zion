@@ -2,6 +2,9 @@ import React from 'react'
 import { assets } from '../assets/assets'
 import { useForm, Controller } from "react-hook-form"
 import Select from "react-select";
+import { FiFacebook } from "react-icons/fi";
+import { FaInstagram } from "react-icons/fa";
+import { ImWhatsapp } from "react-icons/im";
 
 const ContactFrom = () => {
 
@@ -11,148 +14,199 @@ const ContactFrom = () => {
         formState: { errors },
         handleSubmit,
     } = useForm()
+
     const onSubmit = (data) => console.log(data)
 
     const options = [
-		{ value: "s1", label: "Service 1" },
-		{ value: "s2", label: "Service 2" },
-		{ value: "s3", label: "Service 3" },
-	];
+        { value: "s1", label: "Service 1" },
+        { value: "s2", label: "Service 2" },
+        { value: "s3", label: "Service 3" },
+    ];
 
     return (
         <div className='flex flex-col gap-10 lg:gap-0 items-center lg:flex-row justify-center mb-10 lg:mb-0'>
 
             {/* left side */}
-            <div className="w-full lg:w-[50%] flex justify-center items-center py-10 px-5" style={{ background: `url(${assets.contactImage})`, backgroundPosition: "center bottom", backgroundSize: "cover" }}>
-                <form action="" className='bg-white/80 w-[95%] lg:w-[80%] px-10 py-18 rounded-2xl'>
-                    <div className="text-black text-3xl lg:text-5xl font-bold font-jost">Ready, Set, Glow!</div>
-                    <div className="justify-start text-black text-sm font-normal font-jost leading-none mt-5">Fill in the form below and our team will get in touch with you shortly to assist you with bookings, queries or recommendations.</div>
+            <div
+                className="w-full lg:w-[50%] flex justify-center items-center py-10 px-5"
+                style={{
+                    background: `url(${assets.contactImage})`,
+                    backgroundPosition: "center bottom",
+                    backgroundSize: "cover",
+                }}
+            >
+                <form
+                    onSubmit={handleSubmit(onSubmit)}
+                    className="bg-white/80 w-[95%] lg:w-[80%] px-10 py-18 rounded-2xl"
+                >
+                    <div className="text-black text-3xl lg:text-5xl font-bold font-jost">
+                        Ready, Set, Glow!
+                    </div>
+                    <div className="text-black text-sm font-normal font-jost leading-none mt-5">
+                        Fill in the form below and our team will get in touch with you shortly
+                        to assist you with bookings, queries or recommendations.
+                    </div>
 
-                    {/* row 1 */}
+                    {/* Row 1 */}
                     <div className="flex gap-5 mt-10">
-                        {/* first name */}
-                        <input
-                            {...register("firstName", { required: true })}
-                            aria-invalid={errors.firstName ? "true" : "false"}
-                            className='w-[50%] border-b-[2px] outline-none border-black placeholder:text-zink-600 placeholder:text-[16px] placeholder:font-[poppins] py-2'
-                            placeholder='Frist Name*'
-                        />
-                        {errors.firstName?.type === "required" && (
-                            <p role="alert">First name is required</p>
-                        )}
+                        <div className="w-[50%]">
+                            <input
+                                {...register("firstName", {
+                                    required: "First name is required",
+                                    pattern: {
+                                        value: /^[A-Za-z\s]+$/,
+                                        message: "First name should contain only letters",
+                                    },
+                                })}
+                                className="w-full border-b-[2px] outline-none border-black placeholder:text-zinc-600 placeholder:text-[16px] placeholder:font-[poppins] py-2"
+                                placeholder="First Name*"
+                            />
+                            {errors.firstName && (
+                                <p className="text-red-600 text-sm">{errors.firstName.message}</p>
+                            )}
+                        </div>
 
-                        {/* last name */}
-                        <input
-                            {...register("lastname", { required: false })}
-                            aria-invalid={errors.firstName ? "true" : "false"}
-                            className='w-[50%] border-b-[2px] outline-none border-black placeholder:text-zink-600 placeholder:text-[16px] placeholder:font-[poppins] py-2'
-                            placeholder='Last Name*'
-                        />
+                        <div className="w-[50%]">
+                            <input
+                                {...register("lastName", {
+                                    required: "Last name is required",
+                                    pattern: {
+                                        value: /^[A-Za-z\s]+$/,
+                                        message: "Last name should contain only letters",
+                                    },
+                                })}
+                                className="w-full border-b-[2px] outline-none border-black placeholder:text-zinc-600 placeholder:text-[16px] placeholder:font-[poppins] py-2"
+                                placeholder="Last Name*"
+                            />
+                            {errors.lastName && (
+                                <p className="text-red-600 text-sm">{errors.lastName.message}</p>
+                            )}
+                        </div>
                     </div>
 
-                    {/* row 2 */}
+                    {/* Row 2 */}
                     <div className="flex gap-5 mt-8">
-                        {/* first name */}
-                        <input
-                            {...register("phonenumber", { required: true })}
-                            aria-invalid={errors.phonenumber ? "true" : "false"}
-                            className='w-[50%] border-b-[2px] outline-none border-black placeholder:text-zink-600 placeholder:text-[16px] placeholder:font-[poppins] py-2'
-                            placeholder='Frist Name*'
-                        />{/*justify-start justify-start text-zinc-600 text-base font-medium font-['Montserrat'] text-base font-medium font-['Montserrat'] */}
-                        {errors.phonenumber?.type === "required" && (
-                            <p role="alert">Phone number is required</p>
-                        )}
+                        <div className="w-[50%]">
+                            <input
+                                {...register("phonenumber", {
+                                    required: "Phone number is required",
+                                    pattern: {
+                                        value: /^[0-9]{10}$/,
+                                        message: "Enter a valid 10-digit phone number",
+                                    },
+                                })}
+                                className="w-full border-b-[2px] outline-none border-black placeholder:text-zinc-600 placeholder:text-[16px] placeholder:font-[poppins] py-2"
+                                placeholder="Phone Number*"
+                            />
+                            {errors.phonenumber && (
+                                <p className="text-red-600 text-sm">{errors.phonenumber.message}</p>
+                            )}
+                        </div>
 
-                        {/* last name */}
-                        <input
-                            {...register("lastname", { required: false })}
-                            aria-invalid={errors.lastname ? "true" : "false"}
-                            className='w-[50%] border-b-[2px] outline-none border-black placeholder:text-zink-600 placeholder:text-[16px] placeholder:font-[poppins] py-2'
-                            placeholder='Frist Name*'
-                        />
+                        <div className="w-[50%]">
+                            <input
+                                {...register("email", {
+                                    required: "Email is required",
+                                    pattern: {
+                                        value: /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/,
+                                        message: "Enter a valid email address",
+                                    },
+                                })}
+                                className="w-full border-b-[2px] outline-none border-black placeholder:text-zinc-600 placeholder:text-[16px] placeholder:font-[poppins] py-2"
+                                placeholder="Email*"
+                            />
+                            {errors.email && (
+                                <p className="text-red-600 text-sm">{errors.email.message}</p>
+                            )}
+                        </div>
                     </div>
 
-                    <div className="flex gap-5  mt-8">
-                        {/* first name */}
+                    {/* Service Select */}
+                    <div className="flex gap-5 mt-8">
                         <Controller
                             name="service"
                             control={control}
-                            rules={{ required: true }}
+                            rules={{ required: "Service is required" }}
                             render={({ field }) => (
-                                <Controller
-                                    name="service"
-                                    control={control}
-                                    rules={{ required: true }}
-                                    render={({ field }) => (
-                                        <Select
-                                            {...field}
-                                            options={options}
-                                            placeholder="Select an option"
-                                            isSearchable={false}
-                                            className='w-full text-base'
-                                            styles={{
-                                                control: (base, state) => ({
-                                                    ...base,
-                                                    backgroundColor: 'transparent',
-                                                    border: '0',
-                                                    borderBottom: '2px solid black',
-                                                    boxShadow: 'none',
-                                                    borderRadius: 0,
-                                                    fontFamily: 'Poppins, sans-serif',
-                                                    fontSize: '16px',
-                                                    color: '#000',
-                                                }),
-                                                placeholder: (base) => ({
-                                                    ...base,
-                                                    fontFamily: 'Poppins, sans-serif',
-                                                    color: '#71717a', // zinc-600
-                                                    fontSize: '16px',
-                                                }),
-                                                singleValue: (base) => ({
-                                                    ...base,
-                                                    fontFamily: 'Poppins, sans-serif',
-                                                    fontSize: '16px',
-                                                    color: '#000',
-                                                }),
-                                                option: (base, state) => ({
-                                                    ...base,
-                                                    fontFamily: 'Poppins, sans-serif',
-                                                    backgroundColor: state.isSelected
-                                                        ? '#3b82f6' // Tailwind blue-500
-                                                        : state.isFocused
-                                                            ? '#e0e7ff' // Tailwind indigo-100
-                                                            : '#fff',
-                                                    color: '#000',
-                                                    cursor: 'pointer',
-                                                }),
-                                                menu: (base) => ({
-                                                    ...base,
-                                                    zIndex: 50,
-                                                }),
-                                            }}
-                                        />
-                                    )}
+                                <Select
+                                    {...field}
+                                    options={options}
+                                    placeholder="Select a service*"
+                                    isSearchable={false}
+                                    className="w-full text-base"
+                                    styles={{
+                                        control: (base) => ({
+                                            ...base,
+                                            backgroundColor: "transparent",
+                                            border: "0",
+                                            borderBottom: "2px solid black",
+                                            boxShadow: "none",
+                                            borderRadius: 0,
+                                            fontFamily: "Poppins, sans-serif",
+                                            fontSize: "16px",
+                                            color: "#000",
+                                        }),
+                                        placeholder: (base) => ({
+                                            ...base,
+                                            fontFamily: "Poppins, sans-serif",
+                                            color: "#71717a",
+                                            fontSize: "16px",
+                                        }),
+                                        singleValue: (base) => ({
+                                            ...base,
+                                            fontFamily: "Poppins, sans-serif",
+                                            fontSize: "16px",
+                                            color: "#000",
+                                        }),
+                                        option: (base, state) => ({
+                                            ...base,
+                                            fontFamily: "Poppins, sans-serif",
+                                            backgroundColor: state.isSelected
+                                                ? "#3b82f6"
+                                                : state.isFocused
+                                                    ? "#e0e7ff"
+                                                    : "#fff",
+                                            color: "#000",
+                                            cursor: "pointer",
+                                        }),
+                                        menu: (base) => ({
+                                            ...base,
+                                            zIndex: 50,
+                                        }),
+                                    }}
                                 />
                             )}
                         />
-                        {errors.firstName?.type === "required" && (
-                            <p role="alert">First name is required</p>
-                        )}
                     </div>
+                    {errors.service && (
+                        <p className="text-red-600 text-sm mt-2">{errors.service.message}</p>
+                    )}
 
-                    <div className="flex gap-5  mt-8">
-                        {/* last name */}
+                    {/* Message */}
+                    <div className="flex gap-5 mt-8">
                         <textarea
-                            {...register("message", { required: true })}
-                            aria-invalid={errors.message ? "true" : "false"}
-                            className='w-full border-b-[2px] outline-none border-black placeholder:text-zink-600 placeholder:text-base placeholder:font-[poppins] py-2'
-                            placeholder='Message*'
+                            {...register("message", {
+                                required: "Message is required",
+                                pattern: {
+                                    value: /^.{10,}$/,
+                                    message: "Message must be at least 10 characters",
+                                },
+                            })}
+                            className="w-full border-b-[2px] outline-none border-black placeholder:text-zinc-600 placeholder:text-base placeholder:font-[poppins] py-2"
+                            placeholder="Message*"
                         />
-                        {errors.message?.type === "required" && (
-                            <p role="alert">Message is required</p>
-                        )}
                     </div>
+                    {errors.message && (
+                        <p className="text-red-600 text-sm">{errors.message.message}</p>
+                    )}
 
+                    {/* Submit */}
+                    <button
+                        type="submit"
+                        className="bg-[#b88bb2] px-8 py-2 text-white font-[600] mt-10 rounded-sm font-jost"
+                    >
+                        Book Now
+                    </button>
                 </form>
             </div>
 
@@ -170,6 +224,11 @@ const ContactFrom = () => {
                 <div>
                     <div className="self-stretch text-center justify-start text-orange-700 text-5xl font-bold font-jost mt-2">Follow Us</div>
                     <div className="self-stretch text-center justify-start text-orange-700 text-lg font-medium font-jost mt-1">Don’t miss promotions, follow us for the latest news<br /></div>
+                    <div className='flex justify-center gap-5 mt-5'>
+                        <a href='https://www.facebook.com/anupama.sharmanraj'><FiFacebook className='text-[#B63E12] text-[30px]' /></a>
+                        <a href='https://www.instagram.com/zion_beautyofheaven?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==' target='_blank'><FaInstagram className='text-[#B63E12] text-[30px]' /></a>
+                        <a href={`https://wa.me/919739907517`} target='_blank'><ImWhatsapp className='text-[#B63E12] text-[30px]' /></a>
+                    </div>
                 </div>
             </div>
         </div>
