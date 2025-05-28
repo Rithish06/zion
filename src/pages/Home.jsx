@@ -73,13 +73,13 @@ const Home = () => {
 
 			<div className='relative bg-white'>
 				{/* banner bg */}
-				<div className='realtive z-1 flex flex-col justify-around w-full h-[1200px]  lg:h-[100vh]'>
-					<img src={assets.homeBannerBg} className='w-full h-[1200px]  lg:h-[100vh]' alt="" />
+				<div className='realtive z-1 flex flex-col justify-around w-full h-[1300px]  lg:h-[100vh]'>
+					<img src={assets.homeBannerBg} className='w-full h-[1300px]  lg:h-[100vh]' alt="" />
 				</div>
 
 				{/* content */}
 
-				<div className='absolute top-0 z-2 flex flex-col items-center gap-10 lg:flex-row lg:justify-between lg:gap-20 w-full h-[1200px] lg:h-[100vh]'>
+				<div className='absolute top-0 z-2 flex flex-col items-center gap-10 lg:flex-row lg:justify-between lg:gap-20 w-full h-[1300px] lg:h-[100vh]'>
 					{/* left side */}
 					<div className='w-full lg:w-[50%]'>
 						<div className='mx-auto lg:ml-40 p-5 lg:p-0 realtive'>
