@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 
@@ -15,30 +15,35 @@ const HorizontalScroll = ({ children, speed = 30 }) => {
 
     if (!wrapper || !content) return;
 
-    const clone = content.cloneNode(true);
-    wrapper.appendChild(clone);
+    // Wait for layout to be calculated
+    requestAnimationFrame(() => {
+      const contentWidth = content.offsetWidth;
 
-    const contentWidth = content.offsetWidth;
+      if (contentWidth > 0) {
+        const clone = content.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        wrapper.appendChild(clone);
 
-    if (contentWidth > 0) {
-      animationRef.current = gsap.fromTo(
-        wrapper,
-        { x: 0 },
-        {
-          x: -contentWidth,
-          duration: speed,
-          ease: 'none',
-          repeat: -1,
-        }
-      );
+        animationRef.current = gsap.fromTo(
+          wrapper,
+          { x: 0 },
+          {
+            x: -contentWidth,
+            duration: speed,
+            ease: 'none',
+            repeat: -1,
+          }
+        );
+      }
+    });
 
-      return () => {
-        animationRef.current?.kill();
-        if (wrapper.lastChild === clone) {
-          wrapper.removeChild(clone);
-        }
-      };
-    }
+    return () => {
+      animationRef.current?.kill();
+      const lastChild = wrapper.lastChild;
+      if (lastChild && lastChild !== content) {
+        wrapper.removeChild(lastChild);
+      }
+    };
   }, [speed]);
 
   const handleMouseEnter = () => animationRef.current?.pause();
@@ -53,8 +58,8 @@ const HorizontalScroll = ({ children, speed = 30 }) => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          {React.Children.map(children, (child) => (
-            <div className="inline-block">
+          {React.Children.map(children, (child, idx) => (
+            <div key={idx} className="inline-block">
               {child}
             </div>
           ))}

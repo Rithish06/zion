@@ -116,7 +116,7 @@ const Home = () => {
 						{/* scroll 1 */}
 
 						<div className='relative'>
-							<div className="absolute bottom-40 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
+							<div className="absolute bottom-35 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
 							<div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
 							<VerticalInfiniteScroll speed={20} height="60vh">
 								
@@ -140,7 +140,7 @@ const Home = () => {
 						{/* scroll 2 */}
 
 						<div className='relative mt-20'>
-							<div className="absolute bottom-20 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
+							<div className="absolute bottom-16 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
 							<div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
 							<VerticalInfiniteScroll speed={20} height="60vh">
 								<div className='flex flex-col'>
