@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { assets } from '../assets/assets'
 import { useForm, Controller } from "react-hook-form"
 import Select from "react-select";
 import { FiFacebook } from "react-icons/fi";
 import { FaInstagram } from "react-icons/fa";
 import { ImWhatsapp } from "react-icons/im";
+import emailjs from '@emailjs/browser';
+import { init } from '@emailjs/browser';
+
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ContactFrom = () => {
 
@@ -13,9 +18,34 @@ const ContactFrom = () => {
         control,
         formState: { errors },
         handleSubmit,
-    } = useForm()
+        reset,
+    } = useForm();
 
-    const onSubmit = (data) => console.log(data)
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    useEffect(() => {
+        init("h-ZQGpG0Ul1KZ3lvE");
+    }, []);
+
+    const onSubmit = (data) => {
+        setIsSubmitting(true);
+        emailjs.send(
+            "zion",
+            "template_n29pnov",
+            data
+        )
+            .then(() => {
+                toast.success("Email sent successfully!");
+                console.log("email sent")
+                console.log(data)
+                reset();
+            })
+            .catch(() => {
+                toast.error("Failed to send email");
+                console.log("email not sent")
+            })
+            .finally(() => setIsSubmitting(false));
+    };
 
     const options = [
         { value: "Bridal Makeup", label: "Bridal Makeup" },
@@ -133,84 +163,75 @@ const ContactFrom = () => {
                             control={control}
                             rules={{ required: "Service is required" }}
                             render={({ field }) => (
-                                <Controller
-                                    name="service"
-                                    control={control}
-                                    rules={{ required: "Service is required" }}
-                                    render={({ field }) => (
-                                        <Select
-                                            {...field}
-                                            options={options}
-                                            placeholder="Select a service*"
-                                            isSearchable={false}
-                                            className="w-full text-base px-0"
-                                            styles={{
-                                                control: (base) => ({
-                                                    ...base,
-                                                    backgroundColor: "transparent",
-                                                    border: "0",
-                                                    borderBottom: "2px solid black",
-                                                    boxShadow: "none",
-                                                    borderRadius: 0,
-                                                    fontFamily: "Poppins, sans-serif",
-                                                    fontSize: "16px",
-                                                    color: "#000",
-                                                    padding: 0,
-                                                }),
-                                                placeholder: (base) => ({
-                                                    ...base,
-                                                    fontFamily: "Poppins, sans-serif",
-                                                    color: "#565B5D",
-                                                    fontSize: "16px",
-                                                    padding: 0,
-                                                }),
-                                                singleValue: (base) => ({
-                                                    ...base,
-                                                    fontFamily: "Poppins, sans-serif",
-                                                    fontSize: "16px",
-                                                    color: "#000",
-                                                    padding: 0,
-                                                }),
-                                                option: (base, state) => ({
-                                                    ...base,
-                                                    fontFamily: "Poppins, sans-serif",
-                                                    backgroundColor: state.isSelected
-                                                        ? "#3b82f6"
-                                                        : state.isFocused
-                                                            ? "#e0e7ff"
-                                                            : "#fff",
-                                                    color: "#000",
-                                                    cursor: "pointer",
-                                                    paddingLeft: "8px",
-                                                }),
-                                                menu: (base) => ({
-                                                    ...base,
-                                                    zIndex: 50,
-                                                }),
-                                                valueContainer: (base) => ({
-                                                    ...base,
-                                                    padding: 0,
-                                                }),
-                                                input: (base) => ({
-                                                    ...base,
-                                                    padding: 0,
-                                                    margin: 0,
-                                                }),
-                                                dropdownIndicator: (base) => ({
-                                                    ...base,
-                                                    padding: 0,
-                                                }),
-                                                indicatorSeparator: () => ({
-                                                    display: "none",
-                                                }),
-                                            }}
-                                        />
-                                    )}
+                                <Select
+                                    {...field}
+                                    options={options}
+                                    placeholder="Select a service*"
+                                    isSearchable={false}
+                                    className="w-full text-base px-0"
+                                    styles={{
+                                        control: (base) => ({
+                                            ...base,
+                                            backgroundColor: "transparent",
+                                            border: "0",
+                                            borderBottom: "2px solid black",
+                                            boxShadow: "none",
+                                            borderRadius: 0,
+                                            fontFamily: "Poppins, sans-serif",
+                                            fontSize: "16px",
+                                            color: "#000",
+                                            padding: 0,
+                                        }),
+                                        placeholder: (base) => ({
+                                            ...base,
+                                            fontFamily: "Poppins, sans-serif",
+                                            color: "#565B5D",
+                                            fontSize: "16px",
+                                            padding: 0,
+                                        }),
+                                        singleValue: (base) => ({
+                                            ...base,
+                                            fontFamily: "Poppins, sans-serif",
+                                            fontSize: "16px",
+                                            color: "#000",
+                                            padding: 0,
+                                        }),
+                                        option: (base, state) => ({
+                                            ...base,
+                                            fontFamily: "Poppins, sans-serif",
+                                            backgroundColor: state.isSelected
+                                                ? "#3b82f6"
+                                                : state.isFocused
+                                                    ? "#e0e7ff"
+                                                    : "#fff",
+                                            color: "#000",
+                                            cursor: "pointer",
+                                            paddingLeft: "8px",
+                                        }),
+                                        menu: (base) => ({
+                                            ...base,
+                                            zIndex: 50,
+                                        }),
+                                        valueContainer: (base) => ({
+                                            ...base,
+                                            padding: 0,
+                                        }),
+                                        input: (base) => ({
+                                            ...base,
+                                            padding: 0,
+                                            margin: 0,
+                                        }),
+                                        dropdownIndicator: (base) => ({
+                                            ...base,
+                                            padding: 0,
+                                        }),
+                                        indicatorSeparator: () => ({
+                                            display: "none",
+                                        }),
+                                    }}
                                 />
-
                             )}
                         />
-
                     </div>
                     {errors.service && (
                         <p className="text-red-600 text-sm mt-2">{errors.service.message}</p>
@@ -238,6 +259,7 @@ const ContactFrom = () => {
                     <button
                         type="submit"
                         className="bg-[#b88bb2] px-8 py-2 text-white font-[600] mt-10 rounded-sm font-jost"
+                        disabled={isSubmitting}
                     >
                         Book Now
                     </button>
@@ -265,6 +287,7 @@ const ContactFrom = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     )
 }

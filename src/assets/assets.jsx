@@ -47,6 +47,7 @@ import serviceScrollImg7 from './images/scroll-service-7.png'
 import contactBannerImage from './images/zion-salon-contact-image.png'
 import contactIcon from './images/best-womens-salon-tumkur.png'
 import salonPicIn from './images/best-salon-for-women-tumkur.png'
+import beautician from './images/best-beautician-in-tumkur.png'
 
 export const assets = {
     footerImage,
@@ -82,5 +83,6 @@ export const assets = {
     serviceScrollImg7,
     contactBannerImage,
     contactIcon,
-    salonPicIn
+    salonPicIn,
+    beautician
 }

@@ -7,23 +7,21 @@ gsap.registerPlugin(useGSAP);
 const HorizontalScroll = ({ children, speed = 30 }) => {
   const wrapperRef = useRef(null);
   const contentRef = useRef(null);
+  const animationRef = useRef(null);
 
   useGSAP(() => {
     const wrapper = wrapperRef.current;
     const content = contentRef.current;
 
-    // Early return if refs aren't ready
     if (!wrapper || !content) return;
 
-    // Clone the content
     const clone = content.cloneNode(true);
     wrapper.appendChild(clone);
 
     const contentWidth = content.offsetWidth;
 
-    // Only animate if we have content width
     if (contentWidth > 0) {
-      const animation = gsap.fromTo(
+      animationRef.current = gsap.fromTo(
         wrapper,
         { x: 0 },
         {
@@ -35,21 +33,26 @@ const HorizontalScroll = ({ children, speed = 30 }) => {
       );
 
       return () => {
-        animation.kill();
+        animationRef.current?.kill();
         if (wrapper.lastChild === clone) {
           wrapper.removeChild(clone);
         }
       };
     }
-  }, [speed]); // Add speed as dependency if it might change
+  }, [speed]);
 
-  const handleMouseEnter = () => contentRef.current?.pause();
-  const handleMouseLeave = () => contentRef.current?.play();
+  const handleMouseEnter = () => animationRef.current?.pause();
+  const handleMouseLeave = () => animationRef.current?.play();
 
   return (
     <div className="overflow-hidden w-full relative">
       <div ref={wrapperRef} className="flex whitespace-nowrap">
-        <div ref={contentRef} className="flex" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <div
+          ref={contentRef}
+          className="flex"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           {React.Children.map(children, (child) => (
             <div className="inline-block">
               {child}

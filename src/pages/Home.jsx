@@ -5,6 +5,7 @@ import VerticalInfiniteScroll from '../components/VerticalInfiniteScroll';
 import HorizontalScroll from '../components/Horizontal'
 import ContactFrom from '../components/ContactFrom';
 import { Link } from 'react-router-dom';
+import Beautician from '../components/Beautician';
 
 const Home = () => {
 
@@ -101,7 +102,7 @@ const Home = () => {
 						</div>
 
 						<div className='mt-8 flex justify-center lg:justify-start lg:ml-50'>
-							<button className="flex items-center gap-3" onClick={nextContainer}>
+							<button className="flex items-center gap-3 bg-[linear-gradient(90deg,_rgba(0,0,0,0.05)_0%,_rgba(0,0,0,0.05)_100%)] rounded-sm pr-2" onClick={nextContainer}>
 								<div className="justify-start text-white text-xs font-bold font-jost px-5 py-3 bg-gradient-to-r from-black to-black rounded-lg">LET’S DISCOVER</div>
 								<div className='w-[25px] h-[25px] border-[2px] border-black flex justify-center items-center rounded-full'>
 									<FaAngleRight />
@@ -195,30 +196,33 @@ const Home = () => {
 
 			{/* container 3 */}
 			<div className='mt-20'>
-				<div className="justify-start text-stone-950 text-3xl lg:text-5xl font-bold font-jost text-center mt-15 mb-10">Service Menu</div>
+				<div className="justify-start text-stone-950 text-3xl lg:text-5xl font-bold font-jost text-center mt-15 mb-20">Service Menu</div>
 
 				<HorizontalScroll speed={20}>
 					{serviceList.map((service, index) => (
-						<div key={index} className="flex flex-col items-center justify-end gap-2 max-w-[150px] px-2 mx-7 text-center h-[120px]">
-							<img src={service.image} className="w-[77px]" alt="" />
-							<div className="text-black text-[12px] font-normal font-delius tracking-wider">
+						<div key={index} className="flex flex-col items-center justify-start gap-2 max-w-[150px] px-2 mx-7 text-center h-[120px]">
+							<img src={service.image} className="w-auto h-[80px] object-cover" alt="" />
+							<div className="text-black text-center text-[12px] font-normal font-delius break-words w-[100px] text-wrap">
 								{service.name}
 							</div>
 						</div>
 					))}
-					{/* {serviceList.map((service, index) => (
-						<div key={index} className="flex flex-col items-center justify-center gap-2 w-[100px] px-2 mx-7">
-							<img src={service.image} className="w-[77px] h-auto" alt="" />
-							<div className="text-center text-black text-[12px] font-normal font-delius tracking-wider w-[80%]">
+					{serviceList.map((service, index) => (
+						<div key={index} className="flex flex-col items-center justify-start gap-2 max-w-[150px] px-2 mx-7 text-center h-[120px]">
+							<img src={service.image} className="w-auto h-[80px] object-cover" alt="" />
+							<div className="text-black text-center text-[12px] font-normal font-delius break-words w-[100px] text-wrap">
 								{service.name}
 							</div>
 						</div>
-					))} */}
+					))}
 				</HorizontalScroll>
 				<div className="mt-20 flex justify-center">
 					<Link to="/services"><button className="w-64 h-14 bg-[#b88bb2] rounded-lg text-white text-base font-bold font-jost">View Service Menu</button></Link>
 				</div>
 			</div>
+
+			{/* profile card */}
+			<Beautician />
 
 			{/* google review */}
 			<div className='p-5  mt-20'>
