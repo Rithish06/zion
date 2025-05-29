@@ -7,7 +7,14 @@ import { Link } from 'react-router-dom'
 const Services = () => {
 
 
-    const bridalMakeUp = [assets.serviceScrollImg1, assets.serviceScrollImg2, assets.serviceScrollImg3, assets.serviceScrollImg5, assets.serviceScrollImg6, assets.serviceScrollImg7,]
+    const bridalMakeUp = [assets.bm1,assets.bm2,assets.bm3,assets.bm4,assets.bm5,assets.bm6,assets.bm7,assets.bm8,assets.bm9,assets.bm10,assets.bm11,assets.bm12,assets.bm13,assets.bm5]
+    const facial = [assets.facial1, assets.facial2, assets.facial3, assets.facial4, assets.facial5, assets.facial6, assets.facial8, assets.facial9, assets.facial10, assets.facial11]
+    const haircut = [assets.haircut1, assets.haircut2, assets.haircut3, assets.haircut4, assets.haircut5, assets.haircut6, assets.haircut7, assets.haircut9, assets.haircut5, assets.haircut6]
+    const nails = [assets.nails1, assets.nails2, assets.nails3, assets.nails4, assets.nails5, assets.nails6, assets.nails7, assets.nails8, assets.nails9, assets.nails10, assets.nails11, assets.nails5]
+    const makeup = [assets.makeUp1, assets.makeUp2, assets.makeUp3, assets.makeUp4, assets.makeUp5, assets.makeUp6, assets.makeUp7, assets.makeUp8, assets.makeUp9, assets.makeUp10, assets.makeUp11, assets.makeUp5]
+    const eyes = [assets.eye1, assets.eye2, assets.eye3, assets.eye4, assets.eye5, assets.eye6, assets.eye7, assets.eye8, assets.eye9, assets.eye10, assets.eye11, assets.eye6]
+    const hairTreatment = [assets.hairtreatment1, assets.hairtreatment2, assets.hairtreatment3, assets.hairtreatment4, assets.hairtreatment5, assets.hairtreatment6,assets.hairtreatment7, assets.hairtreatment4]
+    const hairSpa = [assets.hairspa1, assets.hairspa2, assets.hairspa3, assets.hairspa4, assets.hairspa5, assets.hairspa6,assets.hairspa7, assets.hairspa4]
 
     return (
         <div className='relative top-20 md:top-0 overflow-x-hidden bg-[#FFF7FE]'>
@@ -107,14 +114,14 @@ const Services = () => {
 
                 <HorizontalScroll speed={20}>
                     {
-                        bridalMakeUp.map((image, index) => (
+                        nails.map((image, index) => (
                             <div className={`w-[120px] md:w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
                                 <img src={image} className='w-[160px] h-auto relative' />
                             </div>
                         ))
                     }
                     {
-                        bridalMakeUp.map((image, index) => (
+                        nails.map((image, index) => (
                             <div className={`w-[120px] md:w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
                                 <img src={image} className='w-[160px] h-auto relative' />
                             </div>
@@ -138,14 +145,14 @@ const Services = () => {
 
                 <HorizontalScroll speed={20}>
                     {
-                        bridalMakeUp.map((image, index) => (
+                        makeup.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
                                 <img src={image} className='w-[120px] md:w-[160px] h-auto relative' />
                             </div>
                         ))
                     }
                     {
-                        bridalMakeUp.map((image, index) => (
+                        makeup.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
                                 <img src={image} className='w-[120px] md:w-[160px] h-auto relative' />
                             </div>
@@ -162,14 +169,14 @@ const Services = () => {
 
                 <HorizontalScroll speed={20}>
                     {
-                        bridalMakeUp.map((image, index) => (
+                        haircut.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
                                 <img src={image} className='w-[120px] md:w-[160px] h-auto relative' />
                             </div>
                         ))
                     }
                     {
-                        bridalMakeUp.map((image, index) => (
+                        haircut.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
                                 <img src={image} className='w-[120px] md:w-[160px] h-auto relative' />
                             </div>
@@ -186,14 +193,14 @@ const Services = () => {
 
                 <HorizontalScroll speed={20}>
                     {
-                        bridalMakeUp.map((image, index) => (
+                        hairTreatment.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
                                 <img src={image} className='w-[160px] h-auto relative' />
                             </div>
                         ))
                     }
                     {
-                        bridalMakeUp.map((image, index) => (
+                        hairTreatment.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
                                 <img src={image} className='w-[160px] h-auto relative' />
                             </div>
@@ -210,14 +217,14 @@ const Services = () => {
 
                 <HorizontalScroll speed={20}>
                     {
-                        bridalMakeUp.map((image, index) => (
+                        hairSpa.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
                                 <img src={image} className='w-[160px] h-auto relative' />
                             </div>
                         ))
                     }
                     {
-                        bridalMakeUp.map((image, index) => (
+                        hairSpa.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
                                 <img src={image} className='w-[160px] h-auto relative' />
                             </div>
@@ -234,14 +241,14 @@ const Services = () => {
 
                 <HorizontalScroll speed={20}>
                     {
-                        bridalMakeUp.map((image, index) => (
+                        eyes.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
                                 <img src={image} className='w-[160px] h-auto relative' />
                             </div>
                         ))
                     }
                     {
-                        bridalMakeUp.map((image, index) => (
+                        eyes.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
                                 <img src={image} className='w-[160px] h-auto relative' />
                             </div>
@@ -258,14 +265,14 @@ const Services = () => {
 
                 <HorizontalScroll speed={20}>
                     {
-                        bridalMakeUp.map((image, index) => (
+                        facial.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
                                 <img src={image} className='w-[160px] h-auto relative' />
                             </div>
                         ))
                     }
                     {
-                        bridalMakeUp.map((image, index) => (
+                        facial.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
                                 <img src={image} className='w-[160px] h-auto relative' />
                             </div>

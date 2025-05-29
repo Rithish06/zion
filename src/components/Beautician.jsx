@@ -72,8 +72,8 @@ const Beautician = () => {
 
                     <div className="relative text-[36px] font-[700] font-jost text-white mt-35 text-center ml-20">Founder & Beauty Professional</div>
 
-                    <div className="text-white text-[20px] font-[400] font-jost text-center w-[70%] mt-8 ml-20">Beauty is not limited to a single shade, shape,or style - it resides uniquely within each individual. Every skin tone and facial feature possesses its own radiance, and our expertise lies in illuminating that natural glow.</div>
-                    <div className="text-white text-[20px] font-[400] font-jost text-center w-[70%] mt-2 ml-20">To me, beauty is deeply personal. It’s not about <span className="font-[700]">TRANSFORMATION</span>, but <span className="font-[700]">RECOGNITION</span> - It’s the moment someone sees themselves with clarity and confidence. That quiet sense of pride, of feeling truly comfortable in one’s appearance, is what defines meaningful beauty.</div>
+                    <div className="text-white text-[20px] font-[400] font-jost text-center w-[80%] mt-8 ml-20">Beauty is not limited to a single shade, shape,or style - it resides uniquely within each individual. Every skin tone and facial feature possesses its own radiance, and our expertise lies in illuminating that natural glow.</div>
+                    <div className="text-white text-[20px] font-[400] font-jost text-center w-[80%] mt-2 ml-20">To me, beauty is deeply personal. It’s not about <span className="font-[700]">TRANSFORMATION</span>, but <span className="font-[700]">RECOGNITION</span> - It’s the moment someone sees themselves with clarity and confidence. That quiet sense of pride, of feeling truly comfortable in one’s appearance, is what defines meaningful beauty.</div>
                 </div>
 
                 {/* right side */}
