@@ -68,7 +68,7 @@ const Services = () => {
                     <Link to='/contact-us' className="flex justify-center items-center w-64 h-14 bg-[#b88bb2] rounded-lg text-white text-base font-bold font-jost">Book an Appointment</Link>
                 </div>
 
-                <HorizontalScroll speed={20}>
+                <HorizontalScroll speed={50}>
                     {
                         bridalMakeUp.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
@@ -112,7 +112,7 @@ const Services = () => {
                     </ul>
                 </div>
 
-                <HorizontalScroll speed={20}>
+                <HorizontalScroll speed={50}>
                     {
                         nails.map((image, index) => (
                             <div className={`w-[120px] md:w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
@@ -143,7 +143,7 @@ const Services = () => {
                         
                     </ul>
 
-                <HorizontalScroll speed={20}>
+                <HorizontalScroll speed={50}>
                     {
                         makeup.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
@@ -167,7 +167,7 @@ const Services = () => {
                 <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">"New look. New light. Same you - elevated."</div>
                 <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Whether you're refreshing your cut or changing your shade, a great style isn’t just seen —<br />it’s felt in every moment that follows.</div>
 
-                <HorizontalScroll speed={20}>
+                <HorizontalScroll speed={50}>
                     {
                         haircut.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
@@ -191,7 +191,7 @@ const Services = () => {
                 <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">"Strong strands. Soft finish. Confident you."</div>
                 <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Dry, frizzy or lifeless? Let your hair bounce back with smoothness, strength and shine. Good hair days start here.</div>
 
-                <HorizontalScroll speed={20}>
+                <HorizontalScroll speed={50}>
                     {
                         hairTreatment.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
@@ -215,7 +215,7 @@ const Services = () => {
                 <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">"A retreat for your hair. A reset for you"</div>
                 <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500]  mb-10 lg:w-[800px]">Indulge in a luxurious hair spa experience that detoxes, rehydrates, and renews — because your hair deserves as much rest as your mind.</div>
 
-                <HorizontalScroll speed={20}>
+                <HorizontalScroll speed={50}>
                     {
                         hairSpa.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
@@ -239,7 +239,7 @@ const Services = () => {
                 <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Tired of mascara?</div>
                 <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Open up your eyes and your energy with beautifully lifted or voluminous lashes - subtle enough for everyday, stunning enough for every moment.</div>
 
-                <HorizontalScroll speed={20}>
+                <HorizontalScroll speed={50}>
                     {
                         eyes.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
@@ -263,7 +263,7 @@ const Services = () => {
                 <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">"Let your skin tell a fresher story"</div>
                 <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Restore your skin’s natural glow with facials designed to deeply hydrate, heal, and refresh. Because confidence begins with healthy, radiant skin.</div>
 
-                <HorizontalScroll speed={20}>
+                <HorizontalScroll speed={50}>
                     {
                         facial.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
