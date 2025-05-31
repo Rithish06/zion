@@ -24,20 +24,30 @@ const ContactFrom = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     useEffect(() => {
-        init("h-ZQGpG0Ul1KZ3lvE");
+        init("RC_EHC25Ix-5xaXAl");
     }, []);
 
     const onSubmit = (data) => {
         setIsSubmitting(true);
+
+        const payload = {
+            firstName: data.firstName,
+            lastName: data.lastName,
+            email: data.email,
+            phonenumber: data.phonenumber,
+            service: data.service?.value || "", // flattening it here
+            message: data.message,
+        };
+
         emailjs.send(
             "zion",
-            "template_n29pnov",
-            data
+            "template_ioc1kev",
+            payload
         )
             .then(() => {
                 toast.success("Email sent successfully!");
                 console.log("email sent")
-                console.log(data)
+                console.log(payload)
                 reset();
             })
             .catch(() => {
@@ -283,7 +293,7 @@ const ContactFrom = () => {
                     <div className='flex justify-center gap-5 mt-5'>
                         <a href='https://www.facebook.com/anupama.sharmanraj'><FiFacebook className='text-[#B63E12] text-[30px]' /></a>
                         <a href='https://www.instagram.com/zion_beautyofheaven?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==' target='_blank'><FaInstagram className='text-[#B63E12] text-[30px]' /></a>
-                        <a href={`https://wa.me/919739907517`} target='_blank'><ImWhatsapp className='text-[#B63E12] text-[30px]' /></a>
+                        <a href={`https://wa.me/919686173447`} target='_blank'><ImWhatsapp className='text-[#B63E12] text-[30px]' /></a>
                     </div>
                 </div>
             </div>

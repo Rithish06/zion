@@ -117,12 +117,12 @@ const Home = () => {
 						</div>
 
 						<div className='mt-8 flex justify-center lg:justify-start lg:ml-50'>
-							<button className="flex items-center gap-3 bg-[linear-gradient(90deg,_rgba(0,0,0,0.05)_0%,_rgba(0,0,0,0.05)_100%)] rounded-sm pr-2" onClick={nextContainer}>
+							<Link to='/services' className="flex items-center gap-3 bg-[linear-gradient(90deg,_rgba(0,0,0,0.05)_0%,_rgba(0,0,0,0.05)_100%)] rounded-sm pr-2">
 								<div className="justify-start text-white text-xs font-bold font-jost px-5 py-3 bg-gradient-to-r from-black to-black rounded-lg">LET’S DISCOVER</div>
 								<div className='w-[25px] h-[25px] border-[2px] border-black flex justify-center items-center rounded-full'>
 									<FaAngleRight />
 								</div>
-							</button>
+							</Link>
 						</div>
 					</div>
 

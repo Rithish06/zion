@@ -32,7 +32,7 @@ const Footer = () => {
           <div className='flex justify-center gap-5 mt-5'>
             <a href='https://www.facebook.com/anupama.sharmanraj'><FiFacebook className='text-[#230a10] text-[30px] cursor-pointer' /></a>
             <a href='https://www.instagram.com/zion_beautyofheaven?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==' target='_blank'><FaInstagram className='text-[#230a10] text-[30px] cursor-pointer' /></a>
-            <a href={`https://wa.me/919739907517`} target='_blank'><ImWhatsapp className='text-[#230a10] text-[30px] cursor-pointer' /></a>
+            <a href={`https://wa.me/919686173447`} target='_blank'><ImWhatsapp className='text-[#230a10] text-[30px] cursor-pointer' /></a>
           </div>
         </div>
       </div>

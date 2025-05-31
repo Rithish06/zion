@@ -94,7 +94,7 @@ const Services = () => {
             {/* container 3 */}
             <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#EAFFF3]' id= "nails">
                 <div className="text-center justify-start text-orange-700 text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Nail Extension & Nail Art</div>
-                <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">"Where your fingertips speak your style"</div>
+                <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Where your fingertips speak your style</div>
                 <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] lg:w-[800px]">Elegant, edgy or expressive - your nails should tell your story. Let our artistry add polish to every gesture you make.</div>
                 <div className="text-center justify-start text-fuchsia-800 text-[12px] lg:text-[16px] font-bold font-jost leading-normal">Our Offerings include:</div>
 
@@ -117,7 +117,7 @@ const Services = () => {
                     </ul>
                 </div>
 
-                <HorizontalScroll speed={50}>
+                <HorizontalScroll speed={70}>
                     {
                         nails.map((image, index) => (
                             <div className={`w-[120px] md:w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
@@ -138,7 +138,7 @@ const Services = () => {
             {/* container 4 */}
             <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FFF7FE]' id= "makeup">
                 <div className="text-center justify-start text-orange-700 text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Makeup Services</div>
-                <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">"Beauty that reflects who you are - not hides it"</div>
+                <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Beauty that reflects who you are - not hides it</div>
                 <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] lg:w-[800px]">From soft glam to bold elegance, our makeup enhances your natural features and brings out the confidence already within you.</div>
 
                 <ul className='list-disc flex flex-col items-center'>
@@ -147,7 +147,7 @@ const Services = () => {
                     <li className='text-black text-base font-jost leading-relaxed mb-10'>Party & Engagement Looks: Bold, playful or dramatic - whatever reflects your style.</li>
                 </ul>
 
-                <HorizontalScroll speed={50}>
+                <HorizontalScroll speed={70}>
                     {
                         makeup.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
@@ -168,7 +168,7 @@ const Services = () => {
             {/* container 5 */}
             <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FFE7F2]'>
                 <div className="text-center justify-start text-orange-700 text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Haircut & Hair Colouring</div>
-                <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">"New look. New light. Same you - elevated."</div>
+                <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">New look. New light. Same you - elevated.</div>
                 <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Whether you're refreshing your cut or changing your shade, a great style isn’t just seen —<br />it’s felt in every moment that follows.</div>
                 <div className="text-center justify-start text-fuchsia-800 text-[12px] lg:text-[16px] font-bold font-jost leading-normal">Our Offerings include:</div>
 
@@ -192,7 +192,7 @@ const Services = () => {
                     </ul>
                 </div>
 
-                <HorizontalScroll speed={50}>
+                <HorizontalScroll speed={70}>
                     {
                         haircut.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
@@ -213,8 +213,8 @@ const Services = () => {
             {/* container 6 */}
             <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FFF7FE]'>
                 <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Hair Treatment</div>
-                <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">"Strong strands. Soft finish. Confident you."</div>
-                <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Dry, frizzy or lifeless? Let your hair bounce back with smoothness, strength and shine. Good hair days start here.</div>
+                <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Strong strands. Soft finish. Confident you.</div>
+                <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-5 lg:w-[800px]">Dry, frizzy or lifeless? Let your hair bounce back with smoothness, strength and shine. Good hair days start here.</div>
                 <div className="text-center justify-start text-fuchsia-800 text-[12px] lg:text-[16px] font-bold font-jost leading-normal">Our Offerings include:</div>
 
                 <div className='flex flex-col md:flex-row md:gap-20'>
@@ -229,7 +229,7 @@ const Services = () => {
                     </ul>
                 </div>
 
-                <HorizontalScroll speed={50}>
+                <HorizontalScroll speed={70}>
                     {
                         hairTreatment.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
@@ -250,10 +250,10 @@ const Services = () => {
             {/* container 7 */}
             <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FEFCE5]'>
                 <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Hair Spa</div>
-                <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">"A retreat for your hair. A reset for you"</div>
+                <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">A retreat for your hair. A reset for you</div>
                 <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500]  mb-10 lg:w-[800px]">Indulge in a luxurious hair spa experience that detoxes, rehydrates, and renews — because your hair deserves as much rest as your mind.</div>
 
-                <HorizontalScroll speed={50}>
+                <HorizontalScroll speed={70}>
                     {
                         hairSpa.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
@@ -277,7 +277,7 @@ const Services = () => {
                 <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Tired of mascara?</div>
                 <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Open up your eyes and your energy with beautifully lifted or voluminous lashes - subtle enough for everyday, stunning enough for every moment.</div>
 
-                <HorizontalScroll speed={50}>
+                <HorizontalScroll speed={70}>
                     {
                         eyes.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
@@ -298,10 +298,10 @@ const Services = () => {
             {/* container 9 */}
             <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#EAECFF]'>
                 <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Advanced Facial</div>
-                <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">"Let your skin tell a fresher story"</div>
+                <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Let your skin tell a fresher story</div>
                 <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Restore your skin’s natural glow with facials designed to deeply hydrate, heal, and refresh. Because confidence begins with healthy, radiant skin.</div>
 
-                <HorizontalScroll speed={50}>
+                <HorizontalScroll speed={70}>
                     {
                         facial.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
@@ -321,18 +321,18 @@ const Services = () => {
 
             {/* container 10 */}
             <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FFF7FE]'>
-                <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Waxing Treatments</div>
+                <div className="text-center justify-start text-[#B63E12] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Waxing Treatments</div>
                 <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Say goodbye to unwanted hair and hello to silky, touchable skin - we wax it all with care and comfort.</div>
-                <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Our Offerings include:</div>
+                <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-3 lg:w-[800px]">Our Offerings include:</div>
 
                 <ul className='list-disc flex flex-col items-center'>
                     <li className='text-black text-base font-jost font-[500] leading-relaxed'>Honey Wax - Classic and effective for smooth, everyday glow.</li>
                     <li className='text-black text-base font-jost leading-relaxed'>Rica Wax - Skin-friendly and gentle, perfect for sensitive skin beauties.</li>
-                    <li className='text-black text-base font-jost leading-relaxed mb-10'>Brazilian Wax - Clean, confident, and beach-ready.</li>
+                    <li className='text-black text-base font-jost leading-relaxed'>Brazilian Wax - Clean, confident, and beach-ready.</li>
                     <li className='text-black text-base font-jost leading-relaxed mb-10'>V Wax - Specialized intimate care with extra comfort</li>
                 </ul>
 
-                <HorizontalScroll speed={50}>
+                <HorizontalScroll speed={70}>
                     {
                         wax.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
@@ -353,8 +353,8 @@ const Services = () => {
             {/* container 11 */}
             <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#F5EAFF]'>
                 <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Eyebrow Shaping</div>
-                {/* <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal"></div> */}
-                <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">A little brow love goes a long way. From neat clean-ups to bold arches - we sculpt brows that frame your face beautifully.</div>
+                <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">A little brow love goes a long way.</div>
+                <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">From neat clean-ups to bold arches - we sculpt brows that frame your face beautifully.</div>
 
 
                 {/* <ul className='list-disc flex flex-col items-center'>
@@ -363,7 +363,7 @@ const Services = () => {
                     <li className='text-black text-base font-jost leading-relaxed mb-10'></li>
                 </ul> */}
 
-                <HorizontalScroll speed={50}>
+                <HorizontalScroll speed={70}>
                     {
                         eyebrow.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
@@ -384,8 +384,8 @@ const Services = () => {
             {/* container 12 */}
             <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FFF7FE]'>
                 <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Face Threading</div>
-                {/* <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal"></div> */}
-                <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Flawless skin, fuzz-free finish. Gentle threading for upper lip, chin, forehead & full face - done with precision, leaving your skin smooth and glowing.</div>
+                <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Flawless skin, fuzz-free finish.</div>
+                <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Gentle threading for upper lip, chin, forehead & full face - done with precision, leaving your skin smooth and glowing.</div>
 
                 {/* <ul className='list-disc flex flex-col items-center'>
                     <li className='text-black text-base font-jost font-[500] leading-relaxed'></li>
@@ -393,7 +393,7 @@ const Services = () => {
                     <li className='text-black text-base font-jost leading-relaxed mb-10'></li>
                 </ul> */}
 
-                <HorizontalScroll speed={50}>
+                <HorizontalScroll speed={70}>
                     {
                         faceThreading.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
@@ -414,8 +414,8 @@ const Services = () => {
             {/* container 13 */}
             <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FFEAEB]'>
                 <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Body Polishing</div>
-                {/* <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal"></div> */}
-                <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Buff, glow, repeat! ✨ Reveal radiant skin with our exfoliating body polish. It removes dead cells, boosts blood flow, and leaves your skin baby-soft and fresh.</div>
+                <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Buff, glow, repeat! ✨</div>
+                <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Reveal radiant skin with our exfoliating body polish. It removes dead cells, boosts blood flow, and leaves your skin baby-soft and fresh.</div>
 
                 {/* <ul className='list-disc flex flex-col items-center'>
                     <li className='text-black text-base font-jost font-[500] leading-relaxed'></li>
@@ -423,7 +423,7 @@ const Services = () => {
                     <li className='text-black text-base font-jost leading-relaxed mb-10'></li>
                 </ul> */}
 
-                <HorizontalScroll speed={50}>
+                <HorizontalScroll speed={70}>
                     {
                         bodyPolish.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
@@ -433,36 +433,6 @@ const Services = () => {
                     }
                     {
                         bodyPolish.map((image, index) => (
-                            <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[160px] h-auto relative' />
-                            </div>
-                        ))
-                    }
-                </HorizontalScroll>
-            </div>
-
-            {/* container 14 */}
-            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#EAECFF]'>
-                <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]"></div>
-                <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal"></div>
-                <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]"></div>
-
-                <ul className='list-disc flex flex-col items-center'>
-                    <li className='text-black text-base font-jost font-[500] leading-relaxed'></li>
-                    <li className='text-black text-base font-jost leading-relaxed'></li>
-                    <li className='text-black text-base font-jost leading-relaxed mb-10'></li>
-                </ul>
-
-                <HorizontalScroll speed={50}>
-                    {
-                        facial.map((image, index) => (
-                            <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[160px] h-auto relative' />
-                            </div>
-                        ))
-                    }
-                    {
-                        facial.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
                                 <img src={image} className='w-[160px] h-auto relative' />
                             </div>
@@ -474,8 +444,8 @@ const Services = () => {
             {/* container 15 */}
             <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#EAECFF]'>
                 <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Body Oil Massage</div>
-                {/* <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal"></div> */}
-                <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Unwind in bliss. Our relaxing oil massage melts away stress, soothes sore muscles, and leaves your skin deeply nourished, soft, and glowing.</div>
+                <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Unwind in bliss.</div>
+                <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Our relaxing oil massage melts away stress, soothes sore muscles, and leaves your skin deeply nourished, soft, and glowing.</div>
 
                 {/* <ul className='list-disc flex flex-col items-center'>
                     <li className='text-black text-base font-jost font-[500] leading-relaxed'></li>
@@ -483,7 +453,7 @@ const Services = () => {
                     <li className='text-black text-base font-jost leading-relaxed mb-10'></li>
                 </ul> */}
 
-                <HorizontalScroll speed={50}>
+                <HorizontalScroll speed={70}>
                     {
                         oilMassage.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>

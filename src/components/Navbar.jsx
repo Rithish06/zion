@@ -34,7 +34,7 @@ const Navbar = () => {
                     <NavLink 
                         to="/" 
                         end 
-                        className={({ isActive }) => `font-['Mina'] ${isActive ? activeStyle : 'font-normal text-black '}`}
+                        className={({ isActive }) => `text-xl font-['Mina'] ${isActive ? activeStyle : 'font-normal text-black '}`}
                     >
                         Home
                     </NavLink>
