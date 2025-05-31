@@ -9,7 +9,7 @@ const Services = () => {
 
     const bridalMakeUp = [assets.bm1, assets.bm2, assets.bm3, assets.bm4, assets.bm5, assets.bm6, assets.bm7, assets.bm8, assets.bm9, assets.bm10, assets.bm11, assets.bm12, assets.bm13, assets.bm5]
     const facial = [assets.facial1, assets.facial2, assets.facial3, assets.facial4, assets.facial5, assets.facial6, assets.facial8, assets.facial9, assets.facial10, assets.facial11]
-    const haircut = [assets.haircut1, assets.haircut2, assets.haircut3, assets.haircut4, assets.haircut5, assets.haircut6, assets.haircut7, assets.haircut9, assets.haircut5, assets.haircut6]
+    const haircut = [assets.haircut1, assets.haircut2, assets.haircut3, assets.haircut4, assets.haircut5, assets.haircut6, assets.haircut7, assets.haircut9]
     const nails = [assets.nails1, assets.nails2, assets.nails3, assets.nails4, assets.nails5, assets.nails6, assets.nails7, assets.nails8, assets.nails9, assets.nails10, assets.nails11, assets.nails5]
     const makeup = [assets.makeUp1, assets.makeUp2, assets.makeUp3, assets.makeUp4, assets.makeUp5, assets.makeUp6, assets.makeUp7, assets.makeUp8, assets.makeUp9, assets.makeUp10, assets.makeUp11, assets.makeUp5]
     const eyes = [assets.eye1, assets.eye2, assets.eye3, assets.eye4, assets.eye5, assets.eye6, assets.eye7, assets.eye8, assets.eye9, assets.eye10, assets.eye11, assets.eye12]
@@ -19,7 +19,7 @@ const Services = () => {
     const eyebrow = [assets.eyebrow1, assets.eyebrow2, assets.eyebrow3, assets.eyebrow4, assets.eyebrow5, assets.eyebrow6, assets.eyebrow7, assets.eyebrow8, assets.eyebrow9, assets.eyebrow10]
     const faceThreading = [assets.faceThreading1, assets.faceThreading2, assets.faceThreading3, assets.faceThreading4, assets.faceThreading5, assets.faceThreading6, assets.faceThreading7, assets.faceThreading8, assets.faceThreading9, assets.faceThreading10]
     const bodyPolish = [assets.bodyPolish1, assets.bodyPolish2, assets.bodyPolish3, assets.bodyPolish4, assets.bodyPolish5, assets.bodyPolish6, assets.bodyPolish7, assets.bodyPolish8, assets.bodyPolish9, assets.bodyPolish10]
-    const oilMassage = [assets.oilMassage1, assets.oilMassage2, assets.oilMassage3, assets.oilMassage3, assets.oilMassage5, assets.oilMassage6, assets.oilMassage7, assets.oilMassage8, assets.oilMassage9, assets.oilMassage10]
+    const oilMassage = [assets.oilMassage1, assets.oilMassage2, assets.oilMassage4, assets.oilMassage5, assets.oilMassage6, assets.oilMassage8, assets.oilMassage9, assets.oilMassage10]
 
     return (
         <div className='relative top-20 md:top-0 overflow-x-hidden bg-[#FFF7FE]'>

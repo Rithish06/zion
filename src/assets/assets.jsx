@@ -224,11 +224,11 @@ import bodyPolish10 from './images/bodyPolishing/body-10.png'
 
 import oilMassage1 from './images/oilMassage/oil-massage-1.png'
 import oilMassage2 from './images/oilMassage/oil-massage-2.png'
-import oilMassage3 from './images/oilMassage/oil-massage-3.png'
+// import oilMassage3 from './images/oilMassage/oil-massage-3.png'
 import oilMassage4 from './images/oilMassage/oil-massage-4.png'
 import oilMassage5 from './images/oilMassage/oil-massage-5.png'
 import oilMassage6 from './images/oilMassage/oil-massage-6.png'
-import oilMassage7 from './images/oilMassage/oil-massage-7.png'
+// import oilMassage7 from './images/oilMassage/oil-massage-7.png'
 import oilMassage8 from './images/oilMassage/oil-massage-8.png'
 import oilMassage9 from './images/oilMassage/oil-massage-9.png'
 import oilMassage10 from './images/oilMassage/oil-massage-10.png'
@@ -458,11 +458,11 @@ export const assets = {
 
     oilMassage1,
     oilMassage2,
-    oilMassage3,
+    // oilMassage3,
     oilMassage4,
     oilMassage5,
     oilMassage6,
-    oilMassage7,
+    // oilMassage7,
     oilMassage8,
     oilMassage9,
     oilMassage10

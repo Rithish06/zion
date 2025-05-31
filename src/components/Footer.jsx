@@ -30,14 +30,14 @@ const Footer = () => {
           <div className="text-stone-950 text-2xl font-bold font-jost text-center">Glow & Connect</div>
           <div className="w-72 text-center text-stone-950 text-lg font-medium font-jost mt-3">Stay connected for updates, offers and everything that makes you glow!</div>
           <div className='flex justify-center gap-5 mt-5'>
-            <a href='https://www.facebook.com/anupama.sharmanraj'><FiFacebook className='text-[#230a10] text-[30px] cursor-pointer' /></a>
+            <a href='https://www.facebook.com/anupama.sharmanraj' target='_blank'><FiFacebook className='text-[#230a10] text-[30px] cursor-pointer' /></a>
             <a href='https://www.instagram.com/zion_beautyofheaven?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==' target='_blank'><FaInstagram className='text-[#230a10] text-[30px] cursor-pointer' /></a>
             <a href={`https://wa.me/919686173447`} target='_blank'><ImWhatsapp className='text-[#230a10] text-[30px] cursor-pointer' /></a>
           </div>
         </div>
       </div>
 
-      <div className="justify-start text-stone-950 text-base font-bold font-jost mt-20 text-center">© 2025 Zion Beauty of Heaven. All Rights Reserved. | Designed with love to celebrate the beauty in you.</div>
+      <div className="justify-start text-stone-950 text-base font-bold font-jost mt-20 text-center">© 2025 Zion Beauty of Heaven. All Rights Reserved. | Designed with love to celebrate the beauty in you. | <a target='black' href='https://inventionminds.com/'>Invention Minds</a></div>
     </div>
   )
 }
