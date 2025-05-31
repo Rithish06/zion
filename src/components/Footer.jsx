@@ -11,7 +11,7 @@ const Footer = () => {
 
         <div className='flex flex-col gap-1 items-center'>
           <img src={assets.logo} alt="salons in tumkur" className='w-52 h-20' />
-          <div className="justify-start text-orange-700 text-lg font-bold font-jost">Where Elegance Meets Expertise</div>
+          <div className="justify-start text-orange-700 text-lg font-bold font-jost text-center">WE DON’T CREATE BEAUTY, <br/>WE REVEAL IT TO YOU.</div>
           <div className="w-72 text-center justify-start text-black text-xs font-[500] font-['jost']">Your trusted beauty destination in Tumkur, offering a wide range of services from bridal makeovers and hair treatments to skin care, nail art, and more — all under one roof.</div>
         </div>
 

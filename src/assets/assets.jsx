@@ -5,15 +5,25 @@ import homeBannerBg from './images/salons-in-tumkur.png'
 
 // scroll images
 
-import scrollImg1 from './images/scroll-img-1.png'
-import scrollImg2 from './images/scroll-img-2.png'
-import scrollImg3 from './images/scroll-img-3.png'
-import scrollImg4 from './images/scroll-img-4.png'
-import scrollImg5 from './images/scroll-img-5.png'
-import scrollImg6 from './images/scroll-img-6.png'
-import scrollImg7 from './images/scroll-img-7.png'
-import scrollImg8 from './images/scroll-img-8.png'
-import scrollImg9 from './images/scroll-img-9.png'
+import scrollImg1 from './images/homeScroll/scroll-home-1.png'
+import scrollImg2 from './images/homeScroll/scroll-home-2.png'
+import scrollImg3 from './images/homeScroll/scroll-home-3.png'
+import scrollImg4 from './images/homeScroll/scroll-home-4.png'
+import scrollImg5 from './images/homeScroll/scroll-home-5.png'
+import scrollImg6 from './images/homeScroll/scroll-home-6.png'
+import scrollImg7 from './images/homeScroll/scroll-home-7.png'
+import scrollImg8 from './images/homeScroll/scroll-home-8.png'
+import scrollImg9 from './images/homeScroll/scroll-home-9.png'
+import scrollImg10 from './images/homeScroll/scroll-home-10.png'
+import scrollImg11 from './images/homeScroll/scroll-home-11.png'
+import scrollImg12 from './images/homeScroll/scroll-home-12.png'
+import scrollImg13 from './images/homeScroll/scroll-home-13.png'
+import scrollImg14 from './images/homeScroll/scroll-home-18.png'
+import scrollImg15 from './images/homeScroll/scroll-home-15.png'
+import scrollImg16 from './images/homeScroll/scroll-home-16.png'
+import scrollImg17 from './images/homeScroll/scroll-home-17.png'
+
+
 
 // home services
 
@@ -35,13 +45,13 @@ import serviceBannerImg from './images/zion-salon-services.png'
 
 // services scroll animation image
 
-import serviceScrollImg1 from './images/scroll-service-1.png'
-import serviceScrollImg2 from './images/scroll-service-2.png'
-import serviceScrollImg3 from './images/scroll-service-3.png'
-import serviceScrollImg4 from './images/scroll-service-4.png'
-import serviceScrollImg5 from './images/scroll-service-5.png'
-import serviceScrollImg6 from './images/scroll-service-6.png'
-import serviceScrollImg7 from './images/scroll-service-7.png'
+// import serviceScrollImg1 from './images/scroll-service-1.png'
+// import serviceScrollImg2 from './images/scroll-service-2.png'
+// import serviceScrollImg3 from './images/scroll-service-3.png'
+// import serviceScrollImg4 from './images/scroll-service-4.png'
+// import serviceScrollImg5 from './images/scroll-service-5.png'
+// import serviceScrollImg6 from './images/scroll-service-6.png'
+// import serviceScrollImg7 from './images/scroll-service-7.png'
 
 // contact images
 import contactBannerImage from './images/zion-salon-contact-image.png'
@@ -137,6 +147,11 @@ import hairtreatment4 from './images/hairTreatment/hair-treatment-4.png'
 import hairtreatment5 from './images/hairTreatment/hair-treatment-5.png'
 import hairtreatment6 from './images/hairTreatment/hair-treatment-6.png'
 import hairtreatment7 from './images/hairTreatment/hair-treatment-7.png'
+import hairtreatment8 from './images/hairTreatment/hair-treatment-8.png'
+import hairtreatment9 from './images/hairTreatment/hair-treatment-9.png'
+import hairtreatment10 from './images/hairTreatment/hair-treatment-10.png'
+import hairtreatment11 from './images/hairTreatment/hair-treatment-11.png'
+import hairtreatment12 from './images/hairTreatment/hair-treatment-12.png'
 
 // hair spa
 
@@ -147,6 +162,78 @@ import hairspa4 from './images/hairSpa/hair-spa-4.png'
 import hairspa5 from './images/hairSpa/hair-spa-5.png'
 import hairspa6 from './images/hairSpa/hair-spa-6.png'
 import hairspa7 from './images/hairSpa/hair-spa-7.png'
+import hairspa8 from './images/hairSpa/hair-spa-8.png'
+import hairspa9 from './images/hairSpa/hair-spa-9.png'
+import hairspa10 from './images/hairSpa/hair-spa-10.png'
+import hairspa11 from './images/hairSpa/hair-spa-11.png'
+import hairspa12 from './images/hairSpa/hair-spa-12.png'
+
+// wax
+
+import wax1 from './images/wax/wax-1.png'
+import wax2 from './images/wax/wax-2.png'
+import wax3 from './images/wax/wax-3.png'
+import wax4 from './images/wax/wax-4.png'
+import wax5 from './images/wax/wax-5.png'
+import wax6 from './images/wax/wax-6.png'
+import wax7 from './images/wax/wax-7.png'
+import wax8 from './images/wax/wax-8.png'
+import wax9 from './images/wax/wax-9.png'
+import wax10 from './images/wax/wax-10.png'
+
+// eyebrow
+
+import eyebrow1 from './images/eyebrow/eyebrow-1.png'
+import eyebrow2 from './images/eyebrow/eyebrow-2.png'
+import eyebrow3 from './images/eyebrow/eyebrow-3.png'
+import eyebrow4 from './images/eyebrow/eyebrow-4.png'
+import eyebrow5 from './images/eyebrow/eyebrow-5.png'
+import eyebrow6 from './images/eyebrow/eyebrow-6.png'
+import eyebrow7 from './images/eyebrow/eyebrow-7.png'
+import eyebrow8 from './images/eyebrow/eyebrow-8.png'
+import eyebrow9 from './images/eyebrow/eyebrow-9.png'
+import eyebrow10 from './images/eyebrow/eyebrow-10.png'
+
+// face threading
+
+import faceThreading1 from './images/facialThreading/face-threading-1.png'
+import faceThreading2 from './images/facialThreading/face-threading-2.png'
+import faceThreading3 from './images/facialThreading/face-threading-3.png'
+import faceThreading4 from './images/facialThreading/face-threading-4.png'
+import faceThreading5 from './images/facialThreading/face-threading-5.png'
+import faceThreading6 from './images/facialThreading/face-threading-6.png'
+import faceThreading7 from './images/facialThreading/face-threading-7.png'
+import faceThreading8 from './images/facialThreading/face-threading-8.png'
+import faceThreading9 from './images/facialThreading/face-threading-9.png'
+import faceThreading10 from './images/facialThreading/face-threading-10.png'
+
+// body polishing
+
+import bodyPolish1 from './images/bodyPolishing/body-1.png'
+import bodyPolish2 from './images/bodyPolishing/body-2.png'
+import bodyPolish3 from './images/bodyPolishing/body-3.png'
+import bodyPolish4 from './images/bodyPolishing/body-4.png'
+import bodyPolish5 from './images/bodyPolishing/body-5.png'
+import bodyPolish6 from './images/bodyPolishing/body-6.png'
+import bodyPolish7 from './images/bodyPolishing/body-7.png'
+import bodyPolish8 from './images/bodyPolishing/body-8.png'
+import bodyPolish9 from './images/bodyPolishing/body-9.png'
+import bodyPolish10 from './images/bodyPolishing/body-10.png'
+
+// oil massage
+
+import oilMassage1 from './images/oilMassage/oil-massage-1.png'
+import oilMassage2 from './images/oilMassage/oil-massage-2.png'
+import oilMassage3 from './images/oilMassage/oil-massage-3.png'
+import oilMassage4 from './images/oilMassage/oil-massage-4.png'
+import oilMassage5 from './images/oilMassage/oil-massage-5.png'
+import oilMassage6 from './images/oilMassage/oil-massage-6.png'
+import oilMassage7 from './images/oilMassage/oil-massage-7.png'
+import oilMassage8 from './images/oilMassage/oil-massage-8.png'
+import oilMassage9 from './images/oilMassage/oil-massage-9.png'
+import oilMassage10 from './images/oilMassage/oil-massage-10.png'
+
+
 
 
 export const assets = {
@@ -154,6 +241,9 @@ export const assets = {
     logo,
     homeBanner,
     homeBannerBg,
+
+    // scroll img home banner
+
     scrollImg1,
     scrollImg2,
     scrollImg3,
@@ -163,6 +253,15 @@ export const assets = {
     scrollImg7,
     scrollImg8,
     scrollImg9,
+    scrollImg10,
+    scrollImg11,
+    scrollImg12,
+    scrollImg13,
+    scrollImg14,
+    scrollImg15,
+    scrollImg16,
+    scrollImg17,
+
     eyeLash,
     makeup,
     hairTreatment,
@@ -174,17 +273,22 @@ export const assets = {
     contactImage,
     serviceBannerBg,
     serviceBannerImg,
-    serviceScrollImg1,
-    serviceScrollImg2,
-    serviceScrollImg3,
-    serviceScrollImg4,
-    serviceScrollImg5,
-    serviceScrollImg6,
-    serviceScrollImg7,
+
+
+    // serviceScrollImg1,
+    // serviceScrollImg2,
+    // serviceScrollImg3,
+    // serviceScrollImg4,
+    // serviceScrollImg5,
+    // serviceScrollImg6,
+    // serviceScrollImg7,
     contactBannerImage,
     contactIcon,
     salonPicIn,
     beautician,
+
+    // bm
+
     bm1,
     bm2,
     bm3,
@@ -198,6 +302,9 @@ export const assets = {
     bm11,
     bm12,
     bm13,
+
+    // facial
+
     facial1,
     facial2,
     facial3,
@@ -209,6 +316,9 @@ export const assets = {
     facial9,
     facial10,
     facial11,
+
+    // haircut
+
     haircut1,
     haircut2,
     haircut3,
@@ -218,6 +328,9 @@ export const assets = {
     haircut7,
     haircut8,
     haircut9,
+
+    // nails
+
     nails1,
     nails2,
     nails3,
@@ -229,6 +342,9 @@ export const assets = {
     nails9,
     nails10,
     nails11,
+
+    // make up
+
     makeUp1,
     makeUp2,
     makeUp3,
@@ -240,6 +356,9 @@ export const assets = {
     makeUp9,
     makeUp10,
     makeUp11,
+
+    // eye
+
     eye1,
     eye2,
     eye3,
@@ -252,6 +371,9 @@ export const assets = {
     eye10,
     eye11,
     eye12,
+
+    // hairTreatment
+
     hairtreatment1,
     hairtreatment2,
     hairtreatment3,
@@ -259,11 +381,89 @@ export const assets = {
     hairtreatment5,
     hairtreatment6,
     hairtreatment7,
+    hairtreatment8,
+    hairtreatment9,
+    hairtreatment10,
+    hairtreatment11,
+    hairtreatment12,
+
+    // hair spa
+
     hairspa1,
     hairspa2,
     hairspa3,
     hairspa4,
     hairspa5,
     hairspa6,
-    hairspa7
-}
+    hairspa7,
+    hairspa8,
+    hairspa9,
+    hairspa10,
+    hairspa11,
+    hairspa12,
+
+    // wax
+
+    wax1,
+    wax2,
+    wax3,
+    wax4,
+    wax5,
+    wax6,
+    wax7,
+    wax8,
+    wax9,
+    wax10,
+
+    // eyebrow
+
+    eyebrow1,
+    eyebrow2,
+    eyebrow3,
+    eyebrow4,
+    eyebrow5,
+    eyebrow6,
+    eyebrow7,
+    eyebrow8,
+    eyebrow9,
+    eyebrow10,
+
+    // face threading
+
+    faceThreading1,
+    faceThreading2,
+    faceThreading3,
+    faceThreading4,
+    faceThreading5,
+    faceThreading6,
+    faceThreading7,
+    faceThreading8,
+    faceThreading9,
+    faceThreading10,
+
+    // body polish
+
+    bodyPolish1,
+    bodyPolish2,
+    bodyPolish3,
+    bodyPolish4,
+    bodyPolish5,
+    bodyPolish6,
+    bodyPolish7,
+    bodyPolish8,
+    bodyPolish9,
+    bodyPolish10,
+
+    // oil massage
+
+    oilMassage1,
+    oilMassage2,
+    oilMassage3,
+    oilMassage4,
+    oilMassage5,
+    oilMassage6,
+    oilMassage7,
+    oilMassage8,
+    oilMassage9,
+    oilMassage10
+}   

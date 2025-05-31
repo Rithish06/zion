@@ -6,6 +6,7 @@ import HorizontalScroll from '../components/Horizontal'
 import ContactFrom from '../components/ContactFrom';
 import { Link } from 'react-router-dom';
 import Beautician from '../components/Beautician';
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
 
@@ -35,44 +36,58 @@ const Home = () => {
 	}
 
 
-	const scrollOne = [assets.scrollImg1, assets.scrollImg2, assets.scrollImg3]
-	const scrollTwo = [assets.scrollImg4, assets.scrollImg5, assets.scrollImg6]
-	const scrollThree = [assets.scrollImg7, assets.scrollImg8, assets.scrollImg9]
+	const scrollOne = [assets.scrollImg1, assets.scrollImg2, assets.scrollImg3, assets.scrollImg4, assets.scrollImg5, assets.scrollImg6]
+	const scrollTwo = [assets.scrollImg7, assets.scrollImg8, assets.scrollImg9, assets.scrollImg10, assets.scrollImg11, assets.scrollImg12]
+	const scrollThree = [assets.scrollImg13, assets.scrollImg14, assets.scrollImg15,assets.scrollImg16, assets.scrollImg17,]
 
 	const serviceList = [
 		{
 			image: assets.eyeLash,
-			name: "Eyelash Extension & Lifting"
+			name: "Eyelash Extension & Lifting",
+			id : "eyelash"
 		},
 		{
 			image: assets.makeup,
-			name: "Makeup"
+			name: "Makeup",
+			id: "makeup"
 		},
 		{
 			image: assets.hairTreatment,
-			name: "Hair Treatment"
+			name: "Hair Treatment",
+			id: "hair-treatment"
 		},
 		{
 			image: assets.bridalMakeup,
-			name: "Bridal makeup"
+			name: "Bridal makeup",
+			id: "bridal"
 		},
 		{
 			image: assets.hairspa,
-			name: "Hair Spa"
+			name: "Hair Spa",
+			id: "hair-spa"
 		},
 		{
 			image: assets.advancedFacial,
-			name: "Advanced Facial"
+			name: "Advanced Facial",
+			id: "facial"
 		},
 		{
 			image: assets.nailPolish,
-			name: "Nail Extension & Nail Art"
+			name: "Nail Extension & Nail Art",
+			id: "nails"
 		},
 		{
 			image: assets.hairColoring,
-			name: "Haircut & Hair Colouring"
+			name: "Haircut & Hair Colouring",
+			id: "haircut"
 		},
 	]
+
+	const navigate = useNavigate();
+
+  const handleIconClick = (sectionId) => {
+    navigate(`/services#${sectionId}`);
+  };
 
 	return (
 		<div className='relative top-20 md:top-0 overflow-x-hidden bg-[#FFF7FE]'>
@@ -116,9 +131,9 @@ const Home = () => {
 						{/* scroll 1 */}
 
 						<div className='relative'>
-							<div className="absolute bottom-35 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
+							<div className="absolute bottom-35 left-0 w-full h-25 md:h-20 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
 							<div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
-							<VerticalInfiniteScroll speed={20} height="60vh">
+							<VerticalInfiniteScroll speed={50} height="60vh">
 								
 								<div className='flex flex-col'>
 									{scrollOne.map((img, index) => (
@@ -127,12 +142,12 @@ const Home = () => {
 									{scrollOne.map((img, index) => (
 										<img className='w-[123px] h-auto mb-4' src={img} key={index} />
 									))}
-									{scrollOne.map((img, index) => (
+									{/* {scrollOne.map((img, index) => (
 										<img className='w-[123px] h-auto mb-4' src={img} key={index} />
 									))}
 									{scrollOne.map((img, index) => (
 										<img className='w-[123px] h-auto mb-4' src={img} key={index} />
-									))}
+									))} */}
 								</div>
 							</VerticalInfiniteScroll>
 						</div>
@@ -140,9 +155,9 @@ const Home = () => {
 						{/* scroll 2 */}
 
 						<div className='relative mt-20'>
-							<div className="absolute bottom-16 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
+							<div className="absolute bottom-16 left-0 w-full h-25 md:h-20 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
 							<div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
-							<VerticalInfiniteScroll speed={20} height="60vh">
+							<VerticalInfiniteScroll speed={50} height="60vh">
 								<div className='flex flex-col'>
 									{scrollTwo.map((img, index) => (
 										<img className='w-[123px] h-auto mb-4' src={img} key={index} />
@@ -150,21 +165,21 @@ const Home = () => {
 									{scrollTwo.map((img, index) => (
 										<img className='w-[123px] h-auto mb-4' src={img} key={index} />
 									))}
-									{scrollTwo.map((img, index) => (
+									{/* {scrollTwo.map((img, index) => (
 										<img className='w-[123px] h-auto mb-4' src={img} key={index} />
 									))}
 									{scrollTwo.map((img, index) => (
 										<img className='w-[123px] h-auto mb-4' src={img} key={index} />
-									))}
+									))} */}
 								</div>
 							</VerticalInfiniteScroll>
 						</div>
 
 						{/* scroll 3 */}
 						<div className='relative mt-40'>
-							<div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
+							<div className="absolute bottom-0 left-0 w-full h-25 md:h-20 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
 							<div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
-							<VerticalInfiniteScroll speed={20} height="60vh">
+							<VerticalInfiniteScroll speed={50} height="60vh">
 								<div className='flex flex-col'>
 									{scrollThree.map((img, index) => (
 										<img className='w-[123px] h-auto mb-4' src={img} key={index} />
@@ -172,12 +187,12 @@ const Home = () => {
 									{scrollThree.map((img, index) => (
 										<img className='w-[123px] h-auto mb-4' src={img} key={index} />
 									))}
-									{scrollThree.map((img, index) => (
+									{/* {scrollThree.map((img, index) => (
 										<img className='w-[123px] h-auto mb-4' src={img} key={index} />
 									))}
 									{scrollThree.map((img, index) => (
 										<img className='w-[123px] h-auto mb-4' src={img} key={index} />
-									))}
+									))} */}
 								</div>
 							</VerticalInfiniteScroll>
 						</div>
@@ -198,7 +213,7 @@ const Home = () => {
 			<div className='mt-20'>
 				<div className="justify-start text-stone-950 text-3xl lg:text-5xl font-bold font-jost text-center mt-15 mb-20">Service Menu</div>
 
-				<HorizontalScroll speed={20}>
+				<HorizontalScroll speed={40}>
 					{serviceList.map((service, index) => (
 						<div key={index} className="flex flex-col items-center justify-start gap-2 max-w-[150px] px-2 mx-7 text-center h-[120px]">
 							<img src={service.image} className="w-auto h-[80px] object-cover" alt="" />

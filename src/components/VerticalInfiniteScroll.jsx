@@ -4,7 +4,7 @@ import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(useGSAP);
 
-const VerticalInfiniteScroll = ({ children, speed = 30, height = '80vh' }) => {
+const VerticalInfiniteScroll = ({ children, speed = 60, height = '80vh' }) => {
   const wrapperRef = useRef(null);
   const contentRef = useRef(null);
   const animationRef = useRef(null);
