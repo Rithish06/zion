@@ -1,4 +1,4 @@
-import React, { useRef, useLayoutEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 
 const VerticalInfiniteScroll = ({ children, speed = 60, height = '80vh' }) => {
@@ -6,45 +6,58 @@ const VerticalInfiniteScroll = ({ children, speed = 60, height = '80vh' }) => {
   const contentRef = useRef(null);
   const animationRef = useRef(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const wrapper = wrapperRef.current;
     const content = contentRef.current;
-
     if (!wrapper || !content) return;
 
-    // Delay until height is ready
-    const waitForHeightAndStart = () => {
-      const height = content.offsetHeight;
+    let observer;
+    let clone;
+    let timeout;
 
-      if (height === 0) {
-        // DOM not ready yet, try again on next frame
-        requestAnimationFrame(waitForHeightAndStart);
-        return;
-      }
+    const startAnimation = () => {
+      const totalHeight = content.offsetHeight;
 
-      // Step 1: Clone content
-      const clone = content.cloneNode(true);
+      if (totalHeight === 0) return; // Still not ready
+
+      clone = content.cloneNode(true);
       wrapper.appendChild(clone);
 
-      // Step 2: Animate after 500ms (optional safety delay)
       animationRef.current = gsap.fromTo(
         wrapper,
         { y: 0 },
         {
-          y: -height,
+          y: -totalHeight,
           duration: speed,
           ease: 'none',
           repeat: -1,
-          delay: 0.5, // Optional delay after clone
         }
       );
     };
 
-    requestAnimationFrame(waitForHeightAndStart); // Start loop
+    const handleReady = () => {
+      // Start animation with slight delay to ensure layout is stable
+      timeout = setTimeout(startAnimation, 100);
+    };
+
+    // Wait for height to become stable using ResizeObserver
+    observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.contentRect.height > 0) {
+          handleReady();
+          observer.disconnect();
+          break;
+        }
+      }
+    });
+
+    observer.observe(content);
 
     return () => {
+      if (timeout) clearTimeout(timeout);
+      if (observer) observer.disconnect();
       if (animationRef.current) animationRef.current.kill();
-      if (wrapper.lastChild !== content) wrapper.removeChild(wrapper.lastChild);
+      if (clone && wrapper.contains(clone)) wrapper.removeChild(clone);
     };
   }, [speed]);
 
