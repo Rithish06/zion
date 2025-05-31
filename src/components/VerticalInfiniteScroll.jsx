@@ -1,60 +1,64 @@
 import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
-import { useGSAP } from '@gsap/react';
-
-gsap.registerPlugin(useGSAP);
 
 const VerticalInfiniteScroll = ({ children, speed = 60, height = '80vh' }) => {
   const wrapperRef = useRef(null);
   const contentRef = useRef(null);
   const animationRef = useRef(null);
+  const observerRef = useRef(null);
 
-useGSAP(() => {
-  const startAnimation = () => {
+  useEffect(() => {
     const wrapper = wrapperRef.current;
     const content = contentRef.current;
 
     if (!wrapper || !content) return;
 
-    const totalHeight = content.offsetHeight;
+    // Function to start animation once height is available
+    const tryStartAnimation = () => {
+      const totalHeight = content.offsetHeight;
 
-    // Wait until DOM has measurable height
-    if (totalHeight === 0) {
-      requestAnimationFrame(startAnimation);
-      return;
-    }
+      if (totalHeight === 0) return; // Still not ready
 
-    // Clone the content
-    const clone = content.cloneNode(true);
-    wrapper.appendChild(clone);
+      // Clone the content
+      const clone = content.cloneNode(true);
+      wrapper.appendChild(clone);
 
-    // Animate
-    animationRef.current = gsap.fromTo(
-      wrapper,
-      { y: 0 },
-      {
-        y: -totalHeight,
-        duration: speed,
-        ease: 'none',
-        repeat: -1,
-        delay: 1 // Optional delay
+      // Start GSAP animation
+      animationRef.current = gsap.fromTo(
+        wrapper,
+        { y: 0 },
+        {
+          y: -totalHeight,
+          duration: speed,
+          ease: 'none',
+          repeat: -1,
+          delay: 1 // Optional delay
+        }
+      );
+    };
+
+    // Use ResizeObserver to watch for real content height
+    observerRef.current = new ResizeObserver(() => {
+      if (content.offsetHeight > 0) {
+        tryStartAnimation();
+        observerRef.current.disconnect(); // Stop watching once ready
       }
-    );
-  };
+    });
 
-  requestAnimationFrame(startAnimation); // Start after DOM is painted
+    observerRef.current.observe(content);
 
-  return () => {
-    if (animationRef.current) {
-      animationRef.current.kill();
-    }
-    if (wrapperRef.current?.lastChild !== contentRef.current) {
-      wrapperRef.current?.removeChild(wrapperRef.current.lastChild);
-    }
-  };
-}, [speed]);
+    // Cleanup
+    return () => {
+      if (animationRef.current) {
+        animationRef.current.kill();
+      }
+      if (wrapper.lastChild !== content) {
+        wrapper.removeChild(wrapper.lastChild);
+      }
+      observerRef.current?.disconnect();
+    };
+  }, [speed]);
 
-  // Original JSX structure preserved exactly
   return (
     <div
       style={{
@@ -64,9 +68,7 @@ useGSAP(() => {
       }}
     >
       <div ref={wrapperRef}>
-        <div ref={contentRef}>
-          {children}
-        </div>
+        <div ref={contentRef}>{children}</div>
       </div>
     </div>
   );
