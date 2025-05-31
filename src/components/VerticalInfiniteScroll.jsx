@@ -12,43 +12,39 @@ const VerticalInfiniteScroll = ({ children, speed = 60, height = '80vh' }) => {
 
     if (!wrapper || !content) return;
 
-    // Function to start animation only when height is ready
-    const startWhenReady = () => {
-      const totalHeight = content.offsetHeight;
+    // Delay until height is ready
+    const waitForHeightAndStart = () => {
+      const height = content.offsetHeight;
 
-      if (totalHeight === 0) {
-        requestAnimationFrame(startWhenReady); // Try again on next frame
+      if (height === 0) {
+        // DOM not ready yet, try again on next frame
+        requestAnimationFrame(waitForHeightAndStart);
         return;
       }
 
-      // Clone the content
+      // Step 1: Clone content
       const clone = content.cloneNode(true);
       wrapper.appendChild(clone);
 
-      // Start animation
+      // Step 2: Animate after 500ms (optional safety delay)
       animationRef.current = gsap.fromTo(
         wrapper,
         { y: 0 },
         {
-          y: -totalHeight,
+          y: -height,
           duration: speed,
           ease: 'none',
           repeat: -1,
-          delay: 1, // Optional delay
+          delay: 0.5, // Optional delay after clone
         }
       );
     };
 
-    requestAnimationFrame(startWhenReady); // First frame
+    requestAnimationFrame(waitForHeightAndStart); // Start loop
 
     return () => {
-      if (animationRef.current) {
-        animationRef.current.kill();
-      }
-      // Cleanup the clone if exists
-      if (wrapper.lastChild !== content) {
-        wrapper.removeChild(wrapper.lastChild);
-      }
+      if (animationRef.current) animationRef.current.kill();
+      if (wrapper.lastChild !== content) wrapper.removeChild(wrapper.lastChild);
     };
   }, [speed]);
 
