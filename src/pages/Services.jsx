@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { assets } from '../assets/assets'
 import HorizontalScroll from '../components/Horizontal'
 import ContactFrom from '../components/ContactFrom'
@@ -20,6 +20,37 @@ const Services = () => {
     const faceThreading = [assets.faceThreading1, assets.faceThreading2, assets.faceThreading3, assets.faceThreading4, assets.faceThreading5, assets.faceThreading6, assets.faceThreading7, assets.faceThreading8, assets.faceThreading9, assets.faceThreading10]
     const bodyPolish = [assets.bodyPolish1, assets.bodyPolish2, assets.bodyPolish3, assets.bodyPolish4, assets.bodyPolish5, assets.bodyPolish6, assets.bodyPolish7, assets.bodyPolish8, assets.bodyPolish9, assets.bodyPolish10]
     const oilMassage = [assets.oilMassage1, assets.oilMassage2, assets.oilMassage4, assets.oilMassage5, assets.oilMassage6, assets.oilMassage8, assets.oilMassage9, assets.oilMassage10]
+
+    const location = useLocation();
+
+
+    const eyelashRef = useRef(null);
+    const makeupRef = useRef(null);
+    const hairTreatmentRef = useRef(null);
+    const bridalRef = useRef(null);
+    const hairSpaRef = useRef(null);
+    const facialRef = useRef(null);
+    const nailsRef = useRef(null);
+    const haircutRef = useRef(null);
+
+    useEffect(() => {
+        const scrollTo = location.state?.scrollTo;
+
+        const refMap = {
+            eyelash: eyelashRef,
+            makeup: makeupRef,
+            'hair-treatment': hairTreatmentRef,
+            bridal: bridalRef,
+            'hair-spa': hairSpaRef,
+            facial: facialRef,
+            nails: nailsRef,
+            haircut: haircutRef,
+        };
+
+        if (scrollTo && refMap[scrollTo]?.current) {
+            refMap[scrollTo].current.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, [location.state]);
 
     return (
         <div className='relative top-20 md:top-0 overflow-x-hidden bg-[#FFF7FE]'>
@@ -49,7 +80,7 @@ const Services = () => {
             </div>
 
             {/* container 2 */}
-            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FFF7FE]'  id="eyelash">
+            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FFF7FE]' ref={bridalRef}>
                 <div className="text-center justify-start text-fuchsia-800 text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Bridal Makeup</div>
                 <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">For Every Ceremony, A Look That Tells Your Story</div>
                 <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500]">BEAUTY is more than appearance; it’s how you feel. A well-crafted look enhances your features, uplifts your mood and brings out your natural confidence. <b>With over 12 years of experience and 500+ bridal makeovers,</b> each transformation is approached with care, expertise, and a deep respect for individual style. Our services are professionally delivered and affordably priced, ensuring a stress-free experience without compromising on quality.</div>
@@ -92,7 +123,7 @@ const Services = () => {
             </div>
 
             {/* container 3 */}
-            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#EAFFF3]' id= "nails">
+            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#EAFFF3]' red={nailsRef}>
                 <div className="text-center justify-start text-orange-700 text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Nail Extension & Nail Art</div>
                 <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Where your fingertips speak your style</div>
                 <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] lg:w-[800px]">Elegant, edgy or expressive - your nails should tell your story. Let our artistry add polish to every gesture you make.</div>
@@ -136,7 +167,7 @@ const Services = () => {
             </div>
 
             {/* container 4 */}
-            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FFF7FE]' id= "makeup">
+            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FFF7FE]' ref={makeupRef}>
                 <div className="text-center justify-start text-orange-700 text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Makeup Services</div>
                 <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Beauty that reflects who you are - not hides it</div>
                 <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] lg:w-[800px]">From soft glam to bold elegance, our makeup enhances your natural features and brings out the confidence already within you.</div>
@@ -166,7 +197,7 @@ const Services = () => {
             </div>
 
             {/* container 5 */}
-            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FFE7F2]'>
+            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FFE7F2]' ref={haircutRef}>
                 <div className="text-center justify-start text-orange-700 text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Haircut & Hair Colouring</div>
                 <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">New look. New light. Same you - elevated.</div>
                 <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Whether you're refreshing your cut or changing your shade, a great style isn’t just seen —<br />it’s felt in every moment that follows.</div>
@@ -211,7 +242,7 @@ const Services = () => {
             </div>
 
             {/* container 6 */}
-            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FFF7FE]'>
+            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FFF7FE]' ref={hairTreatmentRef}>
                 <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Hair Treatment</div>
                 <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Strong strands. Soft finish. Confident you.</div>
                 <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-5 lg:w-[800px]">Dry, frizzy or lifeless? Let your hair bounce back with smoothness, strength and shine. Good hair days start here.</div>
@@ -245,10 +276,10 @@ const Services = () => {
                         ))
                     }
                 </HorizontalScroll>
-            </div>  
+            </div>
 
             {/* container 7 */}
-            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FEFCE5]'>
+            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FEFCE5]' ref={hairSpaRef}>
                 <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Hair Spa</div>
                 <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">A retreat for your hair. A reset for you</div>
                 <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500]  mb-10 lg:w-[800px]">Indulge in a luxurious hair spa experience that detoxes, rehydrates, and renews — because your hair deserves as much rest as your mind.</div>
@@ -272,7 +303,7 @@ const Services = () => {
             </div>
 
             {/* container 8 */}
-            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[##FF7FE]'>
+            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[##FF7FE]' ref={eyelashRef}>
                 <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Eyelash Extension & Lifting</div>
                 <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Tired of mascara?</div>
                 <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Open up your eyes and your energy with beautifully lifted or voluminous lashes - subtle enough for everyday, stunning enough for every moment.</div>
@@ -296,7 +327,7 @@ const Services = () => {
             </div>
 
             {/* container 9 */}
-            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#EAECFF]'>
+            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#EAECFF]' ref={facialRef}>
                 <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Advanced Facial</div>
                 <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Let your skin tell a fresher story</div>
                 <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Restore your skin’s natural glow with facials designed to deeply hydrate, heal, and refresh. Because confidence begins with healthy, radiant skin.</div>

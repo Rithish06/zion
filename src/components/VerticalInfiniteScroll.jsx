@@ -9,47 +9,50 @@ const VerticalInfiniteScroll = ({ children, speed = 60, height = '80vh' }) => {
   const contentRef = useRef(null);
   const animationRef = useRef(null);
 
-  useGSAP(() => {
-    const startAnimation = () => {
-      const wrapper = wrapperRef.current;
-      const content = contentRef.current;
+useGSAP(() => {
+  const startAnimation = () => {
+    const wrapper = wrapperRef.current;
+    const content = contentRef.current;
 
-      if (!wrapper || !content) return;
+    if (!wrapper || !content) return;
 
-      // Clone the content (original structure)
-      const clone = content.cloneNode(true);
-      wrapper.appendChild(clone);
+    const totalHeight = content.offsetHeight;
 
-      const totalHeight = content.offsetHeight;
+    // Wait until DOM has measurable height
+    if (totalHeight === 0) {
+      requestAnimationFrame(startAnimation);
+      return;
+    }
 
-      // Animation with 1-second delay (only change needed)
-      animationRef.current = gsap.fromTo(
-        wrapper,
-        { y: 0 },
-        {
-          y: -totalHeight,
-          duration: speed,
-          ease: 'none',
-          repeat: -1,
-          delay: 1 // Added this line only
-        }
-      );
-    };
+    // Clone the content
+    const clone = content.cloneNode(true);
+    wrapper.appendChild(clone);
 
-    // Start animation after short timeout to ensure DOM ready
-    const timer = setTimeout(startAnimation, 100);
-    
-    return () => {
-      clearTimeout(timer);
-      if (animationRef.current) {
-        animationRef.current.kill();
+    // Animate
+    animationRef.current = gsap.fromTo(
+      wrapper,
+      { y: 0 },
+      {
+        y: -totalHeight,
+        duration: speed,
+        ease: 'none',
+        repeat: -1,
+        delay: 1 // Optional delay
       }
-      // Clean up clone (original cleanup logic)
-      if (wrapperRef.current?.lastChild !== contentRef.current) {
-        wrapperRef.current?.removeChild(wrapperRef.current.lastChild);
-      }
-    };
-  }, [speed]);
+    );
+  };
+
+  requestAnimationFrame(startAnimation); // Start after DOM is painted
+
+  return () => {
+    if (animationRef.current) {
+      animationRef.current.kill();
+    }
+    if (wrapperRef.current?.lastChild !== contentRef.current) {
+      wrapperRef.current?.removeChild(wrapperRef.current.lastChild);
+    }
+  };
+}, [speed]);
 
   // Original JSX structure preserved exactly
   return (

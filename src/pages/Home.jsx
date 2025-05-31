@@ -85,8 +85,9 @@ const Home = () => {
 
 	const navigate = useNavigate();
 
-  const handleIconClick = (sectionId) => {
-    navigate(`/services#${sectionId}`);
+  const handleServiceClick = (serviceId) => {
+    navigate('/services', { state: { scrollTo: serviceId } });
+	console.log(serviceId)
   };
 
 	return (
@@ -215,7 +216,7 @@ const Home = () => {
 
 				<HorizontalScroll speed={40}>
 					{serviceList.map((service, index) => (
-						<div key={index} className="flex flex-col items-center justify-start gap-2 max-w-[150px] px-2 mx-7 text-center h-[120px]">
+						<div key={index} className="flex flex-col items-center justify-start gap-2 max-w-[150px] px-2 mx-7 text-center h-[120px]" onClick={() => handleServiceClick(service.id)}>
 							<img src={service.image} className="w-auto h-[80px] object-cover" alt="" />
 							<div className="text-black text-center text-[12px] font-normal font-delius break-words w-[100px] text-wrap">
 								{service.name}
@@ -223,7 +224,7 @@ const Home = () => {
 						</div>
 					))}
 					{serviceList.map((service, index) => (
-						<div key={index} className="flex flex-col items-center justify-start gap-2 max-w-[150px] px-2 mx-7 text-center h-[120px]">
+						<div key={index} className="flex flex-col items-center justify-start gap-2 max-w-[150px] px-2 mx-7 text-center h-[120px]" onClick={() => handleServiceClick(service.id)}>
 							<img src={service.image} className="w-auto h-[80px] object-cover" alt="" />
 							<div className="text-black text-center text-[12px] font-normal font-delius break-words w-[100px] text-wrap">
 								{service.name}
