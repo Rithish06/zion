@@ -295,7 +295,10 @@ const ContactFrom = () => {
                         <a href='https://www.instagram.com/zion_beautyofheaven?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==' target='_blank'><FaInstagram className='text-[#B63E12] text-[30px]' /></a>
                         <a href={`https://wa.me/919686173447`} target='_blank'><ImWhatsapp className='text-[#B63E12] text-[30px]' /></a>
                     </div>
+
+
                 </div>
+                
             </div>
             <ToastContainer />
         </div>

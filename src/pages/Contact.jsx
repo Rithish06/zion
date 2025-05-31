@@ -32,6 +32,8 @@ const Contact = () => {
       {/* container 2 */}
       <ContactFrom />
 
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4175.534831616375!2d77.1188081!3d13.329271500000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb02c3e107db8bb%3A0x68811d248800d5ca!2sZion%20-%20Beauty%20of%20Heaven!5e1!3m2!1sen!2sin!4v1748712977329!5m2!1sen!2sin" className='w-[80%] h-[50vh] rounded-xl mx-auto my-25'></iframe>
+
       <div className='flex flex-col items-center justify-center lg:flex-row my-10 gap-10 lg:gap-0 mb-30 lg:mb-10'>
           {/* left side */}
           <div className='flex flex-col items-center justify-center w-full lg:w-[50%] '>

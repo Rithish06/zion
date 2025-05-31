@@ -3,6 +3,7 @@ import { assets } from '../assets/assets'
 import { FiFacebook } from "react-icons/fi";
 import { FaInstagram } from "react-icons/fa";
 import { ImWhatsapp } from "react-icons/im";
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -16,9 +17,9 @@ const Footer = () => {
         </div>
 
         <div className='flex flex-row lg:flex-col gap-8 lg:gap-3'>
-          <div className='text-[16px] text-[#230A01] font-[700] font-jost'>Home</div>
-          <div className='text-[16px] text-[#230A01] font-[700] font-jost'>Services</div>
-          <div className='text-[16px] text-[#230A01] font-[700] font-jost'>Contact Us</div>
+          <Link to="/" className='text-[16px] text-[#230A01] font-[700] font-jost'>Home</Link>
+          <Link to="/services" className='text-[16px] text-[#230A01] font-[700] font-jost'>Services</Link>
+          <Link to="/contact-us" className='text-[16px] text-[#230A01] font-[700] font-jost'>Contact Us</Link>
         </div>
 
         <div>
