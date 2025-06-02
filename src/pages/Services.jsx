@@ -31,6 +31,11 @@ const Services = () => {
     const facialRef = useRef(null);
     const nailsRef = useRef(null);
     const haircutRef = useRef(null);
+    const waxingTreatments = useRef(null)
+    const bodyPolishingRef = useRef(null)
+    const eyebrowShapingRef = useRef(null)
+    const faceThreadingRef = useRef(null)
+    const oilMassageRef = useRef(null)
 
     useEffect(() => {
         const scrollTo = location.state?.scrollTo;
@@ -44,6 +49,11 @@ const Services = () => {
             facial: facialRef,
             nails: nailsRef,
             haircut: haircutRef,
+            facethreading: faceThreadingRef,
+            bodyPolish: bodyPolishingRef,
+            waxing: waxingTreatments,
+            oilMassage: oilMassageRef,
+            eyebrowshapping: eyebrowShapingRef
         };
 
         if (scrollTo && refMap[scrollTo]?.current) {
@@ -200,15 +210,15 @@ const Services = () => {
                 <div className="columns-1 md:columns-3 gap-6">
                     <ul className="list-disc text-black text-base font-medium font-jost leading-relaxed pl-5">
                         <li className='text-black text-base font-medium font-jost leading-relaxed'>Level Cut</li>
-                        <li className='text-black text-base font-medium font-jost leading-relaxed'>U Cut</li>
-                        <li className='text-black text-base font-medium font-jost leading-relaxed'>v Cut</li>
-                        <li className='text-black text-base font-medium font-jost leading-relaxed'>Layer cut</li>
-                        <li className='text-black text-base font-medium font-jost leading-relaxed'>feathercht</li>
-                        <li className='text-black text-base font-medium font-jost leading-relaxed'>Butterfly che</li>
-                        <li className='text-black text-base font-medium font-jost leading-relaxed'>wolf ent</li>
-                        <li className='text-black text-base font-medium font-jost leading-relaxed'>Short bob cut</li>
-                        <li className='text-black text-base font-medium font-jost leading-relaxed'>Long bob cut</li>
-                        <li className='text-black text-base font-medium font-jost leading-relaxed'>Step cut</li>
+                        <li className='text-black text-base font-medium font-jost leading-relaxed'>U-Cut</li>
+                        <li className='text-black text-base font-medium font-jost leading-relaxed'>V-Cut</li>
+                        <li className='text-black text-base font-medium font-jost leading-relaxed'>Layer Cut</li>
+                        <li className='text-black text-base font-medium font-jost leading-relaxed'>Feather Cut</li>
+                        <li className='text-black text-base font-medium font-jost leading-relaxed'>Butterfly Cut</li>
+                        <li className='text-black text-base font-medium font-jost leading-relaxed'>Wolf Cut</li>
+                        <li className='text-black text-base font-medium font-jost leading-relaxed'>Short Bob Cut</li>
+                        <li className='text-black text-base font-medium font-jost leading-relaxed'>Long Bob Cut</li>
+                        <li className='text-black text-base font-medium font-jost leading-relaxed'>Step Cut</li>
                     </ul>
                 </div>
 
@@ -400,7 +410,7 @@ const Services = () => {
             </div>
 
             {/* container 12 */}
-            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FFF7FE]'>
+            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FFF7FE]' ref={faceThreadingRef}>
                 <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Face Threading</div>
                 <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Flawless skin, fuzz-free finish.</div>
                 <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Gentle threading for upper lip, chin, forehead & full face - done with precision, leaving your skin smooth and glowing.</div>
@@ -430,7 +440,7 @@ const Services = () => {
             </div>
 
             {/* container 13 */}
-            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FFEAEB]'>
+            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FFEAEB]' ref={bodyPolishingRef}>
                 <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Body Polishing</div>
                 <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Buff, glow, repeat! ✨</div>
                 <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Reveal radiant skin with our exfoliating body polish. It removes dead cells, boosts blood flow, and leaves your skin baby-soft and fresh.</div>
@@ -460,16 +470,10 @@ const Services = () => {
             </div>
 
             {/* container 15 */}
-            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#EAECFF]'>
+            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#EAECFF]' ref={oilMassageRef}>
                 <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Body Oil Massage</div>
                 <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Unwind in bliss.</div>
                 <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Our relaxing oil massage melts away stress, soothes sore muscles, and leaves your skin deeply nourished, soft, and glowing.</div>
-
-                {/* <ul className='list-disc flex flex-col items-center'>
-                    <li className='text-black text-base font-jost font-[500] leading-relaxed'></li>
-                    <li className='text-black text-base font-jost leading-relaxed'></li>
-                    <li className='text-black text-base font-jost leading-relaxed mb-10'></li>
-                </ul> */}
 
                 <HorizontalScroll speed={70}>
                     {

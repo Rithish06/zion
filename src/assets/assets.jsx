@@ -3,6 +3,8 @@ import logo from './images/zion-logo.png'
 import homeBanner from './images/best-salons-tumkur.png'
 import homeBannerBg from './images/salons-in-tumkur.png'
 
+import footerLogo from './images/zion-footer-logo.png'
+
 // scroll images
 
 import scrollImg1 from './images/homeScroll/scroll-home-1.png'
@@ -35,6 +37,12 @@ import hairspa from './images/hair-spa.png'
 import advancedFacial from './images/advanced-facial.png'
 import nailPolish from './images/nail-polish.png'
 import hairColoring from './images/haircut-hair-colouring.png'
+import bodyOilMassage from './images/body-oil-massage.png'
+import bodyPolishing from './images/body-polishing.png'
+import eyebrowShaping from './images/eyebrow-shaping.png'
+import faceThreading from './images/face-threading.png'
+import waxingTreatments from './images/waxing-treatments.png'
+
 
 // home contact image
 import contactImage from './images/best-beauty-parlour-in-tumkur.png'
@@ -242,6 +250,8 @@ export const assets = {
     homeBanner,
     homeBannerBg,
 
+    footerLogo,
+
     // scroll img home banner
 
     scrollImg1,
@@ -273,6 +283,13 @@ export const assets = {
     contactImage,
     serviceBannerBg,
     serviceBannerImg,
+
+    bodyOilMassage,
+    bodyPolishing,
+    eyebrowShaping,
+    faceThreading,
+    waxingTreatments,
+
 
 
     // serviceScrollImg1,

@@ -81,6 +81,31 @@ const Home = () => {
 			name: "Haircut & Hair Colouring",
 			id: "haircut"
 		},
+		{
+			image: assets.faceThreading,
+			name: "Face Threading",
+			id: "facethreading"
+		},
+		{
+			image: assets.bodyPolishing,
+			name: "Body Polishing",
+			id: "bodyPolish"
+		},
+		{
+			image: assets.eyebrowShaping,
+			name: "eyebrow shaping",
+			id: "eyebrowshapping"
+		},
+		{
+			image: assets.waxingTreatments,
+			name: "Waxing Treatments",
+			id: "waxing"
+		},
+		{
+			image: assets.bodyOilMassage,
+			name: "Body Oil Massage",
+			id: "oilMassage"
+		},
 	]
 
 	const navigate = useNavigate();
@@ -96,13 +121,13 @@ const Home = () => {
 
 			<div className='relative bg-white'>
 				{/* banner bg */}
-				<div className='realtive z-1 flex flex-col justify-around w-full h-[1300px]  lg:h-[100vh]'>
+				<div className='realtive z-1 flex flex-col justify-around w-full h-[1500px]  lg:h-[100vh]'>
 					<img src={assets.homeBannerBg} className='w-full h-[1300px]  lg:h-[100vh]' alt="" />
 				</div>
 
 				{/* content */}
 
-				<div className='absolute top-0 z-2 flex flex-col items-center gap-10 lg:flex-row lg:justify-between w-full h-[1300px] lg:h-[100vh]'>
+				<div className='absolute top-0 z-2 flex flex-col items-center gap-10 lg:flex-row lg:justify-between w-full h-[1550px] lg:h-[100vh]'>
 					{/* left side */}
 					<div className='w-full lg:w-[60%]'>
 						<div className='mx-auto lg:ml-50 p-5 lg:p-0 realtive'>
@@ -113,8 +138,8 @@ const Home = () => {
 						</div>
 
 						<div className='w-full flex items-center justify-start gap-5 mt-10 lg:ml-30'>
-							<div className="w-35 h-[3px] bg-red-300" />
-							<div className="w-full justify-start text-red-300 text-base lg:text-[26px] font-normal font-delius">Where Every Look Begins with a Touch of Heaven</div>
+							<div className="hidden lg:flexlg:w-35 h-[3px] bg-red-300" />
+							<div className="w-full text-center justify-start text-red-300 text-base lg:text-[26px] lg:text-left font-normal font-delius">Where Every Look Begins with a Touch of Heaven</div>
 						</div>
 
 						<div className='mt-8 flex justify-center lg:justify-start lg:ml-50'>
@@ -129,6 +154,7 @@ const Home = () => {
 
 					{/* right side */}
 					<div className='flex justify-center gap-4 h-60vh overflow-y-hidden w-full lg:w-[40%] mt-20'>
+
 						{/* scroll 1 */}
 
 						<div className='relative'>

@@ -11,9 +11,9 @@ const Footer = () => {
       <div className='flex flex-col gap-10 justify-center items-center lg:flex-row lg:gap-15 lg:items-center xl:gap-25'>
 
         <div className='flex flex-col gap-1 items-center'>
-          <img src={assets.logo} alt="salons in tumkur" className='w-52 h-20' />
-          <div className="justify-start text-orange-700 text-lg font-bold font-jost text-center">WE DON’T CREATE BEAUTY, <br/>WE REVEAL IT TO YOU.</div>
-          <div className="w-72 text-center justify-start text-black text-xs font-[500] font-['jost']">Your trusted beauty destination in Tumkur, offering a wide range of services from bridal makeovers and hair treatments to skin care, nail art, and more — all under one roof.</div>
+          <img src={assets.footerLogo} alt="salons in tumkur" className='w-42 h-auto' />
+          {/* <div className="justify-start text-orange-700 text-lg font-bold font-jost text-center">WE DON’T CREATE BEAUTY, <br/>WE REVEAL IT TO YOU.</div> */}
+          <div className="w-72 text-center justify-start text-black text-xs font-[500] font-['jost'] mt-3">Your trusted beauty destination in Tumkur, offering a wide range of services from bridal makeovers and hair treatments to skin care, nail art, and more — all under one roof.</div>
         </div>
 
         <div className='flex flex-row lg:flex-col gap-8 lg:gap-3'>
