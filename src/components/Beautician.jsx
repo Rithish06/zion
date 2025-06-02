@@ -82,17 +82,17 @@ const Beautician = () => {
                         <div className="flex flex-col items-start gap-6 p-5">
 
                             <div className="flex flex-col items-center gap-1">
-                                <div className="font-jost text-stroke text-[26px] font-[800] text-transparent text-stroke-white">3000+</div>
+                                <div className="font-jost text-[26px] font-[800] text-white">3000+</div>
                                 <div className="text-[20px] text-center font-jost text-white w-[120px]">Happy Clients Served</div>
                             </div>
 
                             <div className="flex flex-col items-center gap-1">
-                                <div className="font-jost text-stroke text-[26px] font-[800] text-transparent text-stroke-white">500+</div>
+                                <div className="font-jost text-[26px] font-[800] text-white">500+</div>
                                 <div className="text-[20px] text-center font-jost text-white w-[120px]">Bridal Makeup</div>
                             </div>
 
                             <div className="flex flex-col items-center gap-1">
-                                <div className="font-jost text-stroke text-[26px] font-[800] text-transparent text-stroke-white">12+</div>
+                                <div className="font-jost text-[26px] font-[800] text-white">12+</div>
                                 <div className="text-[20px] text-center font-jost text-white w-[120px]">Years of Experience</div>
                             </div>
 
@@ -111,17 +111,17 @@ const Beautician = () => {
                     <div className="flex items-start justify-center gap-3 md:gap-6">
 
                         <div className="flex flex-col items-center gap-1">
-                            <div className="font-jost text-stroke text-[18px] md:text-[24px] font-[800] text-transparent text-stroke-white">3000+</div>
+                            <div className="font-jost text-[18px] md:text-[24px] font-[800] text-white">3000+</div>
                             <div className="text-[12px] md:text-[16px] text-center font-jost text-white w-[100px]">Happy Clients Served</div>
                         </div>
 
                         <div className="flex flex-col items-center gap-1">
-                            <div className="font-jost text-stroke text-[18px] md:text-[24px] font-[800] text-transparent text-stroke-white">500+</div>
+                            <div className="font-jost text-[18px] md:text-[24px] font-[800] text-white">500+</div>
                             <div className="text-[12px] md:text-[16px] text-center font-jost text-white w-[100px]">Bridal Makeup</div>
                         </div>
 
                         <div className="flex flex-col items-center gap-1">
-                            <div className="font-jost text-stroke text-[18px] md:text-[24px] font-[800] text-transparent text-stroke-white">12+</div>
+                            <div className="font-jost text-[18px] md:text-[24px] font-[800] text-white">12+</div>
                             <div className="text-[12px] md:text-[16px] text-center font-jost text-white w-[100px]">Years of Experience</div>
                         </div>
 

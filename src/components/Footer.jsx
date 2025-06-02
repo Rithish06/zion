@@ -13,7 +13,7 @@ const Footer = () => {
         <div className='flex flex-col gap-1 items-center'>
           <img src={assets.footerLogo} alt="salons in tumkur" className='w-42 h-auto' />
           {/* <div className="justify-start text-orange-700 text-lg font-bold font-jost text-center">WE DON’T CREATE BEAUTY, <br/>WE REVEAL IT TO YOU.</div> */}
-          <div className="w-72 text-center justify-start text-black text-xs font-[500] font-['jost'] mt-3">Your trusted beauty destination in Tumkur, offering a wide range of services from bridal makeovers and hair treatments to skin care, nail art, and more — all under one roof.</div>
+          <div className="w-72 text-center justify-start text-black text-[14px] font-[500] font-['jost'] mt-3">Your trusted beauty destination in Tumkur, offering a wide range of services from bridal makeovers and hair treatments to skin care, nail art, and more — all under one roof.</div>
         </div>
 
         <div className='flex flex-row lg:flex-col gap-8 lg:gap-3'>
@@ -31,7 +31,7 @@ const Footer = () => {
           <div className="text-stone-950 text-2xl font-bold font-jost text-center">Glow & Connect</div>
           <div className="w-72 text-center text-stone-950 text-lg font-medium font-jost mt-3">Stay connected for updates, offers and everything that makes you glow!</div>
           <div className='flex justify-center gap-5 mt-5'>
-            <a href='https://www.facebook.com/anupama.sharmanraj' target='_blank'><FiFacebook className='text-[#230a10] text-[30px] cursor-pointer' /></a>
+            <a href='https://www.facebook.com/profile.php?id=61576688983378&mibextid=ZbWKwL' target='_blank'><FiFacebook className='text-[#230a10] text-[30px] cursor-pointer' /></a>
             <a href='https://www.instagram.com/zion_beautyofheaven?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==' target='_blank'><FaInstagram className='text-[#230a10] text-[30px] cursor-pointer' /></a>
             <a href={`https://wa.me/919686173447`} target='_blank'><ImWhatsapp className='text-[#230a10] text-[30px] cursor-pointer' /></a>
           </div>

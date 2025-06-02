@@ -7,7 +7,7 @@ import { useLocation } from "react-router-dom";
 
 const Services = () => {
 
-    const bridalMakeUp = [assets.bm1, assets.bm2, assets.bm3, assets.bm4, assets.bm5, assets.bm6, assets.bm7, assets.bm8, assets.bm9, assets.bm10, assets.bm11, assets.bm12, assets.bm13, assets.bm5]
+    const bridalMakeUp = [assets.bm1, assets.bm2, assets.bm3, assets.bm4, assets.bm5, assets.bm6, assets.bm7, assets.bm8, assets.bm9, assets.bm10, assets.bm11, assets.bm12]
     const facial = [assets.facial1, assets.facial2, assets.facial3, assets.facial4, assets.facial5, assets.facial6, assets.facial8, assets.facial9, assets.facial10, assets.facial11]
     const haircut = [assets.haircut1, assets.haircut2, assets.haircut3, assets.haircut4, assets.haircut5, assets.haircut6, assets.haircut7, assets.haircut9]
     const nails = [assets.nails1, assets.nails2, assets.nails3, assets.nails4, assets.nails5, assets.nails6, assets.nails7, assets.nails8, assets.nails9, assets.nails10, assets.nails11, assets.nails5]
@@ -108,7 +108,7 @@ const Services = () => {
                 </div>
 
                 <div className="flex justify-center mb-10">
-                    <Link to='/contact-us' className="flex justify-center items-center w-64 h-14 bg-[#b88bb2] rounded-lg text-white text-base font-bold font-jost">Book an Appointment</Link>
+                    {/* <Link to='/contact-us' className="flex justify-center items-center w-64 h-14 bg-[#b88bb2] rounded-lg text-white text-base font-bold font-jost">Book an Appointment</Link> */}
                 </div>
 
                 <HorizontalScroll speed={50}>
@@ -176,11 +176,14 @@ const Services = () => {
                 <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Beauty that reflects who you are - not hides it</div>
                 <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] lg:w-[800px]">From soft glam to bold elegance, our makeup enhances your natural features and brings out the confidence already within you.</div>
 
-                <ul className='list-disc flex flex-col items-center'>
-                    <li className='text-black text-base font-jost font-[500] leading-relaxed'>Bridal Makeup: Radiant, confident, and made to last through every emotion.</li>
-                    <li className='text-black text-base font-jost leading-relaxed'>Simple Makeup: Light, dewy, and perfect for everyday celebrations.</li>
-                    <li className='text-black text-base font-jost leading-relaxed mb-10'>Party & Engagement Looks: Bold, playful or dramatic - whatever reflects your style.</li>
-                </ul>
+                <div className="columns-1 md:columns-2 gap-6">
+                    <ul className="list-disc text-black text-base font-medium font-jost leading-relaxed pl-5">
+                        <li className='text-black text-base font-medium font-jost leading-relaxed'>Module Makeup</li>
+                        <li className='text-black text-base font-medium font-jost leading-relaxed'>Simple Makeup</li>
+                        <li className='text-black text-base font-medium font-jost leading-relaxed'>Party Makeup</li>
+                        <li className='text-black text-base font-medium font-jost leading-relaxed'>Engagement Makeup</li>
+                    </ul>
+                </div>
 
                 <HorizontalScroll speed={70}>
                     {
@@ -351,13 +354,13 @@ const Services = () => {
             <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FFF7FE]'>
                 <div className="text-center justify-start text-[#B63E12] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Waxing Treatments</div>
                 <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Say goodbye to unwanted hair and hello to silky, touchable skin - we wax it all with care and comfort.</div>
-                <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-3 lg:w-[800px]">Our Offerings include:</div>
+                <div className="text-center justify-start text-fuchsia-800 text-[12px] lg:text-[16px] font-bold font-jost leading-normal">Our Offerings include:</div>
 
-                <ul className='list-disc flex flex-col items-center'>
-                    <li className='text-black text-base font-jost font-[500] leading-relaxed'>Honey Wax - Classic and effective for smooth, everyday glow.</li>
-                    <li className='text-black text-base font-jost leading-relaxed'>Rica Wax - Skin-friendly and gentle, perfect for sensitive skin beauties.</li>
-                    <li className='text-black text-base font-jost leading-relaxed'>Brazilian Wax - Clean, confident, and beach-ready.</li>
-                    <li className='text-black text-base font-jost leading-relaxed mb-10'>V Wax - Specialized intimate care with extra comfort</li>
+                 <ul className="list-disc text-black text-base font-medium font-jost leading-relaxed pl-5">
+                    <li className='text-black text-base font-medium font-jost leading-relaxed'>Honey wax</li>
+                    <li className='text-black text-base font-medium font-jost leading-relaxed'>Rica Wax</li>
+                    <li className='text-black text-base font-medium font-jost leading-relaxed'>Brazilian Wax</li>
+                    <li className='text-black text-base font-medium font-jost leading-relaxed'>V Wax</li>
                 </ul>
 
                 <HorizontalScroll speed={70}>

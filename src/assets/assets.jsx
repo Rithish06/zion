@@ -80,7 +80,7 @@ import bm9 from './images/brigalmakeup/bridal-makeup-9.png'
 import bm10 from './images/brigalmakeup/bridal-makeup-10.png'
 import bm11 from './images/brigalmakeup/bridal-makeup-11.png'
 import bm12 from './images/brigalmakeup/bridal-makeup-12.png'
-import bm13 from './images/brigalmakeup/bridal-makeup-13.png'
+// import bm13 from './images/brigalmakeup/bridal-makeup-13.png'
 
 // facial
 import facial1 from './images/facail/facial-1.png'
@@ -318,7 +318,7 @@ export const assets = {
     bm10,
     bm11,
     bm12,
-    bm13,
+    // bm13,
 
     // facial
 

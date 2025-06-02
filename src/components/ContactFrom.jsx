@@ -418,7 +418,7 @@ const ContactFrom = () => {
                     <div className="self-stretch text-center justify-start text-orange-700 text-5xl font-bold font-jost mt-2">Follow Us</div>
                     <div className="self-stretch text-center justify-start text-orange-700 text-lg font-medium font-jost mt-1">Don’t miss promotions, follow us for the latest news<br /></div>
                     <div className='flex justify-center gap-5 mt-5'>
-                        <a href='https://www.facebook.com/anupama.sharmanraj'><FiFacebook className='text-[#B63E12] text-[30px]' /></a>
+                        <a href='https://www.facebook.com/profile.php?id=61576688983378&mibextid=ZbWKwL' target='_blank'><FiFacebook className='text-[#B63E12] text-[30px]' /></a>
                         <a href='https://www.instagram.com/zion_beautyofheaven?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==' target='_blank'><FaInstagram className='text-[#B63E12] text-[30px]' /></a>
                         <a href={`https://wa.me/919686173447`} target='_blank'><ImWhatsapp className='text-[#B63E12] text-[30px]' /></a>
                     </div>

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 
 const VerticalInfiniteScroll = ({ children, speed = 60, height = '80vh' }) => {
@@ -6,7 +6,7 @@ const VerticalInfiniteScroll = ({ children, speed = 60, height = '80vh' }) => {
   const contentRef = useRef(null);
   const animationRef = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const wrapper = wrapperRef.current;
     const content = contentRef.current;
     if (!wrapper || !content) return;
@@ -18,7 +18,7 @@ const VerticalInfiniteScroll = ({ children, speed = 60, height = '80vh' }) => {
     const startAnimation = () => {
       const totalHeight = content.offsetHeight;
 
-      if (totalHeight === 0) return; // Still not ready
+      if (totalHeight === 0) return;
 
       clone = content.cloneNode(true);
       wrapper.appendChild(clone);
@@ -36,11 +36,9 @@ const VerticalInfiniteScroll = ({ children, speed = 60, height = '80vh' }) => {
     };
 
     const handleReady = () => {
-      // Start animation with slight delay to ensure layout is stable
       timeout = setTimeout(startAnimation, 100);
     };
 
-    // Wait for height to become stable using ResizeObserver
     observer = new ResizeObserver((entries) => {
       for (const entry of entries) {
         if (entry.contentRect.height > 0) {

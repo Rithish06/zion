@@ -138,7 +138,7 @@ const Home = () => {
 						</div>
 
 						<div className='w-full flex items-center justify-start gap-5 mt-10 lg:ml-30'>
-							<div className="hidden lg:flexlg:w-35 h-[3px] bg-red-300" />
+							<div className="hidden lg:flex lg:w-35 h-[3px] bg-red-300" />
 							<div className="w-full text-center justify-start text-red-300 text-base lg:text-[26px] lg:text-left font-normal font-delius">Where Every Look Begins with a Touch of Heaven</div>
 						</div>
 
