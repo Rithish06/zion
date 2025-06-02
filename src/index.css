@@ -13,6 +13,7 @@
   --font-delius : "Delius Swash Caps";
 
   /* break points */
+    --breakpoint-xxs: 250px;
     --breakpoint-xs: 330px;
     --breakpoint-s: 360px;
     --brekpoint-mm : 380px; 
@@ -45,3 +46,12 @@
   color: transparent;
   paint-order: stroke fill;
 }
+
+input[type="date"]::-webkit-datetime-edit {
+    color: #565B5D; /* Your desired placeholder color */
+    font-family: 'Poppins', sans-serif;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+  }

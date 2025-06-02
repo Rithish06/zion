@@ -38,13 +38,13 @@ const Home = () => {
 
 	const scrollOne = [assets.scrollImg1, assets.scrollImg2, assets.scrollImg3, assets.scrollImg4, assets.scrollImg5, assets.scrollImg6]
 	const scrollTwo = [assets.scrollImg7, assets.scrollImg8, assets.scrollImg9, assets.scrollImg10, assets.scrollImg11, assets.scrollImg12]
-	const scrollThree = [assets.scrollImg13, assets.scrollImg14, assets.scrollImg15,assets.scrollImg16, assets.scrollImg17,]
+	const scrollThree = [assets.scrollImg13, assets.scrollImg14, assets.scrollImg15, assets.scrollImg16, assets.scrollImg17,]
 
 	const serviceList = [
 		{
 			image: assets.eyeLash,
 			name: "Eyelash Extension & Lifting",
-			id : "eyelash"
+			id: "eyelash"
 		},
 		{
 			image: assets.makeup,
@@ -85,10 +85,10 @@ const Home = () => {
 
 	const navigate = useNavigate();
 
-  const handleServiceClick = (serviceId) => {
-    navigate('/services', { state: { scrollTo: serviceId } });
-	console.log(serviceId)
-  };
+	const handleServiceClick = (serviceId) => {
+		navigate('/services', { state: { scrollTo: serviceId } });
+		console.log(serviceId)
+	};
 
 	return (
 		<div className='relative top-20 md:top-0 overflow-x-hidden bg-[#FFF7FE]'>
@@ -132,10 +132,10 @@ const Home = () => {
 						{/* scroll 1 */}
 
 						<div className='relative'>
-							<div className="absolute bottom-35 left-0 w-full h-25 md:h-20 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
+							<div className="absolute bottom-30 xs:bottom-35 left-0 w-full h-25 md:h-20 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
 							<div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
 							<VerticalInfiniteScroll speed={50} height="60vh">
-								
+
 								<div className='flex flex-col'>
 									{scrollOne.map((img, index) => (
 										<img className='w-[123px] h-auto mb-4' src={img} key={index} />
@@ -156,7 +156,7 @@ const Home = () => {
 						{/* scroll 2 */}
 
 						<div className='relative mt-20'>
-							<div className="absolute bottom-16 left-0 w-full h-25 md:h-20 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
+							<div className="absolute bottom-10 xs:bottom-17 s:bottom-20 left-0 w-full h-25 md:h-20 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
 							<div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
 							<VerticalInfiniteScroll speed={50} height="60vh">
 								<div className='flex flex-col'>
@@ -216,17 +216,33 @@ const Home = () => {
 
 				<HorizontalScroll speed={40}>
 					{serviceList.map((service, index) => (
-						<div key={index} className="flex flex-col items-center justify-start gap-2 max-w-[150px] px-2 mx-7 text-center h-[120px]" onClick={() => handleServiceClick(service.id)}>
-							<img src={service.image} className="w-auto h-[80px] object-cover" alt="" />
-							<div className="text-black text-center text-[12px] font-normal font-delius break-words w-[100px] text-wrap">
+						<div
+							key={index}
+							className="flex flex-col items-center justify-start gap-2 max-w-[150px] px-2 mx-7 text-center min-h-[160px]"
+							onClick={() => handleServiceClick(service.id)}
+						>
+							<img
+								src={service.image}
+								className="w-auto h-[80px] object-contain"
+								alt=""
+							/>
+							<div className="text-black text-center text-[12px] font-normal font-delius break-words whitespace-normal w-[100px]">
 								{service.name}
 							</div>
 						</div>
 					))}
 					{serviceList.map((service, index) => (
-						<div key={index} className="flex flex-col items-center justify-start gap-2 max-w-[150px] px-2 mx-7 text-center h-[120px]" onClick={() => handleServiceClick(service.id)}>
-							<img src={service.image} className="w-auto h-[80px] object-cover" alt="" />
-							<div className="text-black text-center text-[12px] font-normal font-delius break-words w-[100px] text-wrap">
+						<div
+							key={index}
+							className="flex flex-col items-center justify-start gap-2 max-w-[150px] px-2 mx-7 text-center min-h-[160px]"
+							onClick={() => handleServiceClick(service.id)}
+						>
+							<img
+								src={service.image}
+								className="w-auto h-[80px] object-contain"
+								alt=""
+							/>
+							<div className="text-black text-center text-[12px] font-normal font-delius break-words whitespace-normal w-[100px]">
 								{service.name}
 							</div>
 						</div>

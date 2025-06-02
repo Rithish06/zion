@@ -35,9 +35,13 @@ const ContactFrom = () => {
             lastName: data.lastName,
             email: data.email,
             phonenumber: data.phonenumber,
-            service: data.service?.value || "", // flattening it here
+            service: data.service?.value || "",
             message: data.message,
+            date: data.date,
+            timeSolt : data.timeslot?.value
         };
+
+        console.log(payload)
 
         emailjs.send(
             "zion",
@@ -67,6 +71,28 @@ const ContactFrom = () => {
         { value: "Eyelash Extension & Lifting", label: "Eyelash Extension & Lifting" },
         { value: "Advanced Facial", label: "Advanced Facial" },
     ];
+
+    const generateTimeSlots = () => {
+        const start = 10 * 60;
+        const end = 20 * 60 + 30;
+        const slots = [];
+
+        for (let minutes = start; minutes <= end; minutes += 30) {
+            const hours = Math.floor(minutes / 60);
+            const mins = minutes % 60;
+            const ampm = hours >= 12 ? "PM" : "AM";
+            const hour12 = hours % 12 === 0 ? 12 : hours % 12;
+            const paddedHour = hour12 < 10 ? `0${hour12}` : hour12;
+            const paddedMins = mins === 0 ? "00" : mins;
+            const label = `${paddedHour}:${paddedMins} ${ampm}`;
+
+            slots.push({ value: label, label });
+        }
+
+        return slots;
+    };
+
+    const timeslots = generateTimeSlots();
 
     return (
         <div className='flex flex-col gap-10 lg:gap-0 items-center lg:flex-row justify-center mb-10 lg:mb-0'>
@@ -247,6 +273,107 @@ const ContactFrom = () => {
                         <p className="text-red-600 text-sm mt-2">{errors.service.message}</p>
                     )}
 
+                    <div className="flex flex-col md:flex-row gap-3 md:gap-5 mt-10 lg:mt-10">
+
+                        {/* date input */}
+                        <div className="w-full md:w-[50%]">
+                            <input
+                                type="date"
+                                {...register("date", {
+                                    required: "Date is required",
+                                })}
+                                className="w-full border-b-[2px] outline-none border-black placeholder:text-[#565B5D] text-[16px] font-[poppins] py-2"
+                                placeholder="Date*"
+                            />
+                            {errors.date && (
+                            <p className="text-red-600 text-sm mt-2">{errors.date.message}</p>
+                        )}
+                        </div>
+
+                        {/* time slot */}
+                        <div className="flex flex-col mt-[3.5px] w-full md:w-[50%]">
+                            <Controller
+                                name="timeslot"
+                                control={control}
+                                rules={{ required: "Time slot is required" }}
+                                render={({ field }) => (
+                                    <Select
+                                        {...field}
+                                        options={timeslots}
+                                        placeholder="Select a slot*"
+                                        isSearchable={false}
+                                        className="w-full text-base px-0"
+                                        styles={{
+                                            control: (base) => ({
+                                                ...base,
+                                                backgroundColor: "transparent",
+                                                border: "0",
+                                                borderBottom: "2px solid black",
+                                                boxShadow: "none",
+                                                borderRadius: 0,
+                                                fontFamily: "Poppins, sans-serif",
+                                                fontSize: "16px",
+                                                color: "#000",
+                                                padding: 0,
+                                            }),
+                                            placeholder: (base) => ({
+                                                ...base,
+                                                fontFamily: "Poppins, sans-serif",
+                                                color: "#565B5D",
+                                                fontSize: "16px",
+                                                padding: 0,
+                                            }),
+                                            singleValue: (base) => ({
+                                                ...base,
+                                                fontFamily: "Poppins, sans-serif",
+                                                fontSize: "16px",
+                                                color: "#000",
+                                                padding: 0,
+                                            }),
+                                            option: (base, state) => ({
+                                                ...base,
+                                                fontFamily: "Poppins, sans-serif",
+                                                backgroundColor: state.isSelected
+                                                    ? "#3b82f6"
+                                                    : state.isFocused
+                                                        ? "#e0e7ff"
+                                                        : "#fff",
+                                                color: "#000",
+                                                cursor: "pointer",
+                                                paddingLeft: "8px",
+                                            }),
+                                            menu: (base) => ({
+                                                ...base,
+                                                zIndex: 50,
+                                            }),
+                                            valueContainer: (base) => ({
+                                                ...base,
+                                                padding: 0,
+                                            }),
+                                            input: (base) => ({
+                                                ...base,
+                                                padding: 0,
+                                                margin: 0,
+                                            }),
+                                            dropdownIndicator: (base) => ({
+                                                ...base,
+                                                padding: 0,
+                                            }),
+                                            indicatorSeparator: () => ({
+                                                display: "none",
+                                            }),
+                                        }}
+                                    />
+                                )}
+                            />
+                            {errors.timeslot && (
+                            <p className="text-red-600 text-sm mt-2">{errors.timeslot.message}</p>
+                        )}
+                        </div>
+                        
+
+                    </div>
+
                     {/* Message */}
                     <div className="flex gap-5 mt-3 lg:mt-8">
                         <textarea
@@ -298,7 +425,7 @@ const ContactFrom = () => {
 
 
                 </div>
-                
+
             </div>
             <ToastContainer />
         </div>

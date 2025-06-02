@@ -23,7 +23,6 @@ const Services = () => {
 
     const location = useLocation();
 
-
     const eyelashRef = useRef(null);
     const makeupRef = useRef(null);
     const hairTreatmentRef = useRef(null);
@@ -86,17 +85,15 @@ const Services = () => {
                 <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500]">BEAUTY is more than appearance; it’s how you feel. A well-crafted look enhances your features, uplifts your mood and brings out your natural confidence. <b>With over 12 years of experience and 500+ bridal makeovers,</b> each transformation is approached with care, expertise, and a deep respect for individual style. Our services are professionally delivered and affordably priced, ensuring a stress-free experience without compromising on quality.</div>
                 <div className="text-center justify-start text-fuchsia-800 text-[12px] lg:text-[16px] font-bold font-jost leading-normal">Our Offerings include:</div>
 
-                <div className='flex flex-col md:flex-row md:gap-20'>
-                    <ul className='list-disc'>
-                        <li className='text-black text-base font-medium font-jost leading-relaxed'>Bridal Makeup</li>
-                        <li className='text-black text-base font-medium font-jost leading-relaxed'>HD Makeup</li>
-                        <li className='text-black text-base font-medium font-jost leading-relaxed'>Glossy Makeup</li>
-                        <li className='text-black text-base font-medium font-jost leading-relaxed'>Wedding Shoot Makeup</li>
-                    </ul>
-                    <ul className='list-disc'>
-                        <li className='text-black text-base font-medium font-jost leading-relaxed'>Groom Makeup</li>
-                        <li className='text-black text-base font-medium font-jost leading-relaxed'>Simple Makeup</li>
-                        <li className='text-black text-base font-medium font-jost leading-relaxed'>Waterproof Makeup</li>
+                <div className="columns-1 md:columns-3 gap-6">
+                    <ul className="list-disc text-black text-base font-medium font-jost leading-relaxed pl-5">
+                        <li>Bridal Makeup</li>
+                        <li>HD Makeup</li>
+                        <li>Glossy Makeup</li>
+                        <li>Wedding Shoot Makeup</li>
+                        <li>Groom Makeup</li>
+                        <li>Simple Makeup</li>
+                        <li>Waterproof Makeup</li>
                     </ul>
                 </div>
 
@@ -129,17 +126,14 @@ const Services = () => {
                 <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] lg:w-[800px]">Elegant, edgy or expressive - your nails should tell your story. Let our artistry add polish to every gesture you make.</div>
                 <div className="text-center justify-start text-fuchsia-800 text-[12px] lg:text-[16px] font-bold font-jost leading-normal">Our Offerings include:</div>
 
-                <div className='flex flex-col md:flex-row md:gap-20'>
-                    <ul className='list-disc'>
+                <div className="columns-1 md:columns-3 gap-6">
+                    <ul className="list-disc text-black text-base font-medium font-jost leading-relaxed pl-5">
                         <li className='text-black text-base font-medium font-jost leading-relaxed'>Custom Art work</li>
                         <li className='text-black text-base font-medium font-jost leading-relaxed'>Ombre Nails</li>
                         <li className='text-black text-base font-medium font-jost leading-relaxed'>3D Nail Art</li>
                         <li className='text-black text-base font-medium font-jost leading-relaxed'>Marble Effect</li>
                         <li className='text-black text-base font-medium font-jost leading-relaxed'>Acrylic</li>
                         <li className='text-black text-base font-medium font-jost leading-relaxed'>Poly gel</li>
-
-                    </ul>
-                    <ul className='list-disc  mb-10'>
                         <li className='text-black text-base font-medium font-jost leading-relaxed'>Full Nail Extension</li>
                         <li className='text-black text-base font-medium font-jost leading-relaxed'>Single Colour Polish</li>
                         <li className='text-black text-base font-medium font-jost leading-relaxed'>Foil art</li>
@@ -168,7 +162,7 @@ const Services = () => {
 
             {/* container 4 */}
             <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FFF7FE]' ref={makeupRef}>
-                <div className="text-center justify-start text-orange-700 text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Makeup Services</div>
+                <div className="text-center justify-start text-orange-700 text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Makeup Artistry</div>
                 <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Beauty that reflects who you are - not hides it</div>
                 <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] lg:w-[800px]">From soft glam to bold elegance, our makeup enhances your natural features and brings out the confidence already within you.</div>
 
@@ -203,21 +197,16 @@ const Services = () => {
                 <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Whether you're refreshing your cut or changing your shade, a great style isn’t just seen —<br />it’s felt in every moment that follows.</div>
                 <div className="text-center justify-start text-fuchsia-800 text-[12px] lg:text-[16px] font-bold font-jost leading-normal">Our Offerings include:</div>
 
-                <div className='flex flex-col md:flex-row md:gap-20'>
-                    <ul className='list-disc'>
+                <div className="columns-1 md:columns-3 gap-6">
+                    <ul className="list-disc text-black text-base font-medium font-jost leading-relaxed pl-5">
                         <li className='text-black text-base font-medium font-jost leading-relaxed'>Level Cut</li>
                         <li className='text-black text-base font-medium font-jost leading-relaxed'>U Cut</li>
                         <li className='text-black text-base font-medium font-jost leading-relaxed'>v Cut</li>
                         <li className='text-black text-base font-medium font-jost leading-relaxed'>Layer cut</li>
-                    </ul>
-                    <ul className='list-disc'>
                         <li className='text-black text-base font-medium font-jost leading-relaxed'>feathercht</li>
                         <li className='text-black text-base font-medium font-jost leading-relaxed'>Butterfly che</li>
                         <li className='text-black text-base font-medium font-jost leading-relaxed'>wolf ent</li>
                         <li className='text-black text-base font-medium font-jost leading-relaxed'>Short bob cut</li>
-                    </ul>
-
-                    <ul className='list-disc'>
                         <li className='text-black text-base font-medium font-jost leading-relaxed'>Long bob cut</li>
                         <li className='text-black text-base font-medium font-jost leading-relaxed'>Step cut</li>
                     </ul>
@@ -248,13 +237,11 @@ const Services = () => {
                 <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-5 lg:w-[800px]">Dry, frizzy or lifeless? Let your hair bounce back with smoothness, strength and shine. Good hair days start here.</div>
                 <div className="text-center justify-start text-fuchsia-800 text-[12px] lg:text-[16px] font-bold font-jost leading-normal">Our Offerings include:</div>
 
-                <div className='flex flex-col md:flex-row md:gap-20'>
-                    <ul className='list-disc'>
+                <div className="columns-1 md:columns-3 gap-6">
+                    <ul className="list-disc text-black text-base font-medium font-jost leading-relaxed pl-5">
                         <li className='text-black text-base font-medium font-jost leading-relaxed'>Hair Spa</li>
                         <li className='text-black text-base font-medium font-jost leading-relaxed'>Hair fall treatment</li>
                         <li className='text-black text-base font-medium font-jost leading-relaxed'>Dandruff treatment</li>
-                    </ul>
-                    <ul className='list-disc'>
                         <li className='text-black text-base font-medium font-jost leading-relaxed'>M.K. Botox treatment</li>
                         <li className='text-black text-base font-medium font-jost leading-relaxed'>Flora active Keratin treatment</li>
                     </ul>
