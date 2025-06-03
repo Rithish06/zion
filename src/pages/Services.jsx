@@ -356,150 +356,152 @@ const Services = () => {
                 <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Say goodbye to unwanted hair and hello to silky, touchable skin - we wax it all with care and comfort.</div>
                 <div className="text-center justify-start text-fuchsia-800 text-[12px] lg:text-[16px] font-bold font-jost leading-normal">Our Offerings include:</div>
 
-                 <ul className="list-disc text-black text-base font-medium font-jost leading-relaxed pl-5">
-                    <li className='text-black text-base font-medium font-jost leading-relaxed'>Honey wax</li>
-                    <li className='text-black text-base font-medium font-jost leading-relaxed'>Rica Wax</li>
-                    <li className='text-black text-base font-medium font-jost leading-relaxed'>Brazilian Wax</li>
-                    <li className='text-black text-base font-medium font-jost leading-relaxed'>V Wax</li>
-                </ul>
+                <div className="columns-1 md:columns-2 gap-6">
+                    <ul className="list-disc text-black text-base font-medium font-jost leading-relaxed pl-5">
+                        <li className='text-black text-base font-medium font-jost leading-relaxed'>Honey wax</li>
+                        <li className='text-black text-base font-medium font-jost leading-relaxed'>Rica Wax</li>
+                        <li className='text-black text-base font-medium font-jost leading-relaxed'>Brazilian Wax</li>
+                        <li className='text-black text-base font-medium font-jost leading-relaxed'>V Wax</li>
+                    </ul>
+                </div>
 
-                <HorizontalScroll speed={70}>
-                    {
-                        wax.map((image, index) => (
-                            <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[160px] h-auto relative' />
-                            </div>
-                        ))
-                    }
-                    {
-                        wax.map((image, index) => (
-                            <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[160px] h-auto relative' />
-                            </div>
-                        ))
-                    }
-                </HorizontalScroll>
-            </div>
+                    <HorizontalScroll speed={70}>
+                        {
+                            wax.map((image, index) => (
+                                <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
+                                    <img src={image} className='w-[160px] h-auto relative' />
+                                </div>
+                            ))
+                        }
+                        {
+                            wax.map((image, index) => (
+                                <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
+                                    <img src={image} className='w-[160px] h-auto relative' />
+                                </div>
+                            ))
+                        }
+                    </HorizontalScroll>
+                </div>
 
-            {/* container 11 */}
-            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#F5EAFF]'>
-                <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Eyebrow Shaping</div>
-                <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">A little brow love goes a long way.</div>
-                <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">From neat clean-ups to bold arches - we sculpt brows that frame your face beautifully.</div>
+                {/* container 11 */}
+                <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#F5EAFF]'>
+                    <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Eyebrow Shaping</div>
+                    <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">A little brow love goes a long way.</div>
+                    <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">From neat clean-ups to bold arches - we sculpt brows that frame your face beautifully.</div>
 
 
-                {/* <ul className='list-disc flex flex-col items-center'>
+                    {/* <ul className='list-disc flex flex-col items-center'>
                     <li className='text-black text-base font-jost font-[500] leading-relaxed'></li>
                     <li className='text-black text-base font-jost leading-relaxed'></li>
                     <li className='text-black text-base font-jost leading-relaxed mb-10'></li>
                 </ul> */}
 
-                <HorizontalScroll speed={70}>
-                    {
-                        eyebrow.map((image, index) => (
-                            <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[160px] h-auto relative' />
-                            </div>
-                        ))
-                    }
-                    {
-                        eyebrow.map((image, index) => (
-                            <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[160px] h-auto relative' />
-                            </div>
-                        ))
-                    }
-                </HorizontalScroll>
-            </div>
+                    <HorizontalScroll speed={70}>
+                        {
+                            eyebrow.map((image, index) => (
+                                <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
+                                    <img src={image} className='w-[160px] h-auto relative' />
+                                </div>
+                            ))
+                        }
+                        {
+                            eyebrow.map((image, index) => (
+                                <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
+                                    <img src={image} className='w-[160px] h-auto relative' />
+                                </div>
+                            ))
+                        }
+                    </HorizontalScroll>
+                </div>
 
-            {/* container 12 */}
-            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FFF7FE]' ref={faceThreadingRef}>
-                <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Face Threading</div>
-                <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Flawless skin, fuzz-free finish.</div>
-                <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Gentle threading for upper lip, chin, forehead & full face - done with precision, leaving your skin smooth and glowing.</div>
+                {/* container 12 */}
+                <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FFF7FE]' ref={faceThreadingRef}>
+                    <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Face Threading</div>
+                    <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Flawless skin, fuzz-free finish.</div>
+                    <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Gentle threading for upper lip, chin, forehead & full face - done with precision, leaving your skin smooth and glowing.</div>
 
-                {/* <ul className='list-disc flex flex-col items-center'>
+                    {/* <ul className='list-disc flex flex-col items-center'>
                     <li className='text-black text-base font-jost font-[500] leading-relaxed'></li>
                     <li className='text-black text-base font-jost leading-relaxed'></li>
                     <li className='text-black text-base font-jost leading-relaxed mb-10'></li>
                 </ul> */}
 
-                <HorizontalScroll speed={70}>
-                    {
-                        faceThreading.map((image, index) => (
-                            <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[160px] h-auto relative' />
-                            </div>
-                        ))
-                    }
-                    {
-                        faceThreading.map((image, index) => (
-                            <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[160px] h-auto relative' />
-                            </div>
-                        ))
-                    }
-                </HorizontalScroll>
-            </div>
+                    <HorizontalScroll speed={70}>
+                        {
+                            faceThreading.map((image, index) => (
+                                <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
+                                    <img src={image} className='w-[160px] h-auto relative' />
+                                </div>
+                            ))
+                        }
+                        {
+                            faceThreading.map((image, index) => (
+                                <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
+                                    <img src={image} className='w-[160px] h-auto relative' />
+                                </div>
+                            ))
+                        }
+                    </HorizontalScroll>
+                </div>
 
-            {/* container 13 */}
-            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FFEAEB]' ref={bodyPolishingRef}>
-                <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Body Polishing</div>
-                <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Buff, glow, repeat! ✨</div>
-                <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Reveal radiant skin with our exfoliating body polish. It removes dead cells, boosts blood flow, and leaves your skin baby-soft and fresh.</div>
+                {/* container 13 */}
+                <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FFEAEB]' ref={bodyPolishingRef}>
+                    <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Body Polishing</div>
+                    <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Buff, glow, repeat! ✨</div>
+                    <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Reveal radiant skin with our exfoliating body polish. It removes dead cells, boosts blood flow, and leaves your skin baby-soft and fresh.</div>
 
-                {/* <ul className='list-disc flex flex-col items-center'>
+                    {/* <ul className='list-disc flex flex-col items-center'>
                     <li className='text-black text-base font-jost font-[500] leading-relaxed'></li>
                     <li className='text-black text-base font-jost leading-relaxed'></li>
                     <li className='text-black text-base font-jost leading-relaxed mb-10'></li>
                 </ul> */}
 
-                <HorizontalScroll speed={70}>
-                    {
-                        bodyPolish.map((image, index) => (
-                            <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[160px] h-auto relative' />
-                            </div>
-                        ))
-                    }
-                    {
-                        bodyPolish.map((image, index) => (
-                            <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[160px] h-auto relative' />
-                            </div>
-                        ))
-                    }
-                </HorizontalScroll>
-            </div>
+                    <HorizontalScroll speed={70}>
+                        {
+                            bodyPolish.map((image, index) => (
+                                <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
+                                    <img src={image} className='w-[160px] h-auto relative' />
+                                </div>
+                            ))
+                        }
+                        {
+                            bodyPolish.map((image, index) => (
+                                <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
+                                    <img src={image} className='w-[160px] h-auto relative' />
+                                </div>
+                            ))
+                        }
+                    </HorizontalScroll>
+                </div>
 
-            {/* container 15 */}
-            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#EAECFF]' ref={oilMassageRef}>
-                <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Body Oil Massage</div>
-                <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Unwind in bliss.</div>
-                <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Our relaxing oil massage melts away stress, soothes sore muscles, and leaves your skin deeply nourished, soft, and glowing.</div>
+                {/* container 15 */}
+                <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#EAECFF]' ref={oilMassageRef}>
+                    <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Body Oil Massage</div>
+                    <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Unwind in bliss.</div>
+                    <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Our relaxing oil massage melts away stress, soothes sore muscles, and leaves your skin deeply nourished, soft, and glowing.</div>
 
-                <HorizontalScroll speed={70}>
-                    {
-                        oilMassage.map((image, index) => (
-                            <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[160px] h-auto relative' />
-                            </div>
-                        ))
-                    }
-                    {
-                        oilMassage.map((image, index) => (
-                            <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[160px] h-auto relative' />
-                            </div>
-                        ))
-                    }
-                </HorizontalScroll>
-            </div>
+                    <HorizontalScroll speed={70}>
+                        {
+                            oilMassage.map((image, index) => (
+                                <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
+                                    <img src={image} className='w-[160px] h-auto relative' />
+                                </div>
+                            ))
+                        }
+                        {
+                            oilMassage.map((image, index) => (
+                                <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
+                                    <img src={image} className='w-[160px] h-auto relative' />
+                                </div>
+                            ))
+                        }
+                    </HorizontalScroll>
+                </div>
 
-            {/* container 10 */}
-            <ContactFrom />
-        </div >
-    )
+                {/* container 10 */}
+                <ContactFrom />
+            </div >
+            )
 }
 
-export default Services
+            export default Services

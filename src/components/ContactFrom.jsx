@@ -11,6 +11,9 @@ import { init } from '@emailjs/browser';
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+import { DayPicker } from "react-day-picker";
+
+
 const ContactFrom = () => {
 
     const {
@@ -27,8 +30,25 @@ const ContactFrom = () => {
         init("RC_EHC25Ix-5xaXAl");
     }, []);
 
+    const [showPicker, setShowPicker] = useState(false);
+
+    const dateHandler = (data) => {
+        console.log("Selected Date:", data.date);
+    };
+
+
     const onSubmit = (data) => {
         setIsSubmitting(true);
+
+        // Format date to dd-mm-yyyy
+        let formattedDate = "";
+        if (data.date) {
+            const dateObj = new Date(data.date);
+            const day = String(dateObj.getDate()).padStart(2, '0');
+            const month = String(dateObj.getMonth() + 1).padStart(2, '0');
+            const year = dateObj.getFullYear();
+            formattedDate = `${day}-${month}-${year}`;
+        }
 
         const payload = {
             firstName: data.firstName,
@@ -37,11 +57,11 @@ const ContactFrom = () => {
             phonenumber: data.phonenumber,
             service: data.service?.value || "",
             message: data.message,
-            date: data.date,
-            timeSolt : data.timeslot?.value
+            date: formattedDate,
+            timeSolt: data.timeslot?.value || ""
         };
 
-        console.log(payload)
+        console.log(payload);
 
         emailjs.send(
             "zion",
@@ -50,16 +70,17 @@ const ContactFrom = () => {
         )
             .then(() => {
                 toast.success("Email sent successfully!");
-                console.log("email sent")
-                console.log(payload)
+                console.log("email sent");
+                console.log(payload);
                 reset();
             })
             .catch(() => {
                 toast.error("Failed to send email");
-                console.log("email not sent")
+                console.log("email not sent");
             })
             .finally(() => setIsSubmitting(false));
     };
+
 
     const options = [
         { value: "Bridal Makeup", label: "Bridal Makeup" },
@@ -277,17 +298,42 @@ const ContactFrom = () => {
 
                         {/* date input */}
                         <div className="w-full md:w-[50%]">
-                            <input
-                                type="date"
-                                {...register("date", {
-                                    required: "Date is required",
-                                })}
-                                className="w-full border-b-[2px] outline-none border-black placeholder:text-[#565B5D] text-[16px] font-[poppins] py-2"
-                                placeholder="Date*"
+                            <Controller
+                                name="date"
+                                control={control}
+                                rules={{ required: "Date is required" }}
+                                render={({ field }) => (
+                                    <div className="relative">
+                                        <input
+                                            readOnly
+                                            value={field.value ? field.value.toLocaleDateString("en-GB") : ""}
+                                            onClick={() => setShowPicker(!showPicker)}
+                                            className="w-full border-b-[2px] outline-none border-black placeholder:text-[#565B5D] text-[16px] font-[poppins] py-2 cursor-pointer"
+                                            placeholder="dd-mm-yyyy"
+                                        />
+                                        {showPicker && (
+                                            <div className="absolute bg-white shadow-lg z-10 mt-2 w-full">
+                                                <DayPicker
+                                                    mode="single"
+                                                    selected={field.value}
+                                                    onSelect={(date) => {
+                                                        field.onChange(date);
+                                                        setShowPicker(false);
+                                                    }}
+                                                    classNames={{
+                                                        day: "p-2 m-1", // Adds padding and margin to each day
+                                                        row: "flex justify-center", // Optional: center-align rows
+                                                        table: "w-full", // Optional: ensure full width
+                                                    }}
+                                                />
+                                            </div>
+                                        )}
+                                    </div>
+                                )}
                             />
                             {errors.date && (
-                            <p className="text-red-600 text-sm mt-2">{errors.date.message}</p>
-                        )}
+                                <p className="text-red-600 text-sm mt-2">{errors.date.message}</p>
+                            )}
                         </div>
 
                         {/* time slot */}
@@ -367,10 +413,10 @@ const ContactFrom = () => {
                                 )}
                             />
                             {errors.timeslot && (
-                            <p className="text-red-600 text-sm mt-2">{errors.timeslot.message}</p>
-                        )}
+                                <p className="text-red-600 text-sm mt-2">{errors.timeslot.message}</p>
+                            )}
                         </div>
-                        
+
 
                     </div>
 

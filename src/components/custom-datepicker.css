@@ -1,0 +1,14 @@
+/* custom-datepicker.css */
+.react-datepicker {
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px;
+}
+.react-datepicker__day--selected {
+  background-color: black;
+  color: white;
+}
+.react-datepicker__day:hover {
+  background-color: #f0f0f0;
+}
