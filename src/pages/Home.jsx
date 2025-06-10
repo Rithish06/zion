@@ -7,6 +7,7 @@ import ContactFrom from '../components/ContactFrom';
 import { Link } from 'react-router-dom';
 import Beautician from '../components/Beautician';
 import { useNavigate } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
 
@@ -117,12 +118,20 @@ const Home = () => {
 
 	return (
 		<div className='relative top-20 md:top-0 overflow-x-hidden bg-[#FFF7FE]'>
+
+			<Helmet>
+				<title>Zion Beauty of Heaven – Best Beauty Parlour in Tumkur for Bridal & Beauty Services</title>
+				<meta name="description" content="Step into Zion Beauty of Heaven, Tumkur’s trusted beauty parlour offering expert bridal makeup, skincare, hair care, and more. Experience personalised beauty that enhances your natural glow." />
+				<meta name="keywords" content="beauty parlour, salon, makeup, haircut, facial, waxing, body massage, nails, hair coloring, spa, massage near me, waxing near me, hair salon near me, nail salon near me, spa near me, haircut near me, facials near me, mascara, make up, salon near me, hair dye, body massage near me, hair salon, eyeliner, make up artist near me, hair treatment near me, beauty parlour near me, eye lashes, hair gloss, makeup set, nail art designs, best spa near me, makeup artist, best face masks" />
+				<meta property="og:title" content="My Page Title for Social Media" />
+			</Helmet>
+
 			{/* banner */}
 
 			<div className='relative bg-white'>
 				{/* banner bg */}
 				<div className='realtive z-1 flex flex-col justify-around w-full h-[1500px]  lg:h-[100vh]'>
-					<img src={assets.homeBannerBg} className='w-full h-[1300px]  lg:h-[100vh]' alt="" />
+					<img src={assets.homeBannerBg} className='w-full h-[1300px]  lg:h-[100vh]' alt="Haircut for Women | Tumkur" />
 				</div>
 
 				{/* content */}
@@ -164,10 +173,10 @@ const Home = () => {
 
 								<div className='flex flex-col'>
 									{scrollOne.map((img, index) => (
-										<img className='w-[123px] h-auto mb-4' src={img} key={index} />
+										<img className='w-[123px] h-auto mb-4' src={img} key={index} alt='Hair Stylist Tumkur' />
 									))}
 									{scrollOne.map((img, index) => (
-										<img className='w-[123px] h-auto mb-4' src={img} key={index} />
+										<img className='w-[123px] h-auto mb-4' src={img} key={index} alt='Hair Spa near me | Tumkur' />
 									))}
 									{/* {scrollOne.map((img, index) => (
 										<img className='w-[123px] h-auto mb-4' src={img} key={index} />
@@ -187,10 +196,10 @@ const Home = () => {
 							<VerticalInfiniteScroll speed={50} height="60vh">
 								<div className='flex flex-col'>
 									{scrollTwo.map((img, index) => (
-										<img className='w-[123px] h-auto mb-4' src={img} key={index} />
+										<img className='w-[123px] h-auto mb-4' src={img} key={index} alt='Bridal eye makeup | Tumkur' />
 									))}
 									{scrollTwo.map((img, index) => (
-										<img className='w-[123px] h-auto mb-4' src={img} key={index} />
+										<img className='w-[123px] h-auto mb-4' src={img} key={index} alt='Best Bridal Makeup | Tumkur' />
 									))}
 									{/* {scrollTwo.map((img, index) => (
 										<img className='w-[123px] h-auto mb-4' src={img} key={index} />
@@ -209,10 +218,10 @@ const Home = () => {
 							<VerticalInfiniteScroll speed={50} height="60vh">
 								<div className='flex flex-col'>
 									{scrollThree.map((img, index) => (
-										<img className='w-[123px] h-auto mb-4' src={img} key={index} />
+										<img className='w-[123px] h-auto mb-4' src={img} key={index} alt='Hair extensions near me' />
 									))}
 									{scrollThree.map((img, index) => (
-										<img className='w-[123px] h-auto mb-4' src={img} key={index} />
+										<img className='w-[123px] h-auto mb-4' src={img} key={index} alt='hair salon' />
 									))}
 									{/* {scrollThree.map((img, index) => (
 										<img className='w-[123px] h-auto mb-4' src={img} key={index} />
@@ -250,7 +259,7 @@ const Home = () => {
 							<img
 								src={service.image}
 								className="w-auto h-[80px] object-contain"
-								alt=""
+								alt="parlour for ladies near me"
 							/>
 							<div className="text-black text-center text-[12px] font-normal font-delius break-words whitespace-normal w-[100px]">
 								{service.name}

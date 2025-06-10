@@ -27,7 +27,7 @@ const Navbar = () => {
     return (
         <>
             <div className={`fixed z-50 w-full flex flex-row gap-12 items-center justify-between md:justify-center p-5 transition-colors duration-300 ${scrolled ? 'bg-white' : 'bg-white md:bg-transparent'}`}>
-                <NavLink to="/" ><img src={assets.logo} className='w-[133px] h-auto' alt="Logo" /></NavLink>
+                <NavLink to="/" ><img src={assets.logo} className='w-[133px] h-auto' alt="Best beauty parlours | Tumkur | Zion Beauty Parlour" /></NavLink>
 
                 {/* Desktop Navigation */}
                 <div className='hidden gap-10 md:flex'>

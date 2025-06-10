@@ -98,7 +98,7 @@ const Beautician = () => {
 
                         </div>
 
-                        <img src={assets.beautician} className="w-[60%]" alt="" />
+                        <img src={assets.beautician} className="w-[60%]" alt="Best Beauty Parlour | Tumkur" />
                     </div>
                     <span className="absolute top-33 font-jost text-stroke text-[80px] font-[700] text-transparent text-stroke-white">anraj</span>
                 </div>
@@ -140,7 +140,7 @@ const Beautician = () => {
                 <div className="bg-[#0F181F]" ref={el => rotateRevRef.current[1] = el}>
                     <div className="text-center font-jost text-stroke text-[50px] font-[700] text-transparent text-stroke-white">Sharmanraj</div>
                     <div className="text-center font-jost text-stroke text-[20px] font-[600] text-transparent text-stroke-white">Founder & Beauty Professional</div>
-                    <img src={assets.beautician} className="w-[60%] mt-10 mx-auto h-auto" alt="" />
+                    <img src={assets.beautician} className="w-[60%] mt-10 mx-auto h-auto" alt="Salons Tumkur" />
                 </div>
             </div>
         </div>

@@ -4,22 +4,184 @@ import HorizontalScroll from '../components/Horizontal'
 import ContactFrom from '../components/ContactFrom'
 import { Link } from 'react-router-dom'
 import { useLocation } from "react-router-dom";
+import { Helmet } from 'react-helmet'
 
 const Services = () => {
 
-    const bridalMakeUp = [assets.bm1, assets.bm2, assets.bm3, assets.bm4, assets.bm5, assets.bm6, assets.bm7, assets.bm8, assets.bm9, assets.bm10, assets.bm11, assets.bm12]
-    const facial = [assets.facial1, assets.facial2, assets.facial3, assets.facial4, assets.facial5, assets.facial6, assets.facial8, assets.facial9, assets.facial10, assets.facial11]
-    const haircut = [assets.haircut1, assets.haircut2, assets.haircut3, assets.haircut4, assets.haircut5, assets.haircut6, assets.haircut7, assets.haircut9]
-    const nails = [assets.nails1, assets.nails2, assets.nails3, assets.nails4, assets.nails5, assets.nails6, assets.nails7, assets.nails8, assets.nails9, assets.nails10, assets.nails11, assets.nails5]
-    const makeup = [assets.makeUp1, assets.makeUp2, assets.makeUp3, assets.makeUp4, assets.makeUp5, assets.makeUp6, assets.makeUp7, assets.makeUp8, assets.makeUp9, assets.makeUp10, assets.makeUp11, assets.makeUp5]
-    const eyes = [assets.eye1, assets.eye2, assets.eye3, assets.eye4, assets.eye5, assets.eye6, assets.eye7, assets.eye8, assets.eye9, assets.eye10, assets.eye11, assets.eye12]
-    const hairTreatment = [assets.hairtreatment1, assets.hairtreatment2, assets.hairtreatment3, assets.hairtreatment4, assets.hairtreatment5, assets.hairtreatment6, assets.hairtreatment7, assets.hairtreatment8, assets.hairtreatment9, assets.hairtreatment10, assets.hairtreatment11, assets.hairtreatment12]
-    const hairSpa = [assets.hairspa1, assets.hairspa2, assets.hairspa3, assets.hairspa4, assets.hairspa5, assets.hairspa6, assets.hairspa7, assets.hairspa8, assets.hairspa9, assets.hairspa10, assets.hairspa11, assets.hairspa12]
-    const wax = [assets.wax1, assets.wax2, assets.wax3, assets.wax4, assets.wax5, assets.wax6, assets.wax7, assets.wax8, assets.wax9, assets.wax10]
-    const eyebrow = [assets.eyebrow1, assets.eyebrow2, assets.eyebrow3, assets.eyebrow4, assets.eyebrow5, assets.eyebrow6, assets.eyebrow7, assets.eyebrow8, assets.eyebrow9, assets.eyebrow10]
-    const faceThreading = [assets.faceThreading1, assets.faceThreading2, assets.faceThreading3, assets.faceThreading4, assets.faceThreading5, assets.faceThreading6, assets.faceThreading7, assets.faceThreading8, assets.faceThreading9, assets.faceThreading10]
-    const bodyPolish = [assets.bodyPolish1, assets.bodyPolish2, assets.bodyPolish3, assets.bodyPolish4, assets.bodyPolish5, assets.bodyPolish6, assets.bodyPolish7, assets.bodyPolish8, assets.bodyPolish9, assets.bodyPolish10]
-    const oilMassage = [assets.oilMassage1, assets.oilMassage2, assets.oilMassage4, assets.oilMassage5, assets.oilMassage6, assets.oilMassage8, assets.oilMassage9, assets.oilMassage10]
+    const bridalMakeUp = [
+        { img: assets.bm1, keyword: "Bridal Makeup" },
+        { img: assets.bm2, keyword: "Bridal makeup artist Tumkur" },
+        { img: assets.bm3, keyword: "Wedding makeup Tumkur" },
+        { img: assets.bm4, keyword: "HD bridal makeup Tumkur" },
+        { img: assets.bm5, keyword: "Airbrush makeup for brides Tumkur" },
+        { img: assets.bm6, keyword: "Professional bridal makeup artist in Tumkur" },
+        { img: assets.bm7, keyword: "Tumkur bridal makeup packages" },
+        { img: assets.bm8, keyword: "Best bridal makeup in Tumkur" },
+        { img: assets.bm9, keyword: "Bridal makeup and hairstyle Tumkur" },
+        { img: assets.bm10, keyword: "Traditional bridal makeup Tumkur" },
+        { img: assets.bm11, keyword: "South Indian bridal makeup Tumkur" },
+        { img: assets.bm12, keyword: "Bridal Makeup" }
+    ];
+
+    const facial = [
+        { img: assets.facial1, keyword: "Advanced Facial" },
+        { img: assets.facial2, keyword: "Advanced facials in Tumkur" },
+        { img: assets.facial3, keyword: "Hydrafacial treatment Tumkur" },
+        { img: assets.facial4, keyword: "Anti-aging facial Tumkur" },
+        { img: assets.facial5, keyword: "Skin brightening facial Tumkur" },
+        { img: assets.facial6, keyword: "O3+ facial in Tumkur" },
+        { img: assets.facial8, keyword: "Dermatologically tested facials Tumkur" },
+        { img: assets.facial9, keyword: "Facial for glowing skin Tumkur" },
+        { img: assets.facial10, keyword: "De-tan facial treatment Tumkur" },
+        { img: assets.facial11, keyword: "VLCC advanced facials Tumkur" }
+    ];
+
+    const haircut = [
+        { img: assets.haircut1, keyword: "Haircut & Hair Colouring" },
+        { img: assets.haircut2, keyword: "Haircut and colour in Tumkur" },
+        { img: assets.haircut3, keyword: "Hair salon for women Tumkur" },
+        { img: assets.haircut4, keyword: "Best hair colouring salon Tumkur" },
+        { img: assets.haircut5, keyword: "Ladies haircut near me in Tumkur" },
+        { img: assets.haircut6, keyword: "Balayage and highlights Tumkur" },
+        { img: assets.haircut7, keyword: "Global hair colour Tumkur" },
+        { img: assets.haircut9, keyword: "Trendy haircuts in Tumkur" }
+    ];
+
+    const nails = [
+        { img: assets.nails1, keyword: "Nail Extension & Nail Art" },
+        { img: assets.nails2, keyword: "Nail extension Tumkur" },
+        { img: assets.nails3, keyword: "Nail art salon Tumkur" },
+        { img: assets.nails4, keyword: "Acrylic nail extensions Tumkur" },
+        { img: assets.nails5, keyword: "Gel nail art Tumkur" },
+        { img: assets.nails6, keyword: "Nail salon in Tumkur for extensions" },
+        { img: assets.nails7, keyword: "Manicure and nail art Tumkur" },
+        { img: assets.nails8, keyword: "Bridal nail art Tumkur" },
+        { img: assets.nails9, keyword: "French manicure with extension Tumkur" },
+        { img: assets.nails10, keyword: "Tumkur nail art designs" },
+        { img: assets.nails11, keyword: "Best nail extension studio Tumkur" }
+    ];
+
+    const makeup = [
+        { img: assets.makeUp1, keyword: "Makeup Artistry" },
+        { img: assets.makeUp2, keyword: "Makeup artist in Tumkur" },
+        { img: assets.makeUp3, keyword: "Professional makeup artist Tumkur" },
+        { img: assets.makeUp4, keyword: "Party makeup Tumkur" },
+        { img: assets.makeUp5, keyword: "Freelance makeup artist Tumkur" },
+        { img: assets.makeUp6, keyword: "Best makeup artist in Tumkur" },
+        { img: assets.makeUp7, keyword: "Tumkur makeup services" },
+        { img: assets.makeUp8, keyword: "Evening party makeup Tumkur" },
+        { img: assets.makeUp9, keyword: "Natural look makeup artist Tumkur" },
+        { img: assets.makeUp10, keyword: "Makeup for photoshoots in Tumkur" },
+        { img: assets.makeUp11, keyword: "Special occasion makeup Tumkur" }
+    ];
+
+    const eyes = [
+        { img: assets.eye1, keyword: "Eyelash Extension & Lifting" },
+        { img: assets.eye2, keyword: "Eyelash extensions in Tumkur" },
+        { img: assets.eye3, keyword: "Eyelash lifting service Tumkur" },
+        { img: assets.eye4, keyword: "Classic eyelash extensions Tumkur" },
+        { img: assets.eye5, keyword: "Volume lash extensions Tumkur" },
+        { img: assets.eye6, keyword: "Best lash artist in Tumkur" },
+        { img: assets.eye7, keyword: "Eyelash salon near me in Tumkur" },
+        { img: assets.eye8, keyword: "3D eyelash extensions Tumkur" },
+        { img: assets.eye9, keyword: "Natural looking eyelash extensions Tumkur" },
+        { img: assets.eye10, keyword: "Lash lift and tint Tumkur" },
+        { img: assets.eye11, keyword: "Professional eyelash services Tumkur" },
+        { img: assets.eye12, keyword: "Eyelash Extension & Lifting" }
+    ];
+
+    const hairTreatment = [
+        { img: assets.hairtreatment1, keyword: "Hair Treatment" },
+        { img: assets.hairtreatment2, keyword: "Hair treatment clinic Tumkur" },
+        { img: assets.hairtreatment3, keyword: "Keratin hair treatment Tumkur" },
+        { img: assets.hairtreatment4, keyword: "Hair smoothening in Tumkur" },
+        { img: assets.hairtreatment5, keyword: "Best hair fall treatment Tumkur" },
+        { img: assets.hairtreatment6, keyword: "Dandruff control treatment Tumkur" },
+        { img: assets.hairtreatment7, keyword: "Olaplex hair treatment Tumkur" },
+        { img: assets.hairtreatment8, keyword: "Hair protein treatment in Tumkur" },
+        { img: assets.hairtreatment9, keyword: "Salon for hair repair Tumkur" },
+        { img: assets.hairtreatment10, keyword: "Anti-frizz hair treatment Tumkur" },
+        { img: assets.hairtreatment11, keyword: "Hair revitalization therapy Tumkur" },
+        { img: assets.hairtreatment12, keyword: "Hair Treatment" }
+    ];
+
+    const hairSpa = [
+        { img: assets.hairspa1, keyword: "Hair Spa" },
+        { img: assets.hairspa2, keyword: "Hair spa services in Tumkur" },
+        { img: assets.hairspa3, keyword: "L'Oréal hair spa Tumkur" },
+        { img: assets.hairspa4, keyword: "Keratin hair spa treatment Tumkur" },
+        { img: assets.hairspa5, keyword: "Best hair spa salon Tumkur" },
+        { img: assets.hairspa6, keyword: "Hair spa for dry and damaged hair Tumkur" },
+        { img: assets.hairspa7, keyword: "Scalp treatment and hair spa Tumkur" },
+        { img: assets.hairspa8, keyword: "Relaxing hair spa in Tumkur" },
+        { img: assets.hairspa9, keyword: "Deep conditioning hair spa Tumkur" },
+        { img: assets.hairspa10, keyword: "Matrix hair spa services Tumkur" },
+        { img: assets.hairspa11, keyword: "Affordable hair spa in Tumkur" },
+        { img: assets.hairspa12, keyword: "Hair Spa" }
+    ];
+
+    const wax = [
+        { img: assets.wax1, keyword: "Waxing Treatments" },
+        { img: assets.wax2, keyword: "Waxing services in Tumkur" },
+        { img: assets.wax3, keyword: "Rica wax salon Tumkur" },
+        { img: assets.wax4, keyword: "Brazilian waxing for women Tumkur" },
+        { img: assets.wax5, keyword: "Full body waxing Tumkur" },
+        { img: assets.wax6, keyword: "Painless waxing services Tumkur" },
+        { img: assets.wax7, keyword: "Honey wax and chocolate wax Tumkur" },
+        { img: assets.wax8, keyword: "Leg and arm waxing in Tumkur" },
+        { img: assets.wax9, keyword: "Beauty parlour for waxing Tumkur" },
+        { img: assets.wax10, keyword: "Hygienic waxing salon Tumkur" }
+    ];
+
+    const eyebrow = [
+        { img: assets.eyebrow1, keyword: "Eyebrow Shaping" },
+        { img: assets.eyebrow2, keyword: "Eyebrow shaping Tumkur" },
+        { img: assets.eyebrow3, keyword: "Eyebrow threading salon Tumkur" },
+        { img: assets.eyebrow4, keyword: "Professional eyebrow shaping in Tumkur" },
+        { img: assets.eyebrow5, keyword: "Eyebrow tinting and shaping Tumkur" },
+        { img: assets.eyebrow6, keyword: "Best eyebrow artist Tumkur" },
+        { img: assets.eyebrow7, keyword: "Painless eyebrow threading Tumkur" },
+        { img: assets.eyebrow8, keyword: "Eyebrow grooming services Tumkur" },
+        { img: assets.eyebrow9, keyword: "Arch and defined eyebrow shaping Tumkur" },
+        { img: assets.eyebrow10, keyword: "Beauty salon for eyebrow threading Tumkur" }
+    ];
+
+    const faceThreading = [
+        { img: assets.faceThreading1, keyword: "Face Threading" },
+        { img: assets.faceThreading2, keyword: "Full face threading Tumkur" },
+        { img: assets.faceThreading3, keyword: "Upper lip and chin threading Tumkur" },
+        { img: assets.faceThreading4, keyword: "Facial hair removal by threading Tumkur" },
+        { img: assets.faceThreading5, keyword: "Sideburns threading for women Tumkur" },
+        { img: assets.faceThreading6, keyword: "Painless face threading services Tumkur" },
+        { img: assets.faceThreading7, keyword: "Salon for face threading in Tumkur" },
+        { img: assets.faceThreading8, keyword: "Forehead threading Tumkur" },
+        { img: assets.faceThreading9, keyword: "Hygienic face threading Tumkur" },
+        { img: assets.faceThreading10, keyword: "Expert threading artist Tumkur" }
+    ];
+
+    const bodyPolish = [
+        { img: assets.bodyPolish1, keyword: "Body Polishing" },
+        { img: assets.bodyPolish2, keyword: "Body polishing services in Tumkur" },
+        { img: assets.bodyPolish3, keyword: "Skin whitening body polishing Tumkur" },
+        { img: assets.bodyPolish4, keyword: "Bridal body polishing packages Tumkur" },
+        { img: assets.bodyPolish5, keyword: "Exfoliating body scrub and polish Tumkur" },
+        { img: assets.bodyPolish6, keyword: "Full body polishing treatment Tumkur" },
+        { img: assets.bodyPolish7, keyword: "Salon for body polishing near me Tumkur" },
+        { img: assets.bodyPolish8, keyword: "Rejuvenating body polishing Tumkur" },
+        { img: assets.bodyPolish9, keyword: "Best body polishing for glowing skin Tumkur" },
+        { img: assets.bodyPolish10, keyword: "Detan body polishing Tumkur" }
+    ];
+
+    const oilMassage = [
+        { img: assets.oilMassage1, keyword: "Body Oil Massage" },
+        { img: assets.oilMassage2, keyword: "Body oil massage in Tumkur" },
+        { img: assets.oilMassage4, keyword: "Full body relaxation massage Tumkur" },
+        { img: assets.oilMassage5, keyword: "Ayurvedic oil massage therapy Tumkur" },
+        { img: assets.oilMassage6, keyword: "Swedish body massage Tumkur" },
+        { img: assets.oilMassage8, keyword: "Deep tissue oil massage Tumkur" },
+        { img: assets.oilMassage9, keyword: "Aromatherapy body massage in Tumkur" },
+        { img: assets.oilMassage10, keyword: "Massage spa for women Tumkur" }
+    ];
 
     const location = useLocation();
 
@@ -63,6 +225,13 @@ const Services = () => {
 
     return (
         <div className='relative top-20 md:top-0 overflow-x-hidden bg-[#FFF7FE]'>
+
+            <Helmet>
+                <title>Our Beauty Services – Bridal Makeup, Hair, Skincare & More | Zion Beauty Tumkur</title>
+                <meta name="description" content="Explore our complete range of beauty services including facials, hair treatments, bridal makeup, nail extensions, body massage, waxing & more – all under one elegant roof." />
+                <meta name="keywords" content="beauty parlour, salon, makeup, haircut, facial, waxing, body massage, nails, hair coloring, spa, massage near me, waxing near me, hair salon near me, nail salon near me, spa near me, haircut near me, facials near me, mascara, make up, salon near me, hair dye, body massage near me, hair salon, eyeliner, make up artist near me, hair treatment near me, beauty parlour near me, eye lashes, hair gloss, makeup set, nail art designs, best spa near me, makeup artist, best face masks" />
+                <meta property="og:title" content="My Page Title for Social Media" />
+            </Helmet>
 
             {/* container 1 */}
             <div className='relative bg-white'>
@@ -115,14 +284,14 @@ const Services = () => {
                     {
                         bridalMakeUp.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[120px] md:w-[160px] h-auto relative' />
+                                <img  src={image.img}  alt={image.keyword} className='w-[120px] md:w-[160px] h-auto relative' />
                             </div>
                         ))
                     }
                     {
                         bridalMakeUp.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[120px] md:w-[160px] h-auto relative' />
+                                <img  src={image.img}  alt={image.keyword} className='w-[120px] md:w-[160px] h-auto relative' />
                             </div>
                         ))
                     }
@@ -156,14 +325,14 @@ const Services = () => {
                     {
                         nails.map((image, index) => (
                             <div className={`w-[120px] md:w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[160px] h-auto relative' />
+                                <img  src={image.img}  alt={image.keyword} className='w-[160px] h-auto relative' />
                             </div>
                         ))
                     }
                     {
                         nails.map((image, index) => (
                             <div className={`w-[120px] md:w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[160px] h-auto relative' />
+                                <img  src={image.img}  alt={image.keyword} className='w-[160px] h-auto relative' />
                             </div>
                         ))
                     }
@@ -189,14 +358,14 @@ const Services = () => {
                     {
                         makeup.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[120px] md:w-[160px] h-auto relative' />
+                                <img  src={image.img}  alt={image.keyword} className='w-[120px] md:w-[160px] h-auto relative' />
                             </div>
                         ))
                     }
                     {
                         makeup.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[120px] md:w-[160px] h-auto relative' />
+                                <img  src={image.img}  alt={image.keyword} className='w-[120px] md:w-[160px] h-auto relative' />
                             </div>
                         ))
                     }
@@ -229,14 +398,14 @@ const Services = () => {
                     {
                         haircut.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[120px] md:w-[160px] h-auto relative' />
+                                <img  src={image.img}  alt={image.keyword} className='w-[120px] md:w-[160px] h-auto relative' />
                             </div>
                         ))
                     }
                     {
                         haircut.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[120px] md:w-[160px] h-auto relative' />
+                                <img  src={image.img}  alt={image.keyword} className='w-[120px] md:w-[160px] h-auto relative' />
                             </div>
                         ))
                     }
@@ -264,14 +433,14 @@ const Services = () => {
                     {
                         hairTreatment.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[160px] h-auto relative' />
+                                <img  src={image.img}  alt={image.keyword} className='w-[160px] h-auto relative' />
                             </div>
                         ))
                     }
                     {
                         hairTreatment.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[160px] h-auto relative' />
+                                <img  src={image.img}  alt={image.keyword} className='w-[160px] h-auto relative' />
                             </div>
                         ))
                     }
@@ -288,14 +457,14 @@ const Services = () => {
                     {
                         hairSpa.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[160px] h-auto relative' />
+                                <img  src={image.img}  alt={image.keyword} className='w-[160px] h-auto relative' />
                             </div>
                         ))
                     }
                     {
                         hairSpa.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[160px] h-auto relative' />
+                                <img  src={image.img}  alt={image.keyword} className='w-[160px] h-auto relative' />
                             </div>
                         ))
                     }
@@ -312,14 +481,14 @@ const Services = () => {
                     {
                         eyes.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[160px] h-auto relative' />
+                                <img  src={image.img}  alt={image.keyword} className='w-[160px] h-auto relative' />
                             </div>
                         ))
                     }
                     {
                         eyes.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[160px] h-auto relative' />
+                                <img  src={image.img}  alt={image.keyword} className='w-[160px] h-auto relative' />
                             </div>
                         ))
                     }
@@ -336,14 +505,14 @@ const Services = () => {
                     {
                         facial.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[160px] h-auto relative' />
+                                <img  src={image.img}  alt={image.keyword} className='w-[160px] h-auto relative' />
                             </div>
                         ))
                     }
                     {
                         facial.map((image, index) => (
                             <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                <img src={image} className='w-[160px] h-auto relative' />
+                                <img  src={image.img}  alt={image.keyword} className='w-[160px] h-auto relative' />
                             </div>
                         ))
                     }
@@ -365,143 +534,143 @@ const Services = () => {
                     </ul>
                 </div>
 
-                    <HorizontalScroll speed={70}>
-                        {
-                            wax.map((image, index) => (
-                                <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                    <img src={image} className='w-[160px] h-auto relative' />
-                                </div>
-                            ))
-                        }
-                        {
-                            wax.map((image, index) => (
-                                <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                    <img src={image} className='w-[160px] h-auto relative' />
-                                </div>
-                            ))
-                        }
-                    </HorizontalScroll>
-                </div>
+                <HorizontalScroll speed={70}>
+                    {
+                        wax.map((image, index) => (
+                            <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
+                                <img  src={image.img}  alt={image.keyword} className='w-[160px] h-auto relative' />
+                            </div>
+                        ))
+                    }
+                    {
+                        wax.map((image, index) => (
+                            <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
+                                <img  src={image.img}  alt={image.keyword} className='w-[160px] h-auto relative' />
+                            </div>
+                        ))
+                    }
+                </HorizontalScroll>
+            </div>
 
-                {/* container 11 */}
-                <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#F5EAFF]'>
-                    <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Eyebrow Shaping</div>
-                    <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">A little brow love goes a long way.</div>
-                    <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">From neat clean-ups to bold arches - we sculpt brows that frame your face beautifully.</div>
+            {/* container 11 */}
+            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#F5EAFF]'>
+                <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Eyebrow Shaping</div>
+                <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">A little brow love goes a long way.</div>
+                <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">From neat clean-ups to bold arches - we sculpt brows that frame your face beautifully.</div>
 
 
-                    {/* <ul className='list-disc flex flex-col items-center'>
+                {/* <ul className='list-disc flex flex-col items-center'>
                     <li className='text-black text-base font-jost font-[500] leading-relaxed'></li>
                     <li className='text-black text-base font-jost leading-relaxed'></li>
                     <li className='text-black text-base font-jost leading-relaxed mb-10'></li>
                 </ul> */}
 
-                    <HorizontalScroll speed={70}>
-                        {
-                            eyebrow.map((image, index) => (
-                                <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                    <img src={image} className='w-[160px] h-auto relative' />
-                                </div>
-                            ))
-                        }
-                        {
-                            eyebrow.map((image, index) => (
-                                <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                    <img src={image} className='w-[160px] h-auto relative' />
-                                </div>
-                            ))
-                        }
-                    </HorizontalScroll>
-                </div>
+                <HorizontalScroll speed={70}>
+                    {
+                        eyebrow.map((image, index) => (
+                            <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
+                                <img  src={image.img}  alt={image.keyword} className='w-[160px] h-auto relative' />
+                            </div>
+                        ))
+                    }
+                    {
+                        eyebrow.map((image, index) => (
+                            <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
+                                <img  src={image.img}  alt={image.keyword} className='w-[160px] h-auto relative' />
+                            </div>
+                        ))
+                    }
+                </HorizontalScroll>
+            </div>
 
-                {/* container 12 */}
-                <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FFF7FE]' ref={faceThreadingRef}>
-                    <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Face Threading</div>
-                    <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Flawless skin, fuzz-free finish.</div>
-                    <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Gentle threading for upper lip, chin, forehead & full face - done with precision, leaving your skin smooth and glowing.</div>
+            {/* container 12 */}
+            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FFF7FE]' ref={faceThreadingRef}>
+                <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Face Threading</div>
+                <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Flawless skin, fuzz-free finish.</div>
+                <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Gentle threading for upper lip, chin, forehead & full face - done with precision, leaving your skin smooth and glowing.</div>
 
-                    {/* <ul className='list-disc flex flex-col items-center'>
+                {/* <ul className='list-disc flex flex-col items-center'>
                     <li className='text-black text-base font-jost font-[500] leading-relaxed'></li>
                     <li className='text-black text-base font-jost leading-relaxed'></li>
                     <li className='text-black text-base font-jost leading-relaxed mb-10'></li>
                 </ul> */}
 
-                    <HorizontalScroll speed={70}>
-                        {
-                            faceThreading.map((image, index) => (
-                                <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                    <img src={image} className='w-[160px] h-auto relative' />
-                                </div>
-                            ))
-                        }
-                        {
-                            faceThreading.map((image, index) => (
-                                <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                    <img src={image} className='w-[160px] h-auto relative' />
-                                </div>
-                            ))
-                        }
-                    </HorizontalScroll>
-                </div>
+                <HorizontalScroll speed={70}>
+                    {
+                        faceThreading.map((image, index) => (
+                            <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
+                                <img  src={image.img}  alt={image.keyword} className='w-[160px] h-auto relative' />
+                            </div>
+                        ))
+                    }
+                    {
+                        faceThreading.map((image, index) => (
+                            <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
+                                <img  src={image.img}  alt={image.keyword} className='w-[160px] h-auto relative' />
+                            </div>
+                        ))
+                    }
+                </HorizontalScroll>
+            </div>
 
-                {/* container 13 */}
-                <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FFEAEB]' ref={bodyPolishingRef}>
-                    <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Body Polishing</div>
-                    <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Buff, glow, repeat! ✨</div>
-                    <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Reveal radiant skin with our exfoliating body polish. It removes dead cells, boosts blood flow, and leaves your skin baby-soft and fresh.</div>
+            {/* container 13 */}
+            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#FFEAEB]' ref={bodyPolishingRef}>
+                <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Body Polishing</div>
+                <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Buff, glow, repeat! ✨</div>
+                <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Reveal radiant skin with our exfoliating body polish. It removes dead cells, boosts blood flow, and leaves your skin baby-soft and fresh.</div>
 
-                    {/* <ul className='list-disc flex flex-col items-center'>
+                {/* <ul className='list-disc flex flex-col items-center'>
                     <li className='text-black text-base font-jost font-[500] leading-relaxed'></li>
                     <li className='text-black text-base font-jost leading-relaxed'></li>
                     <li className='text-black text-base font-jost leading-relaxed mb-10'></li>
                 </ul> */}
 
-                    <HorizontalScroll speed={70}>
-                        {
-                            bodyPolish.map((image, index) => (
-                                <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                    <img src={image} className='w-[160px] h-auto relative' />
-                                </div>
-                            ))
-                        }
-                        {
-                            bodyPolish.map((image, index) => (
-                                <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                    <img src={image} className='w-[160px] h-auto relative' />
-                                </div>
-                            ))
-                        }
-                    </HorizontalScroll>
-                </div>
+                <HorizontalScroll speed={70}>
+                    {
+                        bodyPolish.map((image, index) => (
+                            <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
+                                <img  src={image.img}  alt={image.keyword} className='w-[160px] h-auto relative' />
+                            </div>
+                        ))
+                    }
+                    {
+                        bodyPolish.map((image, index) => (
+                            <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
+                                <img  src={image.img}  alt={image.keyword} className='w-[160px] h-auto relative' />
+                            </div>
+                        ))
+                    }
+                </HorizontalScroll>
+            </div>
 
-                {/* container 15 */}
-                <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#EAECFF]' ref={oilMassageRef}>
-                    <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Body Oil Massage</div>
-                    <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Unwind in bliss.</div>
-                    <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Our relaxing oil massage melts away stress, soothes sore muscles, and leaves your skin deeply nourished, soft, and glowing.</div>
+            {/* container 15 */}
+            <div className='flex flex-col gap-5 lg:gap-8 justify-center items-center p-7 lg:p-20 bg-[#EAECFF]' ref={oilMassageRef}>
+                <div className="text-center justify-start text-[#87427D] text-[30px] lg:text-[42px] font-bold font-jost leading-[60.52px]">Body Oil Massage</div>
+                <div className="text-center justify-start text-black text-[14px] lg:text-[24px] font-bold font-jost leading-normal">Unwind in bliss.</div>
+                <div className="text-center justify-start font-jost text-[16px] lg:text-[20px] font-[500] mb-10 lg:w-[800px]">Our relaxing oil massage melts away stress, soothes sore muscles, and leaves your skin deeply nourished, soft, and glowing.</div>
 
-                    <HorizontalScroll speed={70}>
-                        {
-                            oilMassage.map((image, index) => (
-                                <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                    <img src={image} className='w-[160px] h-auto relative' />
-                                </div>
-                            ))
-                        }
-                        {
-                            oilMassage.map((image, index) => (
-                                <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
-                                    <img src={image} className='w-[160px] h-auto relative' />
-                                </div>
-                            ))
-                        }
-                    </HorizontalScroll>
-                </div>
+                <HorizontalScroll speed={70}>
+                    {
+                        oilMassage.map((image, index) => (
+                            <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
+                                <img  src={image.img}  alt={image.keyword} className='w-[160px] h-auto relative' />
+                            </div>
+                        ))
+                    }
+                    {
+                        oilMassage.map((image, index) => (
+                            <div className={`w-[160px] h-auto mx-[15px] ${index % 2 !== 0 ? 'mt-10' : ''}`} key={index}>
+                                <img  src={image.img}  alt={image.keyword} className='w-[160px] h-auto relative' />
+                            </div>
+                        ))
+                    }
+                </HorizontalScroll>
+            </div>
 
-                {/* container 10 */}
-                <ContactFrom />
-            </div >
-            )
+            {/* container 10 */}
+            <ContactFrom />
+        </div >
+    )
 }
 
-            export default Services
+export default Services
